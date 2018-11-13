@@ -16,11 +16,14 @@ class StudyGroupsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.delegate = self
-        collectionView.dataSource = self
         
         fetchGrupos { (groups) in
             print(groups)
+            groups.forEach({ (group) in
+                group.fetchMembers(completion: { (members) in
+                    print(members!)
+                })
+            })
         }
 
         
@@ -36,16 +39,6 @@ class StudyGroupsViewController: UIViewController {
         CKContainer.default().publicCloudDatabase.perform(query, inZoneWith: nil) { (records, error) in
             //print(records)
             records?.forEach({ (record) in
-                let members = record["members"] as! [CKRecord.Reference]
-                
-                let predicate = NSPredicate(format: "recordID IN %@", members )
-                
-                let query = CKQuery(recordType: "User", predicate: predicate)
-                
-                CKContainer.default().publicCloudDatabase.perform(query, inZoneWith: nil, completionHandler: { (records, error) in
-                    guard let recordas = records?.first else {return}
-                    print(recordas["name"])
-                })
                 
 //                members.forEach({ (reference) in
 //                    CKContainer.default().publicCloudDatabase.fetch(withRecordID: reference.recordID, completionHandler: { (record, error) in
@@ -60,21 +53,5 @@ class StudyGroupsViewController: UIViewController {
         
         
     }
-    
-
-}
-
-
-extension StudyGroupsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        <#code#>
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
-    }
-    
-    
     
 }
