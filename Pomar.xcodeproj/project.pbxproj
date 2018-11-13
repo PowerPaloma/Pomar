@@ -8,13 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		2F0DAB4A219AF37800217ED5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0DAB49219AF37800217ED5 /* AppDelegate.swift */; };
-		2F0DAB4C219AF37800217ED5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0DAB4B219AF37800217ED5 /* ViewController.swift */; };
 		2F0DAB4F219AF37800217ED5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F0DAB4D219AF37800217ED5 /* Main.storyboard */; };
 		2F0DAB52219AF37800217ED5 /* Pomar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2F0DAB50219AF37800217ED5 /* Pomar.xcdatamodeld */; };
 		2F0DAB54219AF37A00217ED5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F0DAB53219AF37A00217ED5 /* Assets.xcassets */; };
 		2F0DAB57219AF37A00217ED5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F0DAB55219AF37A00217ED5 /* LaunchScreen.storyboard */; };
 		2F0DAB62219AF37A00217ED5 /* PomarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0DAB61219AF37A00217ED5 /* PomarTests.swift */; };
 		2F0DAB6D219AF37A00217ED5 /* PomarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0DAB6C219AF37A00217ED5 /* PomarUITests.swift */; };
+		2F0DAB82219AFA7C00217ED5 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F0DAB81219AFA7C00217ED5 /* CloudKit.framework */; };
+		2F0DAB85219B020000217ED5 /* Groups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F0DAB84219B020000217ED5 /* Groups.storyboard */; };
+		2F0DAB87219B021C00217ED5 /* Questions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F0DAB86219B021C00217ED5 /* Questions.storyboard */; };
+		2F0DAB89219B022A00217ED5 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F0DAB88219B022A00217ED5 /* Profile.storyboard */; };
+		2F0DAB8B219B026300217ED5 /* Missions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F0DAB8A219B026300217ED5 /* Missions.storyboard */; };
+		2F0DAB8D219B076C00217ED5 /* StudyGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0DAB8C219B076C00217ED5 /* StudyGroupsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +42,6 @@
 /* Begin PBXFileReference section */
 		2F0DAB46219AF37800217ED5 /* Pomar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pomar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F0DAB49219AF37800217ED5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2F0DAB4B219AF37800217ED5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2F0DAB4E219AF37800217ED5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2F0DAB51219AF37800217ED5 /* Pomar.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pomar.xcdatamodel; sourceTree = "<group>"; };
 		2F0DAB53219AF37A00217ED5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +53,13 @@
 		2F0DAB68219AF37A00217ED5 /* PomarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PomarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F0DAB6C219AF37A00217ED5 /* PomarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomarUITests.swift; sourceTree = "<group>"; };
 		2F0DAB6E219AF37A00217ED5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F0DAB7D219AF9E400217ED5 /* Pomar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pomar.entitlements; sourceTree = "<group>"; };
+		2F0DAB81219AFA7C00217ED5 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		2F0DAB84219B020000217ED5 /* Groups.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Groups.storyboard; sourceTree = "<group>"; };
+		2F0DAB86219B021C00217ED5 /* Questions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Questions.storyboard; sourceTree = "<group>"; };
+		2F0DAB88219B022A00217ED5 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		2F0DAB8A219B026300217ED5 /* Missions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Missions.storyboard; sourceTree = "<group>"; };
+		2F0DAB8C219B076C00217ED5 /* StudyGroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyGroupsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F0DAB82219AFA7C00217ED5 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +95,7 @@
 				2F0DAB60219AF37A00217ED5 /* PomarTests */,
 				2F0DAB6B219AF37A00217ED5 /* PomarUITests */,
 				2F0DAB47219AF37800217ED5 /* Products */,
+				2F0DAB7E219AFA1200217ED5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,9 +112,11 @@
 		2F0DAB48219AF37800217ED5 /* Pomar */ = {
 			isa = PBXGroup;
 			children = (
+				2F0DAB7D219AF9E400217ED5 /* Pomar.entitlements */,
+				2F0DAB7C219AF99600217ED5 /* Controller */,
+				2F0DAB7B219AF98E00217ED5 /* View */,
+				2F0DAB7A219AF98300217ED5 /* Model */,
 				2F0DAB49219AF37800217ED5 /* AppDelegate.swift */,
-				2F0DAB4B219AF37800217ED5 /* ViewController.swift */,
-				2F0DAB4D219AF37800217ED5 /* Main.storyboard */,
 				2F0DAB53219AF37A00217ED5 /* Assets.xcassets */,
 				2F0DAB55219AF37A00217ED5 /* LaunchScreen.storyboard */,
 				2F0DAB58219AF37A00217ED5 /* Info.plist */,
@@ -126,6 +141,65 @@
 				2F0DAB6E219AF37A00217ED5 /* Info.plist */,
 			);
 			path = PomarUITests;
+			sourceTree = "<group>";
+		};
+		2F0DAB7A219AF98300217ED5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2F0DAB7B219AF98E00217ED5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2F0DAB8F219B082400217ED5 /* Study Groups */,
+				2F0DAB83219B01D000217ED5 /* Storyboards */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2F0DAB7C219AF99600217ED5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2F0DAB8E219B080D00217ED5 /* Study Groups */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2F0DAB7E219AFA1200217ED5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2F0DAB81219AFA7C00217ED5 /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2F0DAB83219B01D000217ED5 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				2F0DAB4D219AF37800217ED5 /* Main.storyboard */,
+				2F0DAB84219B020000217ED5 /* Groups.storyboard */,
+				2F0DAB86219B021C00217ED5 /* Questions.storyboard */,
+				2F0DAB88219B022A00217ED5 /* Profile.storyboard */,
+				2F0DAB8A219B026300217ED5 /* Missions.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		2F0DAB8E219B080D00217ED5 /* Study Groups */ = {
+			isa = PBXGroup;
+			children = (
+				2F0DAB8C219B076C00217ED5 /* StudyGroupsViewController.swift */,
+			);
+			path = "Study Groups";
+			sourceTree = "<group>";
+		};
+		2F0DAB8F219B082400217ED5 /* Study Groups */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Study Groups";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +270,14 @@
 				TargetAttributes = {
 					2F0DAB45219AF37800217ED5 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					2F0DAB5C219AF37A00217ED5 = {
 						CreatedOnToolsVersion = 10.1;
@@ -232,7 +314,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F0DAB89219B022A00217ED5 /* Profile.storyboard in Resources */,
+				2F0DAB85219B020000217ED5 /* Groups.storyboard in Resources */,
+				2F0DAB87219B021C00217ED5 /* Questions.storyboard in Resources */,
 				2F0DAB57219AF37A00217ED5 /* LaunchScreen.storyboard in Resources */,
+				2F0DAB8B219B026300217ED5 /* Missions.storyboard in Resources */,
 				2F0DAB54219AF37A00217ED5 /* Assets.xcassets in Resources */,
 				2F0DAB4F219AF37800217ED5 /* Main.storyboard in Resources */,
 			);
@@ -259,9 +345,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F0DAB4C219AF37800217ED5 /* ViewController.swift in Sources */,
 				2F0DAB52219AF37800217ED5 /* Pomar.xcdatamodeld in Sources */,
 				2F0DAB4A219AF37800217ED5 /* AppDelegate.swift in Sources */,
+				2F0DAB8D219B076C00217ED5 /* StudyGroupsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,9 +522,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Pomar/Pomar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MQ922JMCL6;
 				INFOPLIST_FILE = Pomar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -454,9 +542,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Pomar/Pomar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MQ922JMCL6;
 				INFOPLIST_FILE = Pomar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
