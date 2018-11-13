@@ -10,9 +10,14 @@ import UIKit
 import CloudKit
 
 class StudyGroupsViewController: UIViewController {
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView.delegate = self
+        collectionView.dataSource = self
         
         fetchGrupos { (groups) in
             print(groups)
@@ -33,12 +38,13 @@ class StudyGroupsViewController: UIViewController {
             records?.forEach({ (record) in
                 let members = record["members"] as! [CKRecord.Reference]
                 
-                let predicate = NSPredicate(format: "$k IN %@", record["recordName"] as! String, members)
+                let predicate = NSPredicate(format: "recordID IN %@", members )
                 
                 let query = CKQuery(recordType: "User", predicate: predicate)
                 
                 CKContainer.default().publicCloudDatabase.perform(query, inZoneWith: nil, completionHandler: { (records, error) in
-                    print(records)
+                    guard let recordas = records?.first else {return}
+                    print(recordas["name"])
                 })
                 
 //                members.forEach({ (reference) in
@@ -56,4 +62,19 @@ class StudyGroupsViewController: UIViewController {
     }
     
 
+}
+
+
+extension StudyGroupsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        <#code#>
+    }
+    
+    
+    
 }
