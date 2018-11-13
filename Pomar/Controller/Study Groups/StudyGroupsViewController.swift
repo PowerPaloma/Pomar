@@ -7,23 +7,53 @@
 //
 
 import UIKit
+import CloudKit
 
 class StudyGroupsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        fetchGrupos { (groups) in
+            print(groups)
+        }
 
-        // Do any additional setup after loading the view.
+        
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func fetchGrupos(completion: @escaping ([Group]) -> Void){
+        
+        var grupos = [Group]()
+        
+        let query = CKQuery(recordType: "Group", predicate: NSPredicate(value: true))
+        
+        CKContainer.default().publicCloudDatabase.perform(query, inZoneWith: nil) { (records, error) in
+            //print(records)
+            records?.forEach({ (record) in
+                let members = record["members"] as! [CKRecord.Reference]
+                
+                let predicate = NSPredicate(format: "$k IN %@", record["recordName"] as! String, members)
+                
+                let query = CKQuery(recordType: "User", predicate: predicate)
+                
+                CKContainer.default().publicCloudDatabase.perform(query, inZoneWith: nil, completionHandler: { (records, error) in
+                    print(records)
+                })
+                
+//                members.forEach({ (reference) in
+//                    CKContainer.default().publicCloudDatabase.fetch(withRecordID: reference.recordID, completionHandler: { (record, error) in
+//                        print(record)
+//                    })
+//                })
+               
+                grupos.append(Group(record: record))
+            })
+            completion(grupos)
+        }
+        
+        
     }
-    */
+    
 
 }

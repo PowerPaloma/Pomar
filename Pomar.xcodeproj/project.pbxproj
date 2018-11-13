@@ -20,6 +20,7 @@
 		2F0DAB89219B022A00217ED5 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F0DAB88219B022A00217ED5 /* Profile.storyboard */; };
 		2F0DAB8B219B026300217ED5 /* Missions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F0DAB8A219B026300217ED5 /* Missions.storyboard */; };
 		2F0DAB8D219B076C00217ED5 /* StudyGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0DAB8C219B076C00217ED5 /* StudyGroupsViewController.swift */; };
+		DCE87266219B0C8D008F78BE /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE87265219B0C8D008F78BE /* Group.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		2F0DAB88219B022A00217ED5 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		2F0DAB8A219B026300217ED5 /* Missions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Missions.storyboard; sourceTree = "<group>"; };
 		2F0DAB8C219B076C00217ED5 /* StudyGroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyGroupsViewController.swift; sourceTree = "<group>"; };
+		DCE87265219B0C8D008F78BE /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				2F0DAB55219AF37A00217ED5 /* LaunchScreen.storyboard */,
 				2F0DAB58219AF37A00217ED5 /* Info.plist */,
 				2F0DAB50219AF37800217ED5 /* Pomar.xcdatamodeld */,
+				DCE87265219B0C8D008F78BE /* Group.swift */,
 			);
 			path = Pomar;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				2F0DAB52219AF37800217ED5 /* Pomar.xcdatamodeld in Sources */,
 				2F0DAB4A219AF37800217ED5 /* AppDelegate.swift in Sources */,
 				2F0DAB8D219B076C00217ED5 /* StudyGroupsViewController.swift in Sources */,
+				DCE87266219B0C8D008F78BE /* Group.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,7 +528,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Pomar/Pomar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MQ922JMCL6;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Pomar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -544,7 +548,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Pomar/Pomar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MQ922JMCL6;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Pomar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
