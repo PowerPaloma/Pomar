@@ -17,41 +17,14 @@ class StudyGroupsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fetchGrupos { (groups) in
-            print(groups)
-            groups.forEach({ (group) in
-                group.fetchMembers(completion: { (members) in
-                    print(members!)
-                })
-            })
-        }
-
+        let day1 = DaySchedule(day: "monday", hour: "14:00")
+        let day2 = DaySchedule(day: "friday", hour: "14:00")
         
-    }
-    
-    
-    func fetchGrupos(completion: @escaping ([Group]) -> Void){
+        let scheduleArray = [day1, day2]
         
-        var grupos = [Group]()
+        let newGroup = Group(name: "Novo Grupo", description: "descricao", tags: ["tag1", "tag2"], schedule: scheduleArray)
         
-        let query = CKQuery(recordType: "Group", predicate: NSPredicate(value: true))
-        
-        CKContainer.default().publicCloudDatabase.perform(query, inZoneWith: nil) { (records, error) in
-            //print(records)
-            records?.forEach({ (record) in
-                
-//                members.forEach({ (reference) in
-//                    CKContainer.default().publicCloudDatabase.fetch(withRecordID: reference.recordID, completionHandler: { (record, error) in
-//                        print(record)
-//                    })
-//                })
-               
-                grupos.append(Group(record: record))
-            })
-            completion(grupos)
-        }
-        
-        
+        CKManager.shared.createGroup(group: newGroup)
     }
     
 }

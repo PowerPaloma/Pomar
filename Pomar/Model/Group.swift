@@ -11,35 +11,38 @@ import CloudKit
 
 class Group {
     
+    var id: CKRecord.ID?
     var name: String?
+    var description: String?
     var tags: [String]?
-    var members = [CKRecord.Reference]()
+    var schedule: [DaySchedule]?
+    
+    init(name: String, description: String, tags: [String], schedule: [DaySchedule]) {
+        self.name = name
+        self.description = description
+        self.tags = tags
+        self.schedule = schedule
+    }
     
     
     init(record: CKRecord) {
+        self.id = record.recordID
         self.name = record["name"] as? String
+        self.description = record["description"] as? String
         self.tags = record["tags"] as? [String]
-        self.members = record["members"] as! [CKRecord.Reference]
+        
+        
+        guard let schedule = record["schedule"] as? String else {
+            return
+        }
+        
+        let decoder = JSONDecoder()
+        
+        let data = schedule.data(using: .utf8)
+        self.schedule = try? decoder.decode([DaySchedule].self, from: data!)
+        
         
     }
-    
-    func fetchMembers(completion: @escaping ([User]?) -> Void) {
-        
-        var users = [User]()
-        
-        let predicate = NSPredicate(format: "recordID IN %@", self.members)
-        
-        let query = CKQuery(recordType: "User", predicate: predicate)
-        
-        CKContainer.default().publicCloudDatabase.perform(query, inZoneWith: nil, completionHandler: { (records, error) in
-            records?.forEach({ (record) in
-                users.append(User(record: record))
-            })
-            completion(users)
-        })
-    }
-    
-    
     
 }
 
