@@ -16,25 +16,15 @@ class StudyGroupsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.register(UINib(nibName: "GroupsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "celGroup")
         
+        let day1 = DaySchedule(day: "monday", hour: "14:00")
+        let day2 = DaySchedule(day: "friday", hour: "14:00")
         
+        let scheduleArray = [day1, day2]
+        
+        let newGroup = Group(name: "Novo Grupo", description: "descricao", tags: ["tag1", "tag2"], schedule: scheduleArray)
+        
+        CKManager.shared.createGroup(group: newGroup)
     }
-}
-
-extension StudyGroupsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellGroup", for: indexPath) as! GroupsCollectionViewCell
-        return cell
-    }
-    
-    
     
 }

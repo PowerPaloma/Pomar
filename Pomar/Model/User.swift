@@ -1,5 +1,5 @@
 //
-//  Group.swift
+//  User.swift
 //  Pomar
 //
 //  Created by Mateus Rodrigues on 13/11/18.
@@ -9,16 +9,13 @@
 import Foundation
 import CloudKit
 
-class Group {
+class User {
     
     var name: String?
-    var tags: [String]?
-    
+    var skills: [String]?
     
     init(record: CKRecord) {
         self.name = record["name"] as? String
-        self.tags = record["tags"] as? [String]
+        self.skills = record["skills"] as? [String]
     }
-    
 }
-
