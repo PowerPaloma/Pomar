@@ -20,6 +20,8 @@
 		2F0DAB89219B022A00217ED5 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F0DAB88219B022A00217ED5 /* Profile.storyboard */; };
 		2F0DAB8B219B026300217ED5 /* Missions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F0DAB8A219B026300217ED5 /* Missions.storyboard */; };
 		2F0DAB8D219B076C00217ED5 /* StudyGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0DAB8C219B076C00217ED5 /* StudyGroupsViewController.swift */; };
+		2F0DAB92219B471000217ED5 /* GroupsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0DAB90219B471000217ED5 /* GroupsCollectionViewCell.swift */; };
+		2F0DAB93219B471000217ED5 /* GroupsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F0DAB91219B471000217ED5 /* GroupsCollectionViewCell.xib */; };
 		DCE87266219B0C8D008F78BE /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE87265219B0C8D008F78BE /* Group.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +63,8 @@
 		2F0DAB88219B022A00217ED5 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		2F0DAB8A219B026300217ED5 /* Missions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Missions.storyboard; sourceTree = "<group>"; };
 		2F0DAB8C219B076C00217ED5 /* StudyGroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyGroupsViewController.swift; sourceTree = "<group>"; };
+		2F0DAB90219B471000217ED5 /* GroupsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsCollectionViewCell.swift; sourceTree = "<group>"; };
+		2F0DAB91219B471000217ED5 /* GroupsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupsCollectionViewCell.xib; sourceTree = "<group>"; };
 		DCE87265219B0C8D008F78BE /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -201,6 +205,8 @@
 		2F0DAB8F219B082400217ED5 /* Study Groups */ = {
 			isa = PBXGroup;
 			children = (
+				2F0DAB90219B471000217ED5 /* GroupsCollectionViewCell.swift */,
+				2F0DAB91219B471000217ED5 /* GroupsCollectionViewCell.xib */,
 			);
 			path = "Study Groups";
 			sourceTree = "<group>";
@@ -321,6 +327,7 @@
 				2F0DAB85219B020000217ED5 /* Groups.storyboard in Resources */,
 				2F0DAB87219B021C00217ED5 /* Questions.storyboard in Resources */,
 				2F0DAB57219AF37A00217ED5 /* LaunchScreen.storyboard in Resources */,
+				2F0DAB93219B471000217ED5 /* GroupsCollectionViewCell.xib in Resources */,
 				2F0DAB8B219B026300217ED5 /* Missions.storyboard in Resources */,
 				2F0DAB54219AF37A00217ED5 /* Assets.xcassets in Resources */,
 				2F0DAB4F219AF37800217ED5 /* Main.storyboard in Resources */,
@@ -348,6 +355,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F0DAB92219B471000217ED5 /* GroupsCollectionViewCell.swift in Sources */,
 				2F0DAB52219AF37800217ED5 /* Pomar.xcdatamodeld in Sources */,
 				2F0DAB4A219AF37800217ED5 /* AppDelegate.swift in Sources */,
 				2F0DAB8D219B076C00217ED5 /* StudyGroupsViewController.swift in Sources */,

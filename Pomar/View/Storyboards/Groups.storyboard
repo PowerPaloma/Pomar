@@ -17,33 +17,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vfC-ol-jhx">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qDl-YV-UMm">
                                 <rect key="frame" x="0.0" y="116" width="375" height="551"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hyy-b5-mil">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="HQG-q7-Stc">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="vfC-ol-jhx" firstAttribute="top" secondItem="6eS-B8-ye0" secondAttribute="top" id="9Wp-af-2Lx"/>
-                            <constraint firstItem="vfC-ol-jhx" firstAttribute="leading" secondItem="6eS-B8-ye0" secondAttribute="leading" id="G3s-Sr-yy1"/>
-                            <constraint firstItem="6eS-B8-ye0" firstAttribute="bottom" secondItem="vfC-ol-jhx" secondAttribute="bottom" id="dQg-e7-qNx"/>
-                            <constraint firstItem="6eS-B8-ye0" firstAttribute="trailing" secondItem="vfC-ol-jhx" secondAttribute="trailing" id="f0J-5m-6bl"/>
+                            <constraint firstItem="6eS-B8-ye0" firstAttribute="bottom" secondItem="qDl-YV-UMm" secondAttribute="bottom" id="EqU-iK-p2a"/>
+                            <constraint firstItem="6eS-B8-ye0" firstAttribute="trailing" secondItem="qDl-YV-UMm" secondAttribute="trailing" id="Pkk-7H-qp6"/>
+                            <constraint firstItem="qDl-YV-UMm" firstAttribute="leading" secondItem="6eS-B8-ye0" secondAttribute="leading" id="Xha-Ve-Lfr"/>
+                            <constraint firstItem="qDl-YV-UMm" firstAttribute="top" secondItem="6eS-B8-ye0" secondAttribute="top" id="pCK-vx-vlf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6eS-B8-ye0"/>
                     </view>
