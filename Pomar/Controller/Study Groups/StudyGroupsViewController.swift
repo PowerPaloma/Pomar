@@ -20,9 +20,9 @@ class StudyGroupsViewController: UIViewController {
         let day1 = DaySchedule(day: "monday", hour: "14:00")
         let day2 = DaySchedule(day: "friday", hour: "14:00")
         
-        let scheduleArray = [day1, day2]
+        let schedule = [day1, day2]
         
-        let newGroup = Group(name: "Novo Grupo", description: "descricao", tags: ["tag1", "tag2"], schedule: scheduleArray)
+        let newGroup = Group(name: "Novo Grupo", description: "Descricao", tags: ["tag1", "tag2"], schedule: schedule, date: Date(), isWeekly: true)
         
         CKManager.shared.createGroup(group: newGroup)
     }
