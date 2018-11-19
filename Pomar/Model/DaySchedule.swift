@@ -12,3 +12,9 @@ struct DaySchedule: Codable {
     let day: String
     let hour: String
 }
+
+extension DaySchedule: Equatable {}
+
+func ==(lhs: DaySchedule, rhs: DaySchedule) -> Bool {
+    return lhs.day == rhs.day && lhs.hour == rhs.hour
+}
