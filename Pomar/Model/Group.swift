@@ -52,3 +52,21 @@ class Group {
     
 }
 
+extension CKRecord {
+    convenience init(group: Group) {
+        self.init(recordType: "Group")
+        self["name"] = group.name!
+        self["description"] = group.description!
+        self["tags"] = group.tags!
+        self["date"] = group.date!
+        self["isWeekly"] = group.isWeekly! ? 1 : 0
+        
+        let encoder = JSONEncoder()
+        let data = try? encoder.encode(group.schedule)
+        let schedule = String(data: data!, encoding: .utf8)
+        
+        self["schedule"] = schedule
+    }
+}
+
+
