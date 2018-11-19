@@ -19,17 +19,7 @@ final class CKManager {
     
     func createGroup(group: Group) {
         
-        let record = CKRecord(recordType: "Group")
-        record["name"] = group.name!
-        record["description"] = group.description!
-        record["tags"] = group.tags!
-        
-        let encoder = JSONEncoder()
-        encoder.outputFormatting = .prettyPrinted
-        let jsonData = try? encoder.encode(group.schedule)
-        let schedule = String(data: jsonData!, encoding: .utf8)
-        
-        record["schedule"] = schedule
+        let record = CKRecord(group: group)
         
         CKContainer.default().publicCloudDatabase.save(record) { (record, error) in
             guard let record = record, error == nil else {
@@ -42,7 +32,6 @@ final class CKManager {
     }
     
     func fetchGroups(completion: @escaping ([Group]) -> Void){
-        
         
         var grupos = [Group]()
         
