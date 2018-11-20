@@ -10,17 +10,19 @@ import Foundation
 import UIKit
 
 
-class DayPicker: NSObject, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
+class DayPicker: NSObject, UIPickerViewDelegate, UIPickerViewDataSource {
     
     var days: [String] = []
     var months: [String] = []
     let fmt = DateFormatter()
-    let textFieldDelegate: TextFieldProtocol? = nil
+    var component1 = "1"
+    var component2 = "January"
+    var textFieldDelegate: TextFieldProtocol? = nil
     
     override init() {
         for i in 1...31{
-            if i < 12{
-                months.append(fmt.monthSymbols[i])
+            if i <= 12{
+                months.append(fmt.monthSymbols[i-1])
             }
             days.append(String(i))
         }
@@ -56,11 +58,15 @@ class DayPicker: NSObject, UIPickerViewDelegate, UIPickerViewDataSource, UITextF
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch component {
         case 0:
-            textFieldDelegate?.send(isFirstComponent: true, text: days[row])
+            component1 = days[row]
+            textFieldDelegate?.send(text: "\(component1), \(component2)")
+            break
         case 1:
-            textFieldDelegate?.send(isFirstComponent: false, text: days[row])
+            component2 = months[row]
+            textFieldDelegate?.send(text: "\(component1), \(component2)")
+            break
         default:
-            textFieldDelegate?.send(isFirstComponent: false, text: "")
+            textFieldDelegate?.send(text: "\(component1), \(component2)")
         }
         
     }

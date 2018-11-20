@@ -38,10 +38,6 @@ class AddGroupPart1ViewController: UIViewController {
     }
     
 
-    @IBAction func cancel(_ sender: Any) {
-        
-        self.dismiss(animated: true, completion: nil)
-    }
     
     @IBAction func next(_ sender: Any) {
         let isEmptyTextFields = Validation.textFieldsIsEmpty(textFields: [self.nameTxtField, self.tagsTxtField])
@@ -66,8 +62,9 @@ class AddGroupPart1ViewController: UIViewController {
             }else{
                 newGroup.tags = []
             }
-            newGroup.name = self.nameTxtField.text
-            newGroup.description = self.descriptionGroupTxtView.text
+            guard let name = self.nameTxtField.text, let description = self.descriptionGroupTxtView.text else{return}
+            newGroup.name = name
+            newGroup.description = description
             
             performSegue(withIdentifier: "part2", sender: nil)
             

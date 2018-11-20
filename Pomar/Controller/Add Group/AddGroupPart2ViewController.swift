@@ -44,6 +44,9 @@ class AddGroupPart2ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        dayUnique.delegate = self
+        scheduleUnique.delegate = self
+        
         dayUnique.inputView = dayPickerController
         scheduleUnique.inputView = hoursPickerController
         dayUnique.inputAccessoryView = accessoryToolbar
@@ -51,12 +54,16 @@ class AddGroupPart2ViewController: UIViewController {
         modelDayPicker = DayPicker()
         modelHoursPicker = HourPicker()
         
-        dayUnique.delegate = modelDayPicker
+    
         dayPickerController.delegate = modelDayPicker
         dayPickerController.dataSource = modelDayPicker
         
         hoursPickerController.delegate = modelHoursPicker
         hoursPickerController.dataSource = modelHoursPicker
+        
+        modelDayPicker.textFieldDelegate = self
+        modelHoursPicker.textFieldDelegate = self
+        
         
     }
     
@@ -65,6 +72,7 @@ class AddGroupPart2ViewController: UIViewController {
     }
     
     func controlSegmented(){
+        closePicker()
         switch segmentedControl.selectedSegmentIndex {
         case 0:
             self.viewWeekly.isHidden = false
@@ -83,12 +91,16 @@ class AddGroupPart2ViewController: UIViewController {
         }
     }
     
-    @objc func onDoneButtonTapped(sender: UIBarButtonItem) {
+    func closePicker(){
         if dayUnique.isFirstResponder {
             dayUnique.resignFirstResponder()
         }else if scheduleUnique.isFirstResponder {
             scheduleUnique.resignFirstResponder()
         }
+    }
+    
+    @objc func onDoneButtonTapped(sender: UIBarButtonItem) {
+       closePicker()
     }
     
     @IBAction func done(_ sender: Any) {
@@ -111,7 +123,10 @@ class AddGroupPart2ViewController: UIViewController {
                 guard let schedule = self.scheduleUnique.text else {return}
                 let uniqueSchedule = DaySchedule(day: day, hour:schedule)
                 newGroup.schedule?.append(uniqueSchedule)
+                CKManager.shared.createGroup(group: newGroup)
+                
             }
+            
         }
     }
     
@@ -124,17 +139,21 @@ class AddGroupPart2ViewController: UIViewController {
 
 extension AddGroupPart2ViewController: TextFieldProtocol {
     
-    func send(isFirstComponent: Bool, text: String) {
-        if var textField = self.dayUnique.text?.split(separator: " "){
-            if isFirstComponent {
-                //textField[0] = text.utf8CString
-            }
+    func send(text: String) {
+         if dayUnique.isFirstResponder {
+            dayUnique.text = text
+         }else{
+            scheduleUnique.text = text
         }
-        
         
     }
     
-    
+}
+
+extension AddGroupPart2ViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return false
+    }
 }
 
 

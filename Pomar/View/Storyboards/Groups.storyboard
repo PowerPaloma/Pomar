@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="z6C-1G-Hhq">
-                                <rect key="frame" x="0.0" y="116" width="375" height="502"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="a51-eB-7Cb">
                                     <size key="itemSize" width="50" height="50"/>
@@ -80,7 +80,7 @@
                                                 <rect key="frame" x="16" y="16" width="48" height="30"/>
                                                 <state key="normal" title="Cancel"/>
                                                 <connections>
-                                                    <action selector="cancel:" destination="fVK-GN-QHd" eventType="touchUpInside" id="4gl-X3-Orx"/>
+                                                    <segue destination="6rZ-uc-HR8" kind="show" id="D2T-TH-l1P"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePN-Xe-78x">
@@ -189,7 +189,7 @@
         <!--Add Group Part2 View Controller-->
         <scene sceneID="ook-WD-oMl">
             <objects>
-                <viewController id="I21-Vm-T6A" customClass="AddGroupPart2ViewController" customModule="Pomar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="part2" id="I21-Vm-T6A" customClass="AddGroupPart2ViewController" customModule="Pomar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5Ct-2E-91q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -442,5 +442,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="dNA-35-KlY"/>
+        <segue reference="D2T-TH-l1P"/>
     </inferredMetricsTieBreakers>
 </document>
