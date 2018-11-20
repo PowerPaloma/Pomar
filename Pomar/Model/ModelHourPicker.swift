@@ -14,6 +14,9 @@ class HourPicker: NSObject, UIPickerViewDelegate, UIPickerViewDataSource {
     
     var hours: [String] = []
     var minutes: [String] = []
+    var component1 = "1"
+    var component2 = "00"
+    var textFieldDelegate: TextFieldProtocol? = nil
     
     override init() {
         for i in 14...18{
@@ -51,9 +54,20 @@ class HourPicker: NSObject, UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        switch component {
+        case 0:
+            component1 = hours[row]
+            textFieldDelegate?.send(text: "\(component1):\(component2)")
+            break
+        case 1:
+            component2 = minutes[row]
+            textFieldDelegate?.send(text: "\(component1):\(component2)")
+            break
+        default:
+            textFieldDelegate?.send(text: "\(component1):\(component2)")
+        }
         
     }
-    
     
     
 }

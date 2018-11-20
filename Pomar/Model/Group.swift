@@ -12,12 +12,12 @@ import CloudKit
 class Group {
     
     var id: CKRecord.ID?
-    var name: String?
-    var description: String?
-    var tags: [String]?
+    var name: String
+    var description: String
+    var tags: [String]
     var schedule: [DaySchedule]?
     var date: Date?
-    var isWeekly: Bool?
+    var isWeekly: Bool
     
     init(name: String, description: String, tags: [String], schedule: [DaySchedule], date: Date, isWeekly: Bool) {
         self.name = name
@@ -31,47 +31,60 @@ class Group {
         self.name = ""
         self.description = ""
         self.tags = []
-        self.schedule = []
+        self.schedule = nil
+        self.date = nil
+        self.isWeekly = false
+        self.id = nil
+        
     }
     
     
-    init(record: CKRecord) {
+    init?(record: CKRecord){
+        
         self.id = record.recordID
-        self.name = record["name"] as? String
-        self.description = record["description"] as? String
-        self.tags = record["tags"] as? [String]
+        guard let name = record["name"] as? String , let description = record["description"]  as? String, let isWeekly = record["isWeekly"]  as? Bool, let tags = record["tags"] as? [String] else {return nil}
+        self.name = name
+        self.description = description
+        self.isWeekly = isWeekly
+        self.tags = tags
+        
         self.date = record["date"] as? Date
-        self.isWeekly = record["isWeekly"] as? Bool
-        
-        
-        guard let schedule = record["schedule"] as? String else {
-            return
+        if let scheduleRecord = record["schedule"] as? String {
+            let decoder = JSONDecoder()
+            if let data = scheduleRecord.data(using: .utf8) {
+                guard let schedule = try? decoder.decode([DaySchedule].self, from: data) else {return nil}
+                self.schedule = schedule
+            }else{
+                return nil
+            }
+        }else{
+            self.schedule = nil
         }
-        
-        let decoder = JSONDecoder()
-        
-        let data = schedule.data(using: .utf8)
-        self.schedule = try? decoder.decode([DaySchedule].self, from: data!)
-        
-        
     }
     
 }
 
 extension CKRecord {
     convenience init(group: Group) {
+        
         self.init(recordType: "Group")
-        self["name"] = group.name!
-        self["description"] = group.description!
-        self["tags"] = group.tags!
-        self["date"] = group.date!
-        self["isWeekly"] = group.isWeekly! ? 1 : 0
         
-        let encoder = JSONEncoder()
-        let data = try? encoder.encode(group.schedule)
-        let schedule = String(data: data!, encoding: .utf8)
         
-        self["schedule"] = schedule
+        self["name"] = group.name
+        self["description"] = group.description
+        self["tags"] = group.tags
+        self["isWeekly"] = group.isWeekly ? 1 : 0
+        
+        if let schedule = group.schedule {
+            let encoder = JSONEncoder()
+            let data = try? encoder.encode(schedule)
+            let scheduleJson = String(data: data!, encoding: .utf8)
+            self["schedule"] = scheduleJson
+        }else{
+            self["schedule"] = nil
+        }
+        self["date"] = group.date
+        
     }
 }
 

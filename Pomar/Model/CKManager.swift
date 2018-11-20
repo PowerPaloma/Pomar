@@ -39,7 +39,10 @@ final class CKManager {
         
         CKContainer.default().publicCloudDatabase.perform(query, inZoneWith: nil) { (records, error) in
             records?.forEach({ (record) in
-                grupos.append(Group(record: record))
+                if let group = Group(record: record)  {
+                     grupos.append(group)
+                }
+               
             })
             completion(grupos)
         }

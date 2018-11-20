@@ -9,5 +9,5 @@
 import Foundation
 
 protocol TextFieldProtocol {
-    func send(isFirstComponent: Bool, text: String)
+    func send(text: String)
 }
