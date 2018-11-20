@@ -74,6 +74,16 @@ class AddGroupPart2ViewController: UIViewController {
         modelDayPicker.textFieldDelegate = self
         modelHoursPicker.textFieldDelegate = self
         
+        setupTagsTextFields()
+        
+    }
+    
+    func setupTagsTextFileds(){
+        mondayHour.tag = 0
+        tuesdayHour.tag = 1
+        wednesdayHour.tag = 2
+        thursdayHour.tag = 3
+        fridayHour.tag = 4
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -116,6 +126,27 @@ class AddGroupPart2ViewController: UIViewController {
     
     @objc func done(_ sender: Any) {
         if isWeekly {
+            let textFields = [mondayHour,tuesdayHour,wednesdayHour,thursdayHour,fridayHour]
+            let textFieldsFills = textFields.filter { (textField) -> Bool in
+                let check = Validation.textFieldsIsEmpty(textFields: [textField!])
+                return !check
+            }
+            
+            if textFieldsFills.isEmpty{
+                let alertCompleteFields = UIAlertController(title: "Complete all the fields", message: nil, preferredStyle: .alert)
+                DispatchQueue.main.async {
+                    self.present(alertCompleteFields, animated: true, completion: nil)
+                }
+                let when = DispatchTime.now() + 2
+                DispatchQueue.main.asyncAfter(deadline: when){
+                    alertCompleteFields.dismiss(animated: true, completion: nil)
+                }
+            }else{
+                // enum ou switch para verificar tag e retornar nome de dias da semana abreviado
+//                textFieldsFills[0]?.tag = 3030303
+            }
+            
+            
             let isEmpty = Validation.textFieldsIsEmpty(textFields: [mondayHour,tuesdayHour,wednesdayHour,thursdayHour,fridayHour])
             
             if isEmpty{
