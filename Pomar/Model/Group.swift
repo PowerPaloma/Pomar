@@ -16,12 +16,16 @@ class Group {
     var description: String?
     var tags: [String]?
     var schedule: [DaySchedule]?
+    var date: Date?
+    var isWeekly: Bool?
     
-    init(name: String, description: String, tags: [String], schedule: [DaySchedule]) {
+    init(name: String, description: String, tags: [String], schedule: [DaySchedule], date: Date, isWeekly: Bool) {
         self.name = name
         self.description = description
         self.tags = tags
         self.schedule = schedule
+        self.date = date
+        self.isWeekly = isWeekly
     }
     init() {
         self.name = ""
@@ -36,6 +40,8 @@ class Group {
         self.name = record["name"] as? String
         self.description = record["description"] as? String
         self.tags = record["tags"] as? [String]
+        self.date = record["date"] as? Date
+        self.isWeekly = record["isWeekly"] as? Bool
         
         
         guard let schedule = record["schedule"] as? String else {
@@ -51,4 +57,22 @@ class Group {
     }
     
 }
+
+extension CKRecord {
+    convenience init(group: Group) {
+        self.init(recordType: "Group")
+        self["name"] = group.name!
+        self["description"] = group.description!
+        self["tags"] = group.tags!
+        self["date"] = group.date!
+        self["isWeekly"] = group.isWeekly! ? 1 : 0
+        
+        let encoder = JSONEncoder()
+        let data = try? encoder.encode(group.schedule)
+        let schedule = String(data: data!, encoding: .utf8)
+        
+        self["schedule"] = schedule
+    }
+}
+
 

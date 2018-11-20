@@ -77,7 +77,6 @@ extension StudyGroupsViewController: UICollectionViewDataSource, UICollectionVie
         }else{
             cell.hoursGroup.text = ""
         }
-        
         cell.daysGroup.text = days.joined(separator: " ")
         
         //cell.setCollectionViewDataSourceDelegate(self, forRow: indexPath.row)
