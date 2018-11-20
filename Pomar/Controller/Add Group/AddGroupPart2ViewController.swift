@@ -13,6 +13,11 @@ class AddGroupPart2ViewController: UIViewController {
     @IBOutlet weak var viewUnique: UIView!
     @IBOutlet weak var dayUnique: UITextField!
     @IBOutlet weak var scheduleUnique: UITextField!
+    @IBOutlet weak var mondayHour: UITextField!
+    @IBOutlet weak var tuesdayHour: UITextField!
+    @IBOutlet weak var wednesdayHour: UITextField!
+    @IBOutlet weak var thursdayHour: UITextField!
+    @IBOutlet weak var fridayHour: UITextField!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     var isWeekly = true
     var newgroup: Group?
@@ -58,6 +63,9 @@ class AddGroupPart2ViewController: UIViewController {
         hoursPickerController.delegate = modelHoursPicker
         hoursPickerController.dataSource = modelHoursPicker
         
+        let rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done(_:)))
+        
+        self.navigationItem.rightBarButtonItem = rightBarButtonItem
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -91,10 +99,27 @@ class AddGroupPart2ViewController: UIViewController {
         }
     }
     
-    @IBAction func done(_ sender: Any) {
+    
+    
+    @objc func done(_ sender: Any) {
         if isWeekly {
+            let isEmpty = Validation.textFieldsIsEmpty(textFields: [mondayHour,tuesdayHour,wednesdayHour,thursdayHour,fridayHour])
             
-        }else{
+            if isEmpty{
+                let alertCompleteFields = UIAlertController(title: "Complete all the fields", message: nil, preferredStyle: .alert)
+                DispatchQueue.main.async {
+                    self.present(alertCompleteFields, animated: true, completion: nil)
+                }
+            }
+//            else{
+//                    guard let newGroup = self.newgroup else{return}
+//                    guard let scheduleDays = [self.mondayHour.text , self.tuesdayHour.text, self.wednesdayHour.text, self.thursdayHour.text] else{return}
+//                    scheduleDays.forEach({ (schedule) in
+//                        newgroup?.schedule?.append(schedule)
+//                    })
+//                }
+        }
+        else{
             let isEmpty = Validation.textFieldsIsEmpty(textFields: [self.dayUnique, self.scheduleUnique])
             if isEmpty{
                 let alertCompleteFields = UIAlertController(title: "Complete all the fields", message: nil, preferredStyle: .alert)

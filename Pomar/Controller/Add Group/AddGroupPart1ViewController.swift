@@ -69,7 +69,7 @@ class AddGroupPart1ViewController: UIViewController {
             newGroup.name = self.nameTxtField.text
             newGroup.description = self.descriptionGroupTxtView.text
             
-            performSegue(withIdentifier: "part2", sender: nil)
+            self.performSegue(withIdentifier: "next", sender: nil)
             
         }
     }
