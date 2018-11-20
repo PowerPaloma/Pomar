@@ -23,6 +23,12 @@ class Group {
         self.tags = tags
         self.schedule = schedule
     }
+    init() {
+        self.name = ""
+        self.description = ""
+        self.tags = []
+        self.schedule = []
+    }
     
     
     init(record: CKRecord) {
