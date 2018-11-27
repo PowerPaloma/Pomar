@@ -20,81 +20,49 @@ final class CKManager {
     
     var publicDatabase = CKContainer.default().publicCloudDatabase
     
-    func iCloudUserID(completion: @escaping (CKRecord.ID?, Error?) -> Void) {
-        let container = CKContainer.default()
+    //MARK: - User functions
+    
+    func iCloudUserID(completion: @escaping (String?, Error?) -> Void) {
         
         container.fetchUserRecordID() { recordID, error in
-            if error != nil {
+            
+            guard let recordID = recordID, error == nil else {
                 completion(nil, error)
-            } else {
-                completion(recordID, nil)
+                return
             }
+            
+            completion(recordID.recordName, nil)
         }
     }
     
     public func createUser(user: User, completion: @escaping (CKRecord?, Error?) -> Void) {
         
-        let record = CKRecord(user: user)
+        let record = user.record
         
         publicDatabase.save(record) { (record, error) in
-            if error != nil {
-                completion(nil, error)
-            } else {
-                completion(record, nil)
-            }
+            completion(record, error)
         }
         
     }
     
-    func fetchAllUsers(completion: @escaping ([User]) -> Void) {
-        
-        var users = [User]()
+    func fetchAllUsers(completion: @escaping ([User]?, Error?) -> Void) {
         
         let query = CKQuery(recordType: "User", predicate: NSPredicate(value: true))
         
         publicDatabase.perform(query, inZoneWith: nil) { (records, error) in
             
             guard let records = records, error == nil else {
-                print(error!.localizedDescription)
+                completion(nil, error)
                 return
             }
             
-            records.forEach({ (record) in
-                users.append(User(record: record))
+            let users = records.map({ (record) -> User in
+                let user = User(record: record)
+                return user
             })
             
-            completion(users)
+            completion(users, nil)
         }
-        
-    }
-    
-    func fetchAllUsers(profileImage: Bool, completion: @escaping ([User]) -> Void) {
-        
-        var users = [User]()
-        
-        let query = CKQuery(recordType: "User", predicate: NSPredicate(value: true))
-        
-        let operation : CKQueryOperation = CKQueryOperation()
-        operation.query = query
-        operation.resultsLimit = 50
-        operation.desiredKeys = ["recordName", "name", "token", "groups"]
-        operation.qualityOfService = .userInteractive
-        
-        operation.recordFetchedBlock = { record in
-            let user = User(record: record)
-            users.append(user)
-        }
-        
-        operation.queryCompletionBlock = { (cursor, error) in
-            
-            if error != nil {
-                print(error)
-            } else {
-                completion(users)
-            }
-        }
-        
-        publicDatabase.add(operation)
         
     }
     
@@ -121,7 +89,7 @@ final class CKManager {
         
     }
     
-    func fetchUser(token: String, completion: @escaping (User?, Error?) -> Void) {
+    func fetchUser(token: String, completion: @escaping (CKRecord?, User?, Error?) -> Void) {
         
         let predicate = NSPredicate(format: "token = %@", token)
         
@@ -130,73 +98,33 @@ final class CKManager {
         publicDatabase.perform(query, inZoneWith: nil) { (records, error) in
             
             guard let record = records?.first else {
-                completion(nil, error)
+                completion(nil, nil, error)
                 return
             }
             
             let user = User(record: record)
-            completion(user, nil)
+            completion(record, user, nil)
         }
         
     }
     
-    func fetchUserWithoutImage(token: String, completion: @escaping (User?) -> Void) {
+    func fetchUser(id: CKRecord.ID, completion: @escaping (CKRecord?, User?, Error?) -> Void) {
         
-        var user: User?
-        
-        let predicate = NSPredicate(format: "token = %@", token)
+        let predicate = NSPredicate(format: "recordID = %@", id)
         
         let query = CKQuery(recordType: "User", predicate: predicate)
         
-        let operation = CKQueryOperation(query: query)
-        operation.resultsLimit = 1
-        operation.desiredKeys = ["recordName", "name", "token", "groups"]
-        operation.qualityOfService = .default
-        
-        operation.recordFetchedBlock = { record in
-            user = User(record: record)
-        }
-        
-        operation.completionBlock = {
-            completion(user)
-        }
-        
-        publicDatabase.add(operation)
-        
-    }
-    
-    
-    func fetchUserProfileImage(userID: CKRecord.ID, completion: @escaping (UIImage?) -> Void) {
-        
-        var profileImage: UIImage?
-        
-        let predicate = NSPredicate(format: "recordID = %@", userID)
-        
-        let query = CKQuery(recordType: "User", predicate: predicate)
-        
-        let operation = CKQueryOperation(query: query)
-        operation.resultsLimit = 1
-        operation.desiredKeys = ["profileImage"]
-        operation.qualityOfService = .userInteractive
-        
-        operation.recordFetchedBlock = { record in
-            if let asset = record["profileImage"] as? CKAsset {
-                do {
-                    let data = try Data(contentsOf: asset.fileURL)
-                    profileImage = UIImage(data: data)
-                } catch {
-                    print(error.localizedDescription)
-                }
-            } else {
-                profileImage = nil
+        publicDatabase.perform(query, inZoneWith: nil) { (records, error) in
+            
+            guard let record = records?.first else {
+                completion(nil, nil, error)
+                return
             }
+            
+            let user = User(record: record)
+            completion(record, user, nil)
         }
         
-        operation.completionBlock = {
-            completion(profileImage)
-        }
-        
-        publicDatabase.add(operation)
     }
     
     func join(userID: CKRecord.ID, groupID: CKRecord.ID, completion: @escaping (CKRecord?, Error?) -> Void) {
@@ -228,9 +156,76 @@ final class CKManager {
                 print("joined!")
                 completion(record, error)
             }
+            
         }
         
     }
+    
+    func incrementUserApple(userID: CKRecord.ID, type: AppleType, completion: @escaping (CKRecord?, Error?) -> Void) {
+        
+        fetchUser(id: userID) { (record, user, error) in
+            
+            guard let record = record else {
+                completion(nil, error)
+                return
+            }
+            
+            let user = User(record: record)
+            user.incrementeApple(type: type)
+            
+            self.publicDatabase.save(user.record, completionHandler: { (record, error) in
+                completion(record, error)
+            })
+        }
+        
+    }
+    
+    //MARK: - Image Functions
+    
+    func saveimage(_ image: UIImage,  completion: @escaping (CKRecord?, Error?) -> Void) {
+        
+        let record = CKRecord(recordType: "Image")
+        
+        if let data = image.jpegData(compressionQuality: 0.1) {
+            let url = NSURL.fileURL(withPath: NSTemporaryDirectory()).appendingPathComponent(NSUUID().uuidString+".png")
+            do {
+                try data.write(to: url)
+                record["asset"] = CKAsset(fileURL: url)
+                publicDatabase.save(record) { (record, error) in
+                    completion(record, error)
+                }
+                
+            } catch {
+                completion(nil, error)
+            }
+        }
+        
+    }
+    
+    func fetchImage(reference: CKRecord.Reference, completion: @escaping (UIImage?, Error?) -> Void) {
+        publicDatabase.fetch(withRecordID: reference.recordID) { (record, error) in
+            
+            var image: UIImage? = nil
+            
+            guard let record = record, error == nil else {
+                completion(image, error)
+                return
+            }
+            
+            if let asset = record["asset"] as? CKAsset {
+                do {
+                    let data = try Data(contentsOf: asset.fileURL)
+                    image = UIImage(data: data)
+                } catch {
+                    completion(image, error)
+                }
+            }
+            
+            completion(image, nil)
+        }
+    }
+    
+    //MARK: - Group functions
     
     func createGroup(group: Group, completion: @escaping (CKRecord?, Error?) -> Void) {
         

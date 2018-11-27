@@ -24,7 +24,6 @@ class StudyGroupsViewController: UIViewController {
         
         let newGroup = Group(name: "Novo Grupo", description: "Descricao", tags: ["tag1", "tag2"], schedule: schedule, date: Date(), isWeekly: true)
         
-        CKManager.shared.createGroup(group: newGroup)
     }
     
 }
