@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="zsG-mT-XET">
+            <objects>
+                <viewController id="xWJ-1G-Fc8" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HUk-pa-nyN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pomarNome2" translatesAutoresizingMaskIntoConstraints="NO" id="3bE-zV-afS">
+                                <rect key="frame" x="75" y="118.5" width="225" height="72"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ptR-KF-Ngk">
+                                <rect key="frame" x="156.5" y="532" width="62" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.87407993719999999" blue="0.91550147439999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Começar"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bua-Cu-Xlc">
+                                <rect key="frame" x="166.5" y="594" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pomar_Logo" translatesAutoresizingMaskIntoConstraints="NO" id="khp-p4-hRe">
+                                <rect key="frame" x="121" y="277" width="133" height="133"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="khp-p4-hRe" secondAttribute="height" multiplier="1:1" id="UMa-Vz-4C0"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="bua-Cu-Xlc" firstAttribute="centerX" secondItem="dOF-J5-YB5" secondAttribute="centerX" id="0bn-fO-YW8"/>
+                            <constraint firstItem="3bE-zV-afS" firstAttribute="height" secondItem="HUk-pa-nyN" secondAttribute="height" multiplier="0.1" constant="5" id="0iS-nI-Co9"/>
+                            <constraint firstItem="khp-p4-hRe" firstAttribute="centerY" secondItem="dOF-J5-YB5" secondAttribute="centerY" id="1iB-c6-Lof"/>
+                            <constraint firstItem="khp-p4-hRe" firstAttribute="top" relation="greaterThanOrEqual" secondItem="3bE-zV-afS" secondAttribute="bottom" constant="16" id="3gm-jO-qFo"/>
+                            <constraint firstItem="bua-Cu-Xlc" firstAttribute="top" secondItem="ptR-KF-Ngk" secondAttribute="bottom" constant="32" id="7of-ZC-7Kx"/>
+                            <constraint firstItem="khp-p4-hRe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dOF-J5-YB5" secondAttribute="leading" constant="16" id="8Kf-PL-7D1"/>
+                            <constraint firstItem="ptR-KF-Ngk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dOF-J5-YB5" secondAttribute="leading" constant="16" id="9jZ-P7-8Y4"/>
+                            <constraint firstItem="dOF-J5-YB5" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bua-Cu-Xlc" secondAttribute="trailing" constant="16" id="LeH-DT-F7y"/>
+                            <constraint firstItem="dOF-J5-YB5" firstAttribute="bottom" secondItem="bua-Cu-Xlc" secondAttribute="bottom" constant="52" id="NAX-WG-Nig"/>
+                            <constraint firstItem="3bE-zV-afS" firstAttribute="width" secondItem="HUk-pa-nyN" secondAttribute="width" multiplier="0.6" id="WKj-ua-oZH"/>
+                            <constraint firstItem="ptR-KF-Ngk" firstAttribute="top" relation="greaterThanOrEqual" secondItem="khp-p4-hRe" secondAttribute="bottom" constant="32" id="WgZ-ZE-ght"/>
+                            <constraint firstItem="3bE-zV-afS" firstAttribute="centerX" secondItem="dOF-J5-YB5" secondAttribute="centerX" id="dFd-xd-6DJ"/>
+                            <constraint firstItem="bua-Cu-Xlc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dOF-J5-YB5" secondAttribute="leading" constant="16" id="fzU-AO-IF7"/>
+                            <constraint firstItem="dOF-J5-YB5" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ptR-KF-Ngk" secondAttribute="trailing" constant="16" id="iaC-r6-WJZ"/>
+                            <constraint firstItem="khp-p4-hRe" firstAttribute="height" secondItem="HUk-pa-nyN" secondAttribute="height" multiplier="0.2" id="kbN-NI-n8I">
+                                <variation key="heightClass=compact-widthClass=compact" constant="40"/>
+                            </constraint>
+                            <constraint firstItem="dOF-J5-YB5" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="khp-p4-hRe" secondAttribute="trailing" constant="16" id="neC-rG-iNX"/>
+                            <constraint firstItem="ptR-KF-Ngk" firstAttribute="centerX" secondItem="dOF-J5-YB5" secondAttribute="centerX" id="oCX-Mn-7zX"/>
+                            <constraint firstItem="dOF-J5-YB5" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3bE-zV-afS" secondAttribute="trailing" constant="16" id="uEB-R7-scr"/>
+                            <constraint firstItem="3bE-zV-afS" firstAttribute="centerY" secondItem="dOF-J5-YB5" secondAttribute="centerY" multiplier="0.45" id="x9u-4v-xBQ"/>
+                            <constraint firstItem="khp-p4-hRe" firstAttribute="centerX" secondItem="dOF-J5-YB5" secondAttribute="centerX" id="yVL-rc-JhS"/>
+                            <constraint firstItem="3bE-zV-afS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dOF-J5-YB5" secondAttribute="leading" constant="16" id="zeX-Or-U8A"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dOF-J5-YB5"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I9J-aA-y8a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-31" y="106"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="pomarNome2" width="159" height="58"/>
+        <image name="pomar_Logo" width="123" height="134"/>
+    </resources>
+</document>

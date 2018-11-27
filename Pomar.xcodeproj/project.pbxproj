@@ -30,6 +30,7 @@
 		2F0DAB9F21A2E59E00217ED5 /* AddGroupPart2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0DAB9E21A2E59E00217ED5 /* AddGroupPart2ViewController.swift */; };
 		2F0DABA221A2EB1D00217ED5 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0DABA121A2EB1D00217ED5 /* Validation.swift */; };
 		2F0DABA421A3505F00217ED5 /* ModelDayPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0DABA321A3505F00217ED5 /* ModelDayPicker.swift */; };
+		2F3DDEE721ADC34700A97CA2 /* Initial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F3DDEE621ADC34700A97CA2 /* Initial.storyboard */; };
 		9205F20F21AC215900F5CA73 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9205F20E21AC215900F5CA73 /* Tutorial.storyboard */; };
 		9205F21321AC238100F5CA73 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205F21121AC238100F5CA73 /* TutorialViewController.swift */; };
 		9205F21621AC30DD00F5CA73 /* SlideTutorial.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9205F21521AC30DD00F5CA73 /* SlideTutorial.xib */; };
@@ -90,6 +91,7 @@
 		2F0DAB9E21A2E59E00217ED5 /* AddGroupPart2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupPart2ViewController.swift; sourceTree = "<group>"; };
 		2F0DABA121A2EB1D00217ED5 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		2F0DABA321A3505F00217ED5 /* ModelDayPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDayPicker.swift; sourceTree = "<group>"; };
+		2F3DDEE621ADC34700A97CA2 /* Initial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Initial.storyboard; sourceTree = "<group>"; };
 		9205F20E21AC215900F5CA73 /* Tutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
 		9205F21121AC238100F5CA73 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		9205F21521AC30DD00F5CA73 /* SlideTutorial.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlideTutorial.xib; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				2F0DAB88219B022A00217ED5 /* Profile.storyboard */,
 				2F0DAB8A219B026300217ED5 /* Missions.storyboard */,
 				9205F20E21AC215900F5CA73 /* Tutorial.storyboard */,
+				2F3DDEE621ADC34700A97CA2 /* Initial.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 			files = (
 				9205F20F21AC215900F5CA73 /* Tutorial.storyboard in Resources */,
 				2F0DAB89219B022A00217ED5 /* Profile.storyboard in Resources */,
+				2F3DDEE721ADC34700A97CA2 /* Initial.storyboard in Resources */,
 				2F022D6A21A3C11D00A1293D /* TagsCollectionViewCell.xib in Resources */,
 				2F0DAB85219B020000217ED5 /* Groups.storyboard in Resources */,
 				9206BDB621AD6AE50013437F /* FinalTutorial.xib in Resources */,
