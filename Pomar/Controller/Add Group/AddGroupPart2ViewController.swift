@@ -78,7 +78,7 @@ class AddGroupPart2ViewController: UIViewController {
         
     }
     
-    func setupTagsTextFileds(){
+    func setupTagsTextFields(){
         mondayHour.tag = 0
         tuesdayHour.tag = 1
         wednesdayHour.tag = 2

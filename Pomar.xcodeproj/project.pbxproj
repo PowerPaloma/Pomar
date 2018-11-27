@@ -30,6 +30,12 @@
 		2F0DAB9F21A2E59E00217ED5 /* AddGroupPart2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0DAB9E21A2E59E00217ED5 /* AddGroupPart2ViewController.swift */; };
 		2F0DABA221A2EB1D00217ED5 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0DABA121A2EB1D00217ED5 /* Validation.swift */; };
 		2F0DABA421A3505F00217ED5 /* ModelDayPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0DABA321A3505F00217ED5 /* ModelDayPicker.swift */; };
+		9205F20F21AC215900F5CA73 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9205F20E21AC215900F5CA73 /* Tutorial.storyboard */; };
+		9205F21321AC238100F5CA73 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205F21121AC238100F5CA73 /* TutorialViewController.swift */; };
+		9205F21621AC30DD00F5CA73 /* SlideTutorial.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9205F21521AC30DD00F5CA73 /* SlideTutorial.xib */; };
+		9205F21821AC322400F5CA73 /* SlideTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205F21721AC322400F5CA73 /* SlideTutorial.swift */; };
+		9206BDB621AD6AE50013437F /* FinalTutorial.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9206BDB521AD6AE50013437F /* FinalTutorial.xib */; };
+		9206BDB821AD6ED40013437F /* FinalTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9206BDB721AD6ED40013437F /* FinalTutorial.swift */; };
 		DCE87266219B0C8D008F78BE /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE87265219B0C8D008F78BE /* Group.swift */; };
 		DCE87269219B4FFB008F78BE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE87268219B4FFB008F78BE /* User.swift */; };
 		DCE8726B219C53DF008F78BE /* CKManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE8726A219C53DF008F78BE /* CKManager.swift */; };
@@ -84,6 +90,12 @@
 		2F0DAB9E21A2E59E00217ED5 /* AddGroupPart2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupPart2ViewController.swift; sourceTree = "<group>"; };
 		2F0DABA121A2EB1D00217ED5 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		2F0DABA321A3505F00217ED5 /* ModelDayPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDayPicker.swift; sourceTree = "<group>"; };
+		9205F20E21AC215900F5CA73 /* Tutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
+		9205F21121AC238100F5CA73 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
+		9205F21521AC30DD00F5CA73 /* SlideTutorial.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlideTutorial.xib; sourceTree = "<group>"; };
+		9205F21721AC322400F5CA73 /* SlideTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideTutorial.swift; sourceTree = "<group>"; };
+		9206BDB521AD6AE50013437F /* FinalTutorial.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FinalTutorial.xib; sourceTree = "<group>"; };
+		9206BDB721AD6ED40013437F /* FinalTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalTutorial.swift; sourceTree = "<group>"; };
 		DCE87265219B0C8D008F78BE /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		DCE87268219B4FFB008F78BE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DCE8726A219C53DF008F78BE /* CKManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKManager.swift; sourceTree = "<group>"; };
@@ -189,6 +201,7 @@
 		2F0DAB7B219AF98E00217ED5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9205F21021AC232F00F5CA73 /* Tutorial */,
 				2F0DAB8F219B082400217ED5 /* Study Groups */,
 				2F0DAB83219B01D000217ED5 /* Storyboards */,
 			);
@@ -220,6 +233,7 @@
 				2F0DAB86219B021C00217ED5 /* Questions.storyboard */,
 				2F0DAB88219B022A00217ED5 /* Profile.storyboard */,
 				2F0DAB8A219B026300217ED5 /* Missions.storyboard */,
+				9205F20E21AC215900F5CA73 /* Tutorial.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -250,6 +264,18 @@
 				2F0DAB9E21A2E59E00217ED5 /* AddGroupPart2ViewController.swift */,
 			);
 			path = "Add Group";
+			sourceTree = "<group>";
+		};
+		9205F21021AC232F00F5CA73 /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				9205F21121AC238100F5CA73 /* TutorialViewController.swift */,
+				9205F21521AC30DD00F5CA73 /* SlideTutorial.xib */,
+				9205F21721AC322400F5CA73 /* SlideTutorial.swift */,
+				9206BDB521AD6AE50013437F /* FinalTutorial.xib */,
+				9206BDB721AD6ED40013437F /* FinalTutorial.swift */,
+			);
+			path = Tutorial;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -364,13 +390,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9205F20F21AC215900F5CA73 /* Tutorial.storyboard in Resources */,
 				2F0DAB89219B022A00217ED5 /* Profile.storyboard in Resources */,
 				2F022D6A21A3C11D00A1293D /* TagsCollectionViewCell.xib in Resources */,
 				2F0DAB85219B020000217ED5 /* Groups.storyboard in Resources */,
+				9206BDB621AD6AE50013437F /* FinalTutorial.xib in Resources */,
 				2F0DAB87219B021C00217ED5 /* Questions.storyboard in Resources */,
 				2F0DAB57219AF37A00217ED5 /* LaunchScreen.storyboard in Resources */,
 				2F0DAB9B219DC3BE00217ED5 /* GroupsCollectionViewCell.xib in Resources */,
 				2F0DAB8B219B026300217ED5 /* Missions.storyboard in Resources */,
+				9205F21621AC30DD00F5CA73 /* SlideTutorial.xib in Resources */,
 				2F0DAB54219AF37A00217ED5 /* Assets.xcassets in Resources */,
 				2F0DAB4F219AF37800217ED5 /* Main.storyboard in Resources */,
 			);
@@ -401,16 +430,19 @@
 				2F0DAB9F21A2E59E00217ED5 /* AddGroupPart2ViewController.swift in Sources */,
 				2F0DAB9A219DC3BE00217ED5 /* GroupsCollectionViewCell.swift in Sources */,
 				2F0DABA221A2EB1D00217ED5 /* Validation.swift in Sources */,
+				9205F21821AC322400F5CA73 /* SlideTutorial.swift in Sources */,
 				2F022D6C21A3D85B00A1293D /* ModelHourPicker.swift in Sources */,
 				2F0DAB9D21A2E58F00217ED5 /* AddGroupPart1ViewController.swift in Sources */,
 				2F022D6E21A42B7400A1293D /* TextFieldProtocol.swift in Sources */,
 				2F0DAB52219AF37800217ED5 /* Pomar.xcdatamodeld in Sources */,
 				2F0DAB4A219AF37800217ED5 /* AppDelegate.swift in Sources */,
 				2F0DAB8D219B076C00217ED5 /* StudyGroupsViewController.swift in Sources */,
+				9205F21321AC238100F5CA73 /* TutorialViewController.swift in Sources */,
 				DCE87269219B4FFB008F78BE /* User.swift in Sources */,
 				2F022D6921A3C11D00A1293D /* TagsCollectionViewCell.swift in Sources */,
 				DCE8726B219C53DF008F78BE /* CKManager.swift in Sources */,
 				DCE87275219CB1F9008F78BE /* DaySchedule.swift in Sources */,
+				9206BDB821AD6ED40013437F /* FinalTutorial.swift in Sources */,
 				DCE87266219B0C8D008F78BE /* Group.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
