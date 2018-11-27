@@ -20,6 +20,7 @@
 		2F0DAB89219B022A00217ED5 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F0DAB88219B022A00217ED5 /* Profile.storyboard */; };
 		2F0DAB8B219B026300217ED5 /* Missions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F0DAB8A219B026300217ED5 /* Missions.storyboard */; };
 		2F0DAB8D219B076C00217ED5 /* StudyGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0DAB8C219B076C00217ED5 /* StudyGroupsViewController.swift */; };
+		DC66117B21AD7F7400D329DA /* AppleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC66117A21AD7F7400D329DA /* AppleType.swift */; };
 		DCE87266219B0C8D008F78BE /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE87265219B0C8D008F78BE /* Group.swift */; };
 		DCE87269219B4FFB008F78BE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE87268219B4FFB008F78BE /* User.swift */; };
 		DCE8726B219C53DF008F78BE /* CKManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE8726A219C53DF008F78BE /* CKManager.swift */; };
@@ -64,6 +65,7 @@
 		2F0DAB88219B022A00217ED5 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		2F0DAB8A219B026300217ED5 /* Missions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Missions.storyboard; sourceTree = "<group>"; };
 		2F0DAB8C219B076C00217ED5 /* StudyGroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyGroupsViewController.swift; sourceTree = "<group>"; };
+		DC66117A21AD7F7400D329DA /* AppleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleType.swift; sourceTree = "<group>"; };
 		DCE87265219B0C8D008F78BE /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		DCE87268219B4FFB008F78BE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DCE8726A219C53DF008F78BE /* CKManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKManager.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				DCE87265219B0C8D008F78BE /* Group.swift */,
 				DCE87268219B4FFB008F78BE /* User.swift */,
 				DCE87274219CB1F9008F78BE /* DaySchedule.swift */,
+				DC66117A21AD7F7400D329DA /* AppleType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				DCE87269219B4FFB008F78BE /* User.swift in Sources */,
 				DCE8726B219C53DF008F78BE /* CKManager.swift in Sources */,
 				DCE87275219CB1F9008F78BE /* DaySchedule.swift in Sources */,
+				DC66117B21AD7F7400D329DA /* AppleType.swift in Sources */,
 				DCE87266219B0C8D008F78BE /* Group.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

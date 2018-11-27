@@ -12,48 +12,112 @@ import UIKit
 
 class User {
     
-    var id: CKRecord.ID?
-    var name: String
-    var token: String
-    var profileImage: UIImage?
-    var groups: [CKRecord.Reference]?
+    var record: CKRecord
     
-    init(name: String, image: UIImage, token: String) {
+    var id: CKRecord.ID? {
+        get {
+            return record.recordID
+        }
+    }
+    
+    var name: String {
+        set {
+            record["name"] = newValue
+        }
+        get {
+            return record["name"] as! String
+        }
+    }
+    
+    var token: String {
+        set {
+            record["token"] = newValue
+        }
+        get {
+            return record["token"] as! String
+        }
+    }
+    
+    var profileImage: UIImage?
+    
+    var imageRef: CKRecord.Reference? {
+        set {
+            record["imageRef"] = newValue
+        }
+        get {
+            return record["imageRef"] as? CKRecord.Reference
+        }
+    }
+    
+    var groups: [CKRecord.Reference]? {
+        set {
+            record["groups"] = newValue
+        }
+        get {
+            return record["groups"] as? [CKRecord.Reference]
+        }
+    }
+    
+    var redApples: Int {
+        set {
+            record["redApples"] = newValue
+        }
+        get {
+            return record["redApples"] as! Int
+        }
+    }
+    
+    var yellowApples: Int {
+        set {
+            record["yellowApples"] = newValue
+        }
+        get {
+            return record["yellowApples"] as! Int
+        }
+    }
+    
+    var greenApples: Int {
+        set {
+            record["greenApples"] = newValue
+        }
+        get {
+            return record["greenApples"] as! Int
+        }
+    }
+    
+    var money: Int {
+        set {
+            record["money"] = newValue
+        }
+        get {
+            return record["money"] as! Int
+        }
+    }
+    
+    init(name: String, token: String, profileImage: UIImage?) {
+        record = CKRecord(recordType: "User")
         self.name = name
         self.token = token
-        self.profileImage = image
+        self.profileImage = profileImage
+        self.redApples = 0
+        self.yellowApples = 0
+        self.greenApples = 0
+        self.money = 0
     }
     
     init(record: CKRecord) {
-        self.id = record.recordID
-        self.name = record["name"] as! String
-        self.token = record["token"] as! String
-        self.groups = (record["groups"] as? [CKRecord.Reference])
-        if let asset = record["profileImage"] as? CKAsset {
-            do {
-                let data = try Data(contentsOf: asset.fileURL)
-                self.profileImage = UIImage(data: data)
-            } catch {
-                print(error)
-            }
+        self.record = record
+    }
+    
+    func incrementeApple(type: AppleType) {
+        switch type {
+        case .red:
+            self.redApples += 1
+        case .yellow:
+            self.yellowApples += 1
+        default:
+            self.greenApples += 1
         }
     }
     
-}
-
-extension CKRecord {
-    convenience init(user: User) {
-        self.init(recordType: "User")
-        self["name"] = user.name
-        
-        let data = user.profileImage?.jpegData(compressionQuality: 0.1)
-        let url = NSURL.fileURL(withPath: NSTemporaryDirectory()).appendingPathComponent(NSUUID().uuidString+".png")
-        do {
-            try data!.write(to: url)
-        } catch let e as NSError {
-            self["profileImage"] = CKAsset(fileURL: url)
-            print("Error! \(e)")
-        }
-        self["token"] = user.token
-    }
 }
