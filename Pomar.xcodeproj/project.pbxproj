@@ -135,7 +135,6 @@
 				2F0DAB55219AF37A00217ED5 /* LaunchScreen.storyboard */,
 				2F0DAB58219AF37A00217ED5 /* Info.plist */,
 				2F0DAB50219AF37800217ED5 /* Pomar.xcdatamodeld */,
-				DCE8726A219C53DF008F78BE /* CKManager.swift */,
 			);
 			path = Pomar;
 			sourceTree = "<group>";
@@ -167,6 +166,7 @@
 				DCE87268219B4FFB008F78BE /* User.swift */,
 				DCE87274219CB1F9008F78BE /* DaySchedule.swift */,
 				DC66117A21AD7F7400D329DA /* AppleType.swift */,
+				DCE8726A219C53DF008F78BE /* CKManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
