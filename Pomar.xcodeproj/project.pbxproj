@@ -40,6 +40,8 @@
 		DC66117B21AD7F7400D329DA /* AppleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC66117A21AD7F7400D329DA /* AppleType.swift */; };
 		DC66117D21AD86AF00D329DA /* GroupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC66117C21AD86AF00D329DA /* GroupTests.swift */; };
 		DC66117F21AD86DA00D329DA /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC66117E21AD86DA00D329DA /* UserTests.swift */; };
+		DC74C1B121AED0C200C829B2 /* Feedback.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC74C1B021AED0C200C829B2 /* Feedback.storyboard */; };
+		DC74C1B321AED15600C829B2 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC74C1B221AED15600C829B2 /* FeedbackViewController.swift */; };
 		DCE87266219B0C8D008F78BE /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE87265219B0C8D008F78BE /* Group.swift */; };
 		DCE87269219B4FFB008F78BE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE87268219B4FFB008F78BE /* User.swift */; };
 		DCE8726B219C53DF008F78BE /* CKManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE8726A219C53DF008F78BE /* CKManager.swift */; };
@@ -104,6 +106,8 @@
 		DC66117A21AD7F7400D329DA /* AppleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleType.swift; sourceTree = "<group>"; };
 		DC66117C21AD86AF00D329DA /* GroupTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTests.swift; sourceTree = "<group>"; };
 		DC66117E21AD86DA00D329DA /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
+		DC74C1B021AED0C200C829B2 /* Feedback.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Feedback.storyboard; sourceTree = "<group>"; };
+		DC74C1B221AED15600C829B2 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		DCE87265219B0C8D008F78BE /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		DCE87268219B4FFB008F78BE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DCE8726A219C53DF008F78BE /* CKManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKManager.swift; sourceTree = "<group>"; };
@@ -222,6 +226,7 @@
 		2F0DAB7C219AF99600217ED5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DC74C1AD21AECD9E00C829B2 /* Feedback Group */,
 				2F0DABA021A2E5A200217ED5 /* Add Group */,
 				2F0DAB8E219B080D00217ED5 /* Study Groups */,
 			);
@@ -246,6 +251,7 @@
 				2F0DAB8A219B026300217ED5 /* Missions.storyboard */,
 				9205F20E21AC215900F5CA73 /* Tutorial.storyboard */,
 				2F3DDEE621ADC34700A97CA2 /* Initial.storyboard */,
+				DC74C1B021AED0C200C829B2 /* Feedback.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -288,6 +294,14 @@
 				9206BDB721AD6ED40013437F /* FinalTutorial.swift */,
 			);
 			path = Tutorial;
+			sourceTree = "<group>";
+		};
+		DC74C1AD21AECD9E00C829B2 /* Feedback Group */ = {
+			isa = PBXGroup;
+			children = (
+				DC74C1B221AED15600C829B2 /* FeedbackViewController.swift */,
+			);
+			path = "Feedback Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -403,6 +417,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9205F20F21AC215900F5CA73 /* Tutorial.storyboard in Resources */,
+				DC74C1B121AED0C200C829B2 /* Feedback.storyboard in Resources */,
 				2F0DAB89219B022A00217ED5 /* Profile.storyboard in Resources */,
 				2F3DDEE721ADC34700A97CA2 /* Initial.storyboard in Resources */,
 				2F022D6A21A3C11D00A1293D /* TagsCollectionViewCell.xib in Resources */,
@@ -442,6 +457,7 @@
 				2F0DABA421A3505F00217ED5 /* ModelDayPicker.swift in Sources */,
 				2F0DAB9F21A2E59E00217ED5 /* AddGroupPart2ViewController.swift in Sources */,
 				2F0DAB9A219DC3BE00217ED5 /* GroupsCollectionViewCell.swift in Sources */,
+				DC74C1B321AED15600C829B2 /* FeedbackViewController.swift in Sources */,
 				2F0DABA221A2EB1D00217ED5 /* Validation.swift in Sources */,
 				9205F21821AC322400F5CA73 /* SlideTutorial.swift in Sources */,
 				2F022D6C21A3D85B00A1293D /* ModelHourPicker.swift in Sources */,
