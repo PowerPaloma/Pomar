@@ -180,7 +180,14 @@ class AddGroupPart2ViewController: UIViewController {
                 guard let schedule = self.scheduleUnique.text else {return}
                 let uniqueSchedule = DaySchedule(day: day, hour:schedule)
                 newGroup.schedule?.append(uniqueSchedule)
-                CKManager.shared.createGroup(group: newGroup)
+                CKManager.shared.createGroup(group: newGroup) { (record, error) in
+                    if error == nil{
+                        self.dismiss(animated: true, completion: nil)
+                    }else{
+                        print(error!.localizedDescription)
+                    }
+                }
+                
                 
             }
             

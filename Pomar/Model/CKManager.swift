@@ -254,7 +254,7 @@ final class CKManager {
             
             let groups = records.map({ (record) -> Group in
                 let group = Group(record: record)
-                return group
+                return group ?? Group()
             })
             
             completion(groups, nil)

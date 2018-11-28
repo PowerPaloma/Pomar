@@ -28,12 +28,24 @@ class StudyGroupsViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        CKManager.shared.fetchGroups { (groups) in
-            self.groups =  groups
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
+        CKManager.shared.fetchGroups { (groups, error) in
+            if error == nil{
+                if let groups = groups{
+                    self.groups = groups
+                    DispatchQueue.main.async {
+                        self.collectionView.reloadData()
+                    }
+                }
+            }else {
+                fatalError("\(String(describing: error?.localizedDescription))")
             }
         }
+//        CKManager.shared.fetchGroups { (groups) in
+//            self.groups =  groups
+//            DispatchQueue.main.async {
+//                self.collectionView.reloadData()
+//            }
+//        }
         
     }
     
