@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="z6C-1G-Hhq">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="z6C-1G-Hhq">
                                 <rect key="frame" x="0.0" y="116" width="375" height="502"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="a51-eB-7Cb">
@@ -41,19 +41,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6eS-B8-ye0" firstAttribute="trailing" secondItem="z6C-1G-Hhq" secondAttribute="trailing" id="1cw-w0-zOH"/>
-                            <constraint firstItem="z6C-1G-Hhq" firstAttribute="top" secondItem="6eS-B8-ye0" secondAttribute="top" id="90o-Co-0rI"/>
                             <constraint firstItem="z6C-1G-Hhq" firstAttribute="leading" secondItem="6eS-B8-ye0" secondAttribute="leading" id="HGW-nT-KfQ"/>
                             <constraint firstItem="6eS-B8-ye0" firstAttribute="bottom" secondItem="z6C-1G-Hhq" secondAttribute="bottom" id="WAY-Mh-NuX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6eS-B8-ye0"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Study Groups" id="uuD-iT-YII">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="yrv-8j-gTk">
-                            <connections>
-                                <segue destination="xH0-1q-a0L" kind="presentation" id="d3C-lm-t7I"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Study Groups" id="uuD-iT-YII"/>
                     <connections>
                         <outlet property="collectionView" destination="z6C-1G-Hhq" id="YLk-Su-wow"/>
                     </connections>
@@ -405,8 +398,8 @@
                     <tabBarItem key="tabBarItem" title="Groups" id="PiR-nW-3jX"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="rYH-1E-136">
-                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rYH-1E-136">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

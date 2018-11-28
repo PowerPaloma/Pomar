@@ -24,8 +24,17 @@ class StudyGroupsViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: "GroupsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cellGroup")
+        let screen = UIScreen.main.bounds
+        let userMoney = UserMoney()
+        userMoney.frame = CGRect(x: 32, y: 32, width: screen.width * 0.2, height: screen.height * 0.25)
+        userMoney.backgroundColor = UIColor.blue
+        self.view.addSubview(userMoney)
+    
+        
+//        userMoney.classForCoder = 
         
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         CKManager.shared.fetchGroups { (groups) in
@@ -34,6 +43,10 @@ class StudyGroupsViewController: UIViewController {
                 self.collectionView.reloadData()
             }
         }
+        super.viewDidAppear(animated)
+        let height: CGFloat = 80 //whatever height you want to add to the existing height
+        guard let bounds = self.navigationController?.navigationBar.bounds else {return}
+        self.navigationController?.navigationBar.bounds = CGRect(x: 0, y: -100, width: bounds.width, height: bounds.height - height)
         
     }
     
