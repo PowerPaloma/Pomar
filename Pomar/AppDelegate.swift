@@ -16,15 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        
-        let storyboard = UIStoryboard(name: "Tutorial", bundle: nil)
-        
-        let initialViewController = storyboard.instantiateViewController(withIdentifier: "TutorialViewController")
-        
-        self.window?.rootViewController = initialViewController
-        self.window?.makeKeyAndVisible()
+       
+//        self.window = UIWindow(frame: UIScreen.main.bounds)
+//        
+//        let storyboard = UIStoryboard(name: "Groups", bundle: nil)
+//        
+//        let initialViewController = storyboard.instantiateInitialViewController()
+//        
+//        self.window?.rootViewController = initialViewController
+//        self.window?.makeKeyAndVisible()
         
         return true
     }
