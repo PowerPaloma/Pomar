@@ -23,14 +23,14 @@ class UserMoney: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.myInit()
-        
     }
     
     private func myInit(){
         Bundle.main.loadNibNamed("UserMoney", owner: self, options: nil)
+        self.contentView.clipsToBounds = true
+        self.contentView.layer.cornerRadius = 12
         self.addSubview(contentView)
         contentView.frame = self.bounds
-    
     }
     
     

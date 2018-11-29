@@ -33,6 +33,8 @@
 		2F3DDEE721ADC34700A97CA2 /* Initial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F3DDEE621ADC34700A97CA2 /* Initial.storyboard */; };
 		2F3DDEEA21ADD01F00A97CA2 /* UserMoney.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F3DDEE921ADD01F00A97CA2 /* UserMoney.xib */; };
 		2F3DDEEC21ADD13500A97CA2 /* UserMoney.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3DDEEB21ADD13500A97CA2 /* UserMoney.swift */; };
+		2F3DDEF121AF8F8500A97CA2 /* CustomHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F3DDEF021AF8F8500A97CA2 /* CustomHeader.xib */; };
+		2F3DDEF321AF911A00A97CA2 /* CustomHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3DDEF221AF911A00A97CA2 /* CustomHeader.swift */; };
 		9205F20F21AC215900F5CA73 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9205F20E21AC215900F5CA73 /* Tutorial.storyboard */; };
 		9205F21321AC238100F5CA73 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205F21121AC238100F5CA73 /* TutorialViewController.swift */; };
 		9205F21621AC30DD00F5CA73 /* SlideTutorial.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9205F21521AC30DD00F5CA73 /* SlideTutorial.xib */; };
@@ -96,6 +98,8 @@
 		2F3DDEE621ADC34700A97CA2 /* Initial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Initial.storyboard; sourceTree = "<group>"; };
 		2F3DDEE921ADD01F00A97CA2 /* UserMoney.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserMoney.xib; sourceTree = "<group>"; };
 		2F3DDEEB21ADD13500A97CA2 /* UserMoney.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMoney.swift; sourceTree = "<group>"; };
+		2F3DDEF021AF8F8500A97CA2 /* CustomHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomHeader.xib; sourceTree = "<group>"; };
+		2F3DDEF221AF911A00A97CA2 /* CustomHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeader.swift; sourceTree = "<group>"; };
 		9205F20E21AC215900F5CA73 /* Tutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
 		9205F21121AC238100F5CA73 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		9205F21521AC30DD00F5CA73 /* SlideTutorial.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlideTutorial.xib; sourceTree = "<group>"; };
@@ -207,6 +211,7 @@
 		2F0DAB7B219AF98E00217ED5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2F3DDEEF21AF8F6900A97CA2 /* Custon Navigation */,
 				2F3DDEE821ADD00500A97CA2 /* User Points */,
 				9205F21021AC232F00F5CA73 /* Tutorial */,
 				2F0DAB8F219B082400217ED5 /* Study Groups */,
@@ -281,6 +286,15 @@
 				2F3DDEEB21ADD13500A97CA2 /* UserMoney.swift */,
 			);
 			path = "User Points";
+			sourceTree = "<group>";
+		};
+		2F3DDEEF21AF8F6900A97CA2 /* Custon Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				2F3DDEF021AF8F8500A97CA2 /* CustomHeader.xib */,
+				2F3DDEF221AF911A00A97CA2 /* CustomHeader.swift */,
+			);
+			path = "Custon Navigation";
 			sourceTree = "<group>";
 		};
 		9205F21021AC232F00F5CA73 /* Tutorial */ = {
@@ -408,6 +422,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9205F20F21AC215900F5CA73 /* Tutorial.storyboard in Resources */,
+				2F3DDEF121AF8F8500A97CA2 /* CustomHeader.xib in Resources */,
 				2F0DAB89219B022A00217ED5 /* Profile.storyboard in Resources */,
 				2F3DDEE721ADC34700A97CA2 /* Initial.storyboard in Resources */,
 				2F022D6A21A3C11D00A1293D /* TagsCollectionViewCell.xib in Resources */,
@@ -454,6 +469,7 @@
 				2F0DAB9D21A2E58F00217ED5 /* AddGroupPart1ViewController.swift in Sources */,
 				2F022D6E21A42B7400A1293D /* TextFieldProtocol.swift in Sources */,
 				2F0DAB52219AF37800217ED5 /* Pomar.xcdatamodeld in Sources */,
+				2F3DDEF321AF911A00A97CA2 /* CustomHeader.swift in Sources */,
 				2F0DAB4A219AF37800217ED5 /* AppDelegate.swift in Sources */,
 				2F0DAB8D219B076C00217ED5 /* StudyGroupsViewController.swift in Sources */,
 				9205F21321AC238100F5CA73 /* TutorialViewController.swift in Sources */,

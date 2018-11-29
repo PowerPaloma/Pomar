@@ -13,9 +13,10 @@ class StudyGroupsViewController: UIViewController {
     
    
     @IBOutlet weak var collectionView: UICollectionView!
-    let minimumInteritemSpacing: CGFloat = 20
-    let minimumLineSpacing:CGFloat = 20
+    let minimumInteritemSpacing: CGFloat = 32
+    let minimumLineSpacing:CGFloat = 32
     var storedOffsets = [Int: CGFloat]()
+    var navBar: UINavigationBar = UINavigationBar()
     var groups: [Group] = []
     
 
@@ -24,29 +25,54 @@ class StudyGroupsViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: "GroupsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cellGroup")
-        let screen = UIScreen.main.bounds
-        let userMoney = UserMoney()
-        userMoney.frame = CGRect(x: 32, y: 32, width: screen.width * 0.2, height: screen.height * 0.25)
-        userMoney.backgroundColor = UIColor.blue
-        self.view.addSubview(userMoney)
+        
+        navigationController?.navigationBar.isHidden = true
+//        let screen = UIScreen.main.bounds
+//
+//        let frame = CGRect(x: 32, y: 32, width: 150, height: 70)
+//        let userMoney = UserMoney(frame: frame)
+//        userMoney.backgroundColor = UIColor.blue
+//        self.view.addSubview(userMoney)
     
         
-//        userMoney.classForCoder = 
+    }
+    
+    private func setupNavigation(){
+//        let coins = UIButton(type: .system)
+//        coins.setImage(UIImage(named: "addButton")?.withRenderingMode(.alwaysOriginal), for: .normal)
+//        coins.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
+//
+////        backButtonView.bounds = CGRectOffset(backButtonView.bounds, -14, -7);
+////        navigationItem.rightBarButtonItemd
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: coins)
+////        naviga
+//        guard let bounds = self.navigationController?.navigationBar.bounds else {return}
+//        print(bounds.height)
+//        self.navigationController?.navigationBar.bounds = CGRect(x: 0, y: 0, width: bounds.width, height: bounds.height + 100)
+//         guard let bounds2 = self.navigationController?.navigationBar.bounds else {return}
+//        print(bounds2.height)
         
+        
+//        let coin = UIButton(frame: CGRect(x: 7, y: 30, width: 35, height: 35))
+//        coin.setImage(UIImage(named: "addButton")?.withRenderingMode(.alwaysOriginal), for: .normal)
+//        let coinView =  UIView(frame: CGRect(x: 0.0, y: 0.0, width: 46, height: 40))
+//       coinView.addSubview(coin)
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: coinView)
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         CKManager.shared.fetchGroups { (groups) in
             self.groups =  groups
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
         }
-        super.viewDidAppear(animated)
-        let height: CGFloat = 80 //whatever height you want to add to the existing height
-        guard let bounds = self.navigationController?.navigationBar.bounds else {return}
-        self.navigationController?.navigationBar.bounds = CGRect(x: 0, y: -100, width: bounds.width, height: bounds.height - height)
+        setupNavigation()
+        //let height: CGFloat = 80 //whatever height you want to add to the existing height
+        //guard let bounds = self.navigationController?.navigationBar.bounds else {return}
+        //self.navigationController?.navigationBar.bounds = CGRect(x: 0, y: -100, width: bounds.width, height: bounds.height + 60)
         
     }
     

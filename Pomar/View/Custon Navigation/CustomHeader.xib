@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomHeader" customModule="Pomar" customModuleProvider="target">
+            <connections>
+                <outlet property="addButton" destination="ekc-3c-8Zb" id="ubc-zU-b5H"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="I1B-so-dcd"/>
+                <outlet property="title" destination="V87-Gy-kLC" id="PYC-ZF-UY3"/>
+                <outlet property="userPoints" destination="CxM-zT-Tze" id="405-CS-h6e"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" userLabel="ContentView">
+            <rect key="frame" x="0.0" y="0.0" width="396" height="164"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Study  Groups" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V87-Gy-kLC">
+                    <rect key="frame" x="133.5" y="75.5" width="129.5" height="23"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                    <color key="textColor" red="0.69803921570000005" green="0.0" blue="0.023529411760000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ekc-3c-8Zb">
+                    <rect key="frame" x="290.5" y="86.5" width="73.5" height="73.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="ekc-3c-8Zb" secondAttribute="height" multiplier="1:1" id="TF9-vw-kuT"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="addButton"/>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CxM-zT-Tze" customClass="UserMoney" customModule="Pomar" customModuleProvider="target">
+                    <rect key="frame" x="32" y="24" width="87" height="39.5"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="CxM-zT-Tze" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="24" id="2gT-Jk-4af"/>
+                <constraint firstItem="CxM-zT-Tze" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.24" id="7pL-AV-HQO"/>
+                <constraint firstItem="CxM-zT-Tze" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="920-7D-0np"/>
+                <constraint firstItem="ekc-3c-8Zb" firstAttribute="top" secondItem="V87-Gy-kLC" secondAttribute="bottom" constant="-12" id="IKB-8g-ZFP"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="V87-Gy-kLC" secondAttribute="trailing" constant="32" id="JVF-fy-NKW"/>
+                <constraint firstItem="V87-Gy-kLC" firstAttribute="top" secondItem="CxM-zT-Tze" secondAttribute="bottom" constant="12" id="cQv-zN-jbh"/>
+                <constraint firstItem="CxM-zT-Tze" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.22" id="dwZ-BB-i1q"/>
+                <constraint firstItem="V87-Gy-kLC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="fDE-dE-fQ8"/>
+                <constraint firstItem="V87-Gy-kLC" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="kac-nI-8eA"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ekc-3c-8Zb" secondAttribute="bottom" constant="4" id="kem-3h-Q8s"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ekc-3c-8Zb" secondAttribute="trailing" constant="32" id="vFo-II-sKB"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="155.19999999999999" y="367.91604197901052"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="addButton" width="39" height="39"/>
+    </resources>
+</document>
