@@ -9,6 +9,55 @@
 import Foundation
 import CloudKit
 
+class GroupNew {
+    
+    var record: CKRecord
+    
+    var id: CKRecord.ID? {
+        get {
+            return record.recordID
+        }
+    }
+    
+    var name: String {
+        set {
+            record["name"] = newValue
+        }
+        get {
+            return record["name"] as! String
+        }
+    }
+    
+    var description: String {
+        set {
+            record["description"] = newValue
+        }
+        get {
+            return record["description"] as! String
+        }
+    }
+    
+    var tags: [String] {
+        set {
+            record["tags"] = newValue
+        }
+        get {
+            return record["tags"] as! [String]
+        }
+    }
+    
+    init(name: String, description: String, tags: [String]) {
+        record = CKRecord(recordType: "Group")
+        self.name = name
+        self.description = description
+    }
+    
+    init(record: CKRecord) {
+        self.record = record
+    }
+    
+}
+
 class Group {
     
     var id: CKRecord.ID?
