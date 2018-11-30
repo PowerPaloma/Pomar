@@ -11,9 +11,9 @@ import UIKit
 class UserViewCell: UICollectionViewCell {
 
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var redView: UIView!
-    @IBOutlet weak var yellowView: UIView!
-    @IBOutlet weak var greenView: UIView!
+    @IBOutlet weak var redView: UIImageView!
+    @IBOutlet weak var yellowView: UIImageView!
+    @IBOutlet weak var greenView: UIImageView!
     
     var user: User?
     
@@ -26,15 +26,15 @@ class UserViewCell: UICollectionViewCell {
             switch selectedApple {
                 case .red:
                     UIView.animate(withDuration: 0.5, animations: {
-                        self.redView.backgroundColor = UIColor.red
+                        self.redView.tintColor = UIColor.red
                     })
                 case .yellow:
                     UIView.animate(withDuration: 0.5, animations: {
-                        self.yellowView.backgroundColor = UIColor.yellow
+                        self.yellowView.tintColor = UIColor.green
                     })
                 case .green:
                     UIView.animate(withDuration: 0.5, animations: {
-                        self.greenView.backgroundColor = UIColor.orange
+                        self.greenView.tintColor = UIColor.orange
                     })
                 case .black:
                     break;
@@ -48,10 +48,16 @@ class UserViewCell: UICollectionViewCell {
         super.awakeFromNib()
         
         redView.layer.contents = UIImage(named: "apple-vector")
+        redView.image = redView.image?.withRenderingMode(.alwaysTemplate)
+        redView.tintColor = UIColor.clear
         
-        redView.backgroundColor = UIColor.clear
-        yellowView.backgroundColor = UIColor.clear
-        greenView.backgroundColor = UIColor.clear
+        yellowView.layer.contents = UIImage(named: "apple-vector")
+        yellowView.image = redView.image?.withRenderingMode(.alwaysTemplate)
+        yellowView.tintColor = UIColor.clear
+        
+        greenView.layer.contents = UIImage(named: "apple-vector")
+        greenView.image = redView.image?.withRenderingMode(.alwaysTemplate)
+        greenView.tintColor = UIColor.clear
     }
     
     override func layoutSubviews() {
@@ -59,9 +65,6 @@ class UserViewCell: UICollectionViewCell {
         imageView.layer.cornerRadius = self.frame.width/2
         imageView.layer.borderColor = UIColor.gray.cgColor
 //        imageView.layer.borderWidth = 3.0
-        redView.layer.cornerRadius = (self.frame.width*0.3)/2
-        yellowView.layer.cornerRadius = (self.frame.width*0.3)/2
-        greenView.layer.cornerRadius = (self.frame.width*0.3)/2
     }
 
 }

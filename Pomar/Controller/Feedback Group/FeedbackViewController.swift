@@ -18,6 +18,7 @@ enum SelectedApple {
 class FeedbackViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var redAppleImageView: UIImageView! {
         didSet {
             redAppleImageView.image = redAppleImageView.image?.withRenderingMode(.alwaysTemplate)
@@ -49,7 +50,12 @@ class FeedbackViewController: UIViewController {
         }
     }
     
-    var users: [String] = ["Alan", "Mateus", "Thalia", "Paloma"]
+    @IBOutlet weak var redLabel: UILabel!
+    @IBOutlet weak var yellowLabel: UILabel!
+    @IBOutlet weak var greenLabel: UILabel!
+    
+    
+    var users: [String] = ["Alan", "Mateus", "Thalia", "Paloma", "Cibele", "Elias"]
     
     var applePath: UIBezierPath {
         let shape = UIBezierPath()
@@ -104,8 +110,7 @@ extension FeedbackViewController: UICollectionViewDataSource , UICollectionViewD
 extension FeedbackViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let bounds = collectionView.bounds
-        let width = (bounds.width-4)/2
-        print(width)
+        let width = (bounds.width-20)/3
         let height = width
         return CGSize(width: width, height: height)
     }
@@ -115,11 +120,11 @@ extension FeedbackViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 2
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 2
+        return 10
     }
     
     
@@ -136,14 +141,13 @@ extension FeedbackViewController: UICollectionViewDropDelegate {
     func collectionView(_ collectionView: UICollectionView, performDropWith coordinator: UICollectionViewDropCoordinator) {
         
         let selected = coordinator.items.first?.dragItem.localObject as! SelectedApple
-        print(selected)
         
-        let destinationIndexPath = coordinator.destinationIndexPath ?? IndexPath(item: 0, section: 0)
+        guard let destinationIndexPath = coordinator.destinationIndexPath else {
+            return
+        }
         
         let cell = collectionView.cellForItem(at: destinationIndexPath) as! UserViewCell
         cell.selectedApple = selected
-        
-        print(destinationIndexPath.item)
     }
     
     
@@ -168,7 +172,7 @@ extension FeedbackViewController: UIDragInteractionDelegate, UIDropInteractionDe
                 case yellowAppleImageView:
                     selected = .yellow
                     print("yellowApple")
-                    color = UIColor.yellow
+                    color = UIColor.green
                 case greenAppleImageView:
                     print("greenApple")
                     selected = .green
@@ -200,26 +204,37 @@ extension FeedbackViewController: UIDragInteractionDelegate, UIDropInteractionDe
         
     }
     
-//    func dragInteraction(_ interaction: UIDragInteraction, previewForLifting item: UIDragItem, session: UIDragSession) -> UITargetedDragPreview? {
-//
-//        guard let image = item.localObject as? UIImage else { return nil }
-//
-//        let previewImageView = UIImageView(image: image)
-//        previewImageView.center = CGPoint(x: 100, y: 100)
-//
-//        let previewParameters = UIDragPreviewParameters()
-//
-//        let dragView = interaction.view!
-//        var dragPoint = session.location(in: dragView)
-//        let target = UIDragPreviewTarget(container: view, center: dragPoint)
-//
-//        let path = UIBezierPath(ovalIn: CGRect(origin: CGPoint(x: -25, y: -25), size: CGSize(width: 100, height: 100)))
-//
-//        previewParameters.visiblePath = applePath
-//
-//
-//        return UITargetedDragPreview(view: previewImageView, parameters: previewParameters, target: target)
-//    }
+    func dragInteraction(_ interaction: UIDragInteraction, previewForLifting item: UIDragItem, session: UIDragSession) -> UITargetedDragPreview? {
+
+        guard let selected = item.localObject as? SelectedApple else { return nil }
+
+        let preview = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100 ))
+        
+        var dragView: UIView?
+        
+        switch selected {
+        case .red:
+            preview.backgroundColor = UIColor.red
+            dragView = redAppleImageView
+        case .yellow:
+            preview.backgroundColor = UIColor.green
+            dragView = yellowAppleImageView
+        case .green:
+            preview.backgroundColor = UIColor.orange
+            dragView = greenAppleImageView
+        default:
+            break;
+        }
+
+        let previewParameters = UIDragPreviewParameters()
+
+        let target = UIDragPreviewTarget(container: stackView, center: dragView!.center)
+
+        previewParameters.visiblePath = applePath
+
+
+        return UITargetedDragPreview(view: preview, parameters: previewParameters, target: target)
+    }
     
     func dropInteraction(_ interaction: UIDropInteraction, sessionDidUpdate session: UIDropSession) -> UIDropProposal {
         return UIDropProposal(operation: .copy)
