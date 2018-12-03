@@ -7,9 +7,24 @@
 //
 
 import Foundation
+import UIKit
 
 enum AppleType {
     case green
     case yellow
     case red
+    
+    func color() -> UIColor {
+        switch self {
+            case .red:
+                return UIColor.red
+            case .yellow:
+                return UIColor.orange
+            case .green:
+                return UIColor.green
+            
+            
+        }
+    }
+    
 }

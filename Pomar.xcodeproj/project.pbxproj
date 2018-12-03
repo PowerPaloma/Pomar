@@ -44,6 +44,9 @@
 		DC74C1B321AED15600C829B2 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC74C1B221AED15600C829B2 /* FeedbackViewController.swift */; };
 		DC74C1E321B0671000C829B2 /* UserViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC74C1E121B0671000C829B2 /* UserViewCell.swift */; };
 		DC74C1E421B0671000C829B2 /* UserViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC74C1E221B0671000C829B2 /* UserViewCell.xib */; };
+		DC74C1E621B1D5EA00C829B2 /* Apples.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC74C1E521B1D5EA00C829B2 /* Apples.swift */; };
+		DC74C1E821B372C000C829B2 /* ApplesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC74C1E721B372C000C829B2 /* ApplesTests.swift */; };
+		DC74C1EA21B48C2800C829B2 /* AppleTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC74C1E921B48C2800C829B2 /* AppleTypeTests.swift */; };
 		DCE87266219B0C8D008F78BE /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE87265219B0C8D008F78BE /* Group.swift */; };
 		DCE87269219B4FFB008F78BE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE87268219B4FFB008F78BE /* User.swift */; };
 		DCE8726B219C53DF008F78BE /* CKManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE8726A219C53DF008F78BE /* CKManager.swift */; };
@@ -112,6 +115,9 @@
 		DC74C1B221AED15600C829B2 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		DC74C1E121B0671000C829B2 /* UserViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewCell.swift; sourceTree = "<group>"; };
 		DC74C1E221B0671000C829B2 /* UserViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserViewCell.xib; sourceTree = "<group>"; };
+		DC74C1E521B1D5EA00C829B2 /* Apples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apples.swift; sourceTree = "<group>"; };
+		DC74C1E721B372C000C829B2 /* ApplesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplesTests.swift; sourceTree = "<group>"; };
+		DC74C1E921B48C2800C829B2 /* AppleTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleTypeTests.swift; sourceTree = "<group>"; };
 		DCE87265219B0C8D008F78BE /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		DCE87268219B4FFB008F78BE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DCE8726A219C53DF008F78BE /* CKManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKManager.swift; sourceTree = "<group>"; };
@@ -188,6 +194,8 @@
 				DC66117E21AD86DA00D329DA /* UserTests.swift */,
 				2F0DAB61219AF37A00217ED5 /* PomarTests.swift */,
 				2F0DAB63219AF37A00217ED5 /* Info.plist */,
+				DC74C1E721B372C000C829B2 /* ApplesTests.swift */,
+				DC74C1E921B48C2800C829B2 /* AppleTypeTests.swift */,
 			);
 			path = PomarTests;
 			sourceTree = "<group>";
@@ -213,6 +221,7 @@
 				2F022D6D21A42B7400A1293D /* TextFieldProtocol.swift */,
 				DC66117A21AD7F7400D329DA /* AppleType.swift */,
 				DCE8726A219C53DF008F78BE /* CKManager.swift */,
+				DC74C1E521B1D5EA00C829B2 /* Apples.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -461,6 +470,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC74C1E621B1D5EA00C829B2 /* Apples.swift in Sources */,
 				2F0DABA421A3505F00217ED5 /* ModelDayPicker.swift in Sources */,
 				2F0DAB9F21A2E59E00217ED5 /* AddGroupPart2ViewController.swift in Sources */,
 				2F0DAB9A219DC3BE00217ED5 /* GroupsCollectionViewCell.swift in Sources */,
@@ -489,6 +499,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC74C1E821B372C000C829B2 /* ApplesTests.swift in Sources */,
+				DC74C1EA21B48C2800C829B2 /* AppleTypeTests.swift in Sources */,
 				DC66117F21AD86DA00D329DA /* UserTests.swift in Sources */,
 				2F0DAB62219AF37A00217ED5 /* PomarTests.swift in Sources */,
 				DC66117D21AD86AF00D329DA /* GroupTests.swift in Sources */,

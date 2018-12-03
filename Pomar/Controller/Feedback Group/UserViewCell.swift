@@ -17,52 +17,43 @@ class UserViewCell: UICollectionViewCell {
     
     var user: User?
     
-    var selectedApple: SelectedApple = .black {
-        
+    var selectedApple: AppleType? {
         didSet {
-            
-            var color: UIColor?
-            
+            var selectedView: UIImageView?
             switch selectedApple {
-                case .red:
-                    UIView.animate(withDuration: 0.5, animations: {
-                        self.redView.tintColor = UIColor.red
-                    })
-                case .yellow:
-                    UIView.animate(withDuration: 0.5, animations: {
-                        self.yellowView.tintColor = UIColor.green
-                    })
-                case .green:
-                    UIView.animate(withDuration: 0.5, animations: {
-                        self.greenView.tintColor = UIColor.orange
-                    })
-                case .black:
-                    break;
+                case .red?:
+                    selectedView = redView
+                case .yellow?:
+                    selectedView = yellowView
+                case .green?:
+                    selectedView = greenView
                 default:
                     break
             }
+            
+            UIView.animate(withDuration: 0.5, animations: {
+                selectedView?.tintColor = self.selectedApple?.color()
+            })
+            
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        redView.layer.contents = UIImage(named: "apple-vector")
         redView.image = redView.image?.withRenderingMode(.alwaysTemplate)
         redView.tintColor = UIColor.clear
         
-        yellowView.layer.contents = UIImage(named: "apple-vector")
         yellowView.image = redView.image?.withRenderingMode(.alwaysTemplate)
         yellowView.tintColor = UIColor.clear
         
-        greenView.layer.contents = UIImage(named: "apple-vector")
         greenView.image = redView.image?.withRenderingMode(.alwaysTemplate)
         greenView.tintColor = UIColor.clear
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        imageView.layer.cornerRadius = self.frame.width/2
+        imageView.layer.cornerRadius = self.frame.width*0.9/2
         imageView.layer.borderColor = UIColor.gray.cgColor
 //        imageView.layer.borderWidth = 3.0
     }

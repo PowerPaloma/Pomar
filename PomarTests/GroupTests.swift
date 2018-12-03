@@ -56,12 +56,12 @@ class GroupTests: XCTestCase {
         record["schedule"] = testScheduleString
         record["isWeekly"] = testIsWeekly! ? 1 : 0
         let group = Group(record: record)
-        XCTAssertEqual(group.name!, testName)
-        XCTAssertEqual(group.description!, testDescription)
-        XCTAssertEqual(group.tags!, testTags)
-        XCTAssertEqual(group.date!, testDate)
-        XCTAssertEqual(group.schedule!, testSchedule)
-        XCTAssertEqual(group.isWeekly, testIsWeekly)
+        XCTAssertEqual(group?.name, testName)
+        XCTAssertEqual(group?.description, testDescription)
+        XCTAssertEqual(group?.tags, testTags)
+        XCTAssertEqual(group?.date!, testDate)
+        XCTAssertEqual(group?.schedule!, testSchedule)
+        XCTAssertEqual(group?.isWeekly, testIsWeekly)
         
     }
     

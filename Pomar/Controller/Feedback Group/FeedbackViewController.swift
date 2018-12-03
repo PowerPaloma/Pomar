@@ -8,22 +8,13 @@
 
 import UIKit
 
-enum SelectedApple {
-    case black
-    case red
-    case yellow
-    case green
-}
-
 class FeedbackViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var redAppleImageView: UIImageView! {
         didSet {
-            redAppleImageView.image = redAppleImageView.image?.withRenderingMode(.alwaysTemplate)
-            redAppleImageView.tintColor = UIColor.red
-            redAppleImageView.isUserInteractionEnabled = true
+            redAppleImageView.tintColor = AppleType.red.color()
             let drag = UIDragInteraction(delegate: self)
             drag.isEnabled = true
             redAppleImageView.addInteraction(drag)
@@ -31,9 +22,7 @@ class FeedbackViewController: UIViewController {
     }
     @IBOutlet weak var yellowAppleImageView: UIImageView! {
         didSet {
-            yellowAppleImageView.image = redAppleImageView.image?.withRenderingMode(.alwaysTemplate)
-            yellowAppleImageView.tintColor = UIColor.green
-            yellowAppleImageView.isUserInteractionEnabled = true
+            yellowAppleImageView.tintColor = AppleType.yellow.color()
             let drag = UIDragInteraction(delegate: self)
             drag.isEnabled = true
             yellowAppleImageView.addInteraction(drag)
@@ -41,9 +30,7 @@ class FeedbackViewController: UIViewController {
     }
     @IBOutlet weak var greenAppleImageView: UIImageView! {
         didSet {
-            greenAppleImageView.image = greenAppleImageView.image?.withRenderingMode(.alwaysTemplate)
-            greenAppleImageView.tintColor = UIColor.orange
-            greenAppleImageView.isUserInteractionEnabled = true
+            greenAppleImageView.tintColor = AppleType.green.color()
             let drag = UIDragInteraction(delegate: self)
             drag.isEnabled = true
             greenAppleImageView.addInteraction(drag)
@@ -54,8 +41,10 @@ class FeedbackViewController: UIViewController {
     @IBOutlet weak var yellowLabel: UILabel!
     @IBOutlet weak var greenLabel: UILabel!
     
-    
     var users: [String] = ["Alan", "Mateus", "Thalia", "Paloma", "Cibele", "Elias"]
+//    var users = [User]()
+    
+    var selectedView: UIView?
     
     var applePath: UIBezierPath {
         let shape = UIBezierPath()
@@ -67,10 +56,7 @@ class FeedbackViewController: UIViewController {
         shape.addCurve(to: CGPoint(x: 42.97, y: 30.47), controlPoint1: CGPoint(x: 49.5, y: 4.11), controlPoint2: CGPoint(x: 39.86, y: 13.67))
         shape.addCurve(to: CGPoint(x: 74.46, y: 0), controlPoint1: CGPoint(x: 56.86, y: 34.73), controlPoint2: CGPoint(x: 73.82, y: 24.95))
         shape.close()
-        
-        let scale = CGFloat(0.7)
-        shape.apply(CGAffineTransform(scaleX: scale, y: scale))
-        
+        shape.apply(CGAffineTransform(scaleX: 0.7, y: 0.7))
         return shape
     }
     
@@ -101,8 +87,17 @@ extension FeedbackViewController: UICollectionViewDataSource , UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let user = users[indexPath.item]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! UserViewCell
-        //cell.imageView.image = #imageLiteral(resourceName: "pomarApple")
+//        cell.user = user
+//        CKManager.shared.fetchImage(reference: user.imageRef!) { (image, error) in
+//            DispatchQueue.main.async {
+//                guard let image = image else {
+//                    return
+//                }
+//                cell.imageView.image = image
+//            }
+//        }
         return cell
     }
 }
@@ -110,7 +105,7 @@ extension FeedbackViewController: UICollectionViewDataSource , UICollectionViewD
 extension FeedbackViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let bounds = collectionView.bounds
-        let width = (bounds.width-20)/3
+        let width = (bounds.width)/3
         let height = width
         return CGSize(width: width, height: height)
     }
@@ -120,11 +115,11 @@ extension FeedbackViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
+        return 0
     }
     
     
@@ -132,15 +127,10 @@ extension FeedbackViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension FeedbackViewController: UICollectionViewDropDelegate {
-    
-    func dropInteraction(_ interaction: UIDropInteraction, performDrop session: UIDropSession) {
-        let selected = session.items.first?.localObject as! SelectedApple
-        print(selected)
-    }
-    
+        
     func collectionView(_ collectionView: UICollectionView, performDropWith coordinator: UICollectionViewDropCoordinator) {
         
-        let selected = coordinator.items.first?.dragItem.localObject as! SelectedApple
+        let selected = coordinator.items.first?.dragItem.localObject as! AppleType
         
         guard let destinationIndexPath = coordinator.destinationIndexPath else {
             return
@@ -148,6 +138,18 @@ extension FeedbackViewController: UICollectionViewDropDelegate {
         
         let cell = collectionView.cellForItem(at: destinationIndexPath) as! UserViewCell
         cell.selectedApple = selected
+        
+        selectedView?.isUserInteractionEnabled = false
+        selectedView?.tintColor = UIColor.gray
+        
+//        CKManager.shared.incrementUserApple(userID: (cell.user?.id)!, type: selected) { (record, error) in
+//            guard let record = record else {
+//                print(error!.localizedDescription)
+//                return
+//            }
+//            print(record)
+//        }
+        
     }
     
     
@@ -158,25 +160,19 @@ extension FeedbackViewController: UIDragInteractionDelegate, UIDropInteractionDe
     
     func dragInteraction(_ interaction: UIDragInteraction, itemsForBeginning session: UIDragSession) -> [UIDragItem] {
         
-        var color: UIColor = UIColor.black
-        
-        var selected = SelectedApple.black
+        var selected: AppleType?
         
         if let imageView = interaction.view as? UIImageView {
             
+            selectedView = imageView
+            
             switch imageView {
                 case redAppleImageView:
-                    print("redApple")
                     selected = .red
-                    color = UIColor.red
                 case yellowAppleImageView:
                     selected = .yellow
-                    print("yellowApple")
-                    color = UIColor.green
                 case greenAppleImageView:
-                    print("greenApple")
                     selected = .green
-                    color = UIColor.orange
                 default:
                     break
             }
@@ -187,10 +183,11 @@ extension FeedbackViewController: UIDragInteractionDelegate, UIDropInteractionDe
             
             let item = UIDragItem(itemProvider: provider)
             item.localObject = selected
+
             
             item.previewProvider = {
                 let previewParameters = UIDragPreviewParameters()
-                previewParameters.backgroundColor = color
+                previewParameters.backgroundColor = selected?.color()
                 previewParameters.visiblePath = self.applePath
                 let preview = UIDragPreview(view: UIView(), parameters: previewParameters)
                 return preview
@@ -206,29 +203,16 @@ extension FeedbackViewController: UIDragInteractionDelegate, UIDropInteractionDe
     
     func dragInteraction(_ interaction: UIDragInteraction, previewForLifting item: UIDragItem, session: UIDragSession) -> UITargetedDragPreview? {
 
-        guard let selected = item.localObject as? SelectedApple else { return nil }
+        guard let selected = item.localObject as? AppleType else { return nil }
 
         let preview = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100 ))
+        preview.backgroundColor = selected.color()
         
-        var dragView: UIView?
-        
-        switch selected {
-        case .red:
-            preview.backgroundColor = UIColor.red
-            dragView = redAppleImageView
-        case .yellow:
-            preview.backgroundColor = UIColor.green
-            dragView = yellowAppleImageView
-        case .green:
-            preview.backgroundColor = UIColor.orange
-            dragView = greenAppleImageView
-        default:
-            break;
-        }
+        let dragView = interaction.view
 
         let previewParameters = UIDragPreviewParameters()
 
-        let target = UIDragPreviewTarget(container: stackView, center: dragView!.center)
+        let target = UIDragPreviewTarget(container: (dragView?.superview)!, center: dragView!.center)
 
         previewParameters.visiblePath = applePath
 
