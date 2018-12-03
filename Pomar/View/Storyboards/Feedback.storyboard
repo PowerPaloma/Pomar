@@ -66,10 +66,17 @@
                                     <constraint firstItem="pCR-HC-v58" firstAttribute="height" secondItem="8GK-AN-ZYR" secondAttribute="height" id="Vz3-91-s37"/>
                                 </constraints>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6qZ-OK-pu1">
+                                <rect key="frame" x="65" y="600" width="33.5" height="34"/>
+                                <color key="backgroundColor" red="0.77005211562674658" green="0.61749418424558178" blue="0.44044943899179967" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="6qZ-OK-pu1" secondAttribute="height" multiplier="1:1" id="fLb-lo-GH3"/>
+                                </constraints>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CzT-gM-dkE">
-                                <rect key="frame" x="44.5" y="515" width="8" height="20.5"/>
+                                <rect key="frame" x="77.5" y="607" width="8" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -77,12 +84,15 @@
                         <constraints>
                             <constraint firstItem="ie7-mz-ZGE" firstAttribute="bottom" secondItem="8GK-AN-ZYR" secondAttribute="bottom" constant="50" id="5HB-TN-i1S"/>
                             <constraint firstItem="ie7-mz-ZGE" firstAttribute="trailing" secondItem="CZX-3l-CFo" secondAttribute="trailing" constant="16" id="5gd-Ds-QSD"/>
+                            <constraint firstItem="6qZ-OK-pu1" firstAttribute="centerY" secondItem="pCR-HC-v58" secondAttribute="bottom" id="7nB-So-KBY"/>
                             <constraint firstItem="CZX-3l-CFo" firstAttribute="leading" secondItem="ie7-mz-ZGE" secondAttribute="leading" constant="16" id="Dn6-N6-MLp"/>
+                            <constraint firstItem="CzT-gM-dkE" firstAttribute="centerY" secondItem="6qZ-OK-pu1" secondAttribute="centerY" id="FoA-Jy-nOK"/>
                             <constraint firstItem="8GK-AN-ZYR" firstAttribute="height" secondItem="kzL-nQ-9LS" secondAttribute="height" multiplier="0.1" id="KeP-Hj-0U2"/>
+                            <constraint firstItem="6qZ-OK-pu1" firstAttribute="centerX" secondItem="pCR-HC-v58" secondAttribute="trailing" id="RAe-eq-Q11"/>
                             <constraint firstItem="8GK-AN-ZYR" firstAttribute="leading" secondItem="ie7-mz-ZGE" secondAttribute="leading" constant="15" id="TBO-D1-Ufb"/>
+                            <constraint firstItem="6qZ-OK-pu1" firstAttribute="width" secondItem="ie7-mz-ZGE" secondAttribute="width" multiplier="0.09" id="VrT-7Y-wP2"/>
                             <constraint firstItem="CZX-3l-CFo" firstAttribute="top" secondItem="ie7-mz-ZGE" secondAttribute="top" constant="20" id="Xas-wF-Xx5"/>
-                            <constraint firstItem="pCR-HC-v58" firstAttribute="top" secondItem="CzT-gM-dkE" secondAttribute="bottom" constant="15" id="q5t-fj-8wq"/>
-                            <constraint firstItem="CzT-gM-dkE" firstAttribute="centerX" secondItem="pCR-HC-v58" secondAttribute="centerX" id="uzr-A5-hDo"/>
+                            <constraint firstItem="CzT-gM-dkE" firstAttribute="centerX" secondItem="6qZ-OK-pu1" secondAttribute="centerX" id="XcF-2K-1oE"/>
                             <constraint firstItem="ie7-mz-ZGE" firstAttribute="trailing" secondItem="8GK-AN-ZYR" secondAttribute="trailing" constant="15" id="zw0-hs-8sM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ie7-mz-ZGE"/>
@@ -90,6 +100,7 @@
                     <connections>
                         <outlet property="collectionView" destination="CZX-3l-CFo" id="LVb-12-SAx"/>
                         <outlet property="greenAppleImageView" destination="TDP-7F-Ywc" id="K3C-Nu-CkE"/>
+                        <outlet property="indicatorView" destination="6qZ-OK-pu1" id="hcY-89-BR8"/>
                         <outlet property="redAppleImageView" destination="pCR-HC-v58" id="ezJ-va-rli"/>
                         <outlet property="redLabel" destination="CzT-gM-dkE" id="eX0-5k-KUB"/>
                         <outlet property="stackView" destination="8GK-AN-ZYR" id="ndx-yq-i3k"/>

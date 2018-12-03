@@ -10,9 +10,19 @@ import Foundation
 import UIKit
 
 enum AppleType {
-    case green
-    case yellow
     case red
+    case yellow
+    case green
+    
+    init?(index: Int) {
+        switch index {
+            case 0: self = .red
+            case 1: self = .yellow
+            case 2: self = .green
+            default: return nil
+        }
+    }
+
     
     func color() -> UIColor {
         switch self {
@@ -22,8 +32,6 @@ enum AppleType {
                 return UIColor.orange
             case .green:
                 return UIColor.green
-            
-            
         }
     }
     

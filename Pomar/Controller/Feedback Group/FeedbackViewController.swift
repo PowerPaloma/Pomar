@@ -12,56 +12,58 @@ class FeedbackViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var stackView: UIStackView!
+    
     @IBOutlet weak var redAppleImageView: UIImageView! {
         didSet {
             redAppleImageView.tintColor = AppleType.red.color()
             let drag = UIDragInteraction(delegate: self)
             drag.isEnabled = true
             redAppleImageView.addInteraction(drag)
+            redAppleImageView.tag = 0
         }
     }
+    
     @IBOutlet weak var yellowAppleImageView: UIImageView! {
         didSet {
             yellowAppleImageView.tintColor = AppleType.yellow.color()
             let drag = UIDragInteraction(delegate: self)
             drag.isEnabled = true
             yellowAppleImageView.addInteraction(drag)
+            yellowAppleImageView.tag = 1
         }
     }
+    
     @IBOutlet weak var greenAppleImageView: UIImageView! {
         didSet {
             greenAppleImageView.tintColor = AppleType.green.color()
             let drag = UIDragInteraction(delegate: self)
             drag.isEnabled = true
             greenAppleImageView.addInteraction(drag)
+            greenAppleImageView.tag = 2
         }
     }
     
     @IBOutlet weak var redLabel: UILabel!
-    @IBOutlet weak var yellowLabel: UILabel!
-    @IBOutlet weak var greenLabel: UILabel!
+    
+    @IBOutlet weak var indicatorView: UIView!
     
     var users: [String] = ["Alan", "Mateus", "Thalia", "Paloma", "Cibele", "Elias"]
 //    var users = [User]()
     
     var selectedView: UIView?
     
-    var applePath: UIBezierPath {
-        let shape = UIBezierPath()
-        shape.move(to: CGPoint(x: 68.12, y: 123.67))
-        shape.addCurve(to: CGPoint(x: 55.71, y: 38.19), controlPoint1: CGPoint(x: 17.02, y: 173.55), controlPoint2: CGPoint(x: -48.04, y: 16.08))
-        shape.addCurve(to: CGPoint(x: 68.12, y: 123.67), controlPoint1: CGPoint(x: 140.5, y: -24.68), controlPoint2: CGPoint(x: 146.98, y: 157.59))
-        shape.close()
-        shape.move(to: CGPoint(x: 74.46, y: 0))
-        shape.addCurve(to: CGPoint(x: 42.97, y: 30.47), controlPoint1: CGPoint(x: 49.5, y: 4.11), controlPoint2: CGPoint(x: 39.86, y: 13.67))
-        shape.addCurve(to: CGPoint(x: 74.46, y: 0), controlPoint1: CGPoint(x: 56.86, y: 34.73), controlPoint2: CGPoint(x: 73.82, y: 24.95))
-        shape.close()
-        shape.apply(CGAffineTransform(scaleX: 0.7, y: 0.7))
-        return shape
+    var redApples: Int = 0 {
+        didSet {
+            redLabel.text = String(redApples)
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        redApples = 6
+        
+        indicatorView.layer.cornerRadius = view.frame.width*0.09/2
         
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -122,8 +124,6 @@ extension FeedbackViewController: UICollectionViewDelegateFlowLayout {
         return 0
     }
     
-    
-    
 }
 
 extension FeedbackViewController: UICollectionViewDropDelegate {
@@ -132,6 +132,7 @@ extension FeedbackViewController: UICollectionViewDropDelegate {
         
         let selected = coordinator.items.first?.dragItem.localObject as! AppleType
         
+        
         guard let destinationIndexPath = coordinator.destinationIndexPath else {
             return
         }
@@ -139,8 +140,17 @@ extension FeedbackViewController: UICollectionViewDropDelegate {
         let cell = collectionView.cellForItem(at: destinationIndexPath) as! UserViewCell
         cell.selectedApple = selected
         
-        selectedView?.isUserInteractionEnabled = false
-        selectedView?.tintColor = UIColor.gray
+        if selectedView == redAppleImageView {
+            redApples -= 1
+            if redApples == 0 {
+                selectedView?.isUserInteractionEnabled = false
+                selectedView?.tintColor = UIColor.gray
+            }
+        } else {
+            selectedView?.isUserInteractionEnabled = false
+            selectedView?.tintColor = UIColor.gray
+        }
+        
         
 //        CKManager.shared.incrementUserApple(userID: (cell.user?.id)!, type: selected) { (record, error) in
 //            guard let record = record else {
@@ -166,16 +176,7 @@ extension FeedbackViewController: UIDragInteractionDelegate, UIDropInteractionDe
             
             selectedView = imageView
             
-            switch imageView {
-                case redAppleImageView:
-                    selected = .red
-                case yellowAppleImageView:
-                    selected = .yellow
-                case greenAppleImageView:
-                    selected = .green
-                default:
-                    break
-            }
+            selected = AppleType(index: (selectedView?.tag)!)
             
             guard let image = imageView.image else { return [] }
             
@@ -188,7 +189,7 @@ extension FeedbackViewController: UIDragInteractionDelegate, UIDropInteractionDe
             item.previewProvider = {
                 let previewParameters = UIDragPreviewParameters()
                 previewParameters.backgroundColor = selected?.color()
-                previewParameters.visiblePath = self.applePath
+                previewParameters.visiblePath = AppleShape().path
                 let preview = UIDragPreview(view: UIView(), parameters: previewParameters)
                 return preview
             }
@@ -214,7 +215,7 @@ extension FeedbackViewController: UIDragInteractionDelegate, UIDropInteractionDe
 
         let target = UIDragPreviewTarget(container: (dragView?.superview)!, center: dragView!.center)
 
-        previewParameters.visiblePath = applePath
+        previewParameters.visiblePath = AppleShape().path
 
 
         return UITargetedDragPreview(view: preview, parameters: previewParameters, target: target)

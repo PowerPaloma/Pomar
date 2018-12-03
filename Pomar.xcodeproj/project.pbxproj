@@ -47,6 +47,7 @@
 		DC74C1E621B1D5EA00C829B2 /* Apples.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC74C1E521B1D5EA00C829B2 /* Apples.swift */; };
 		DC74C1E821B372C000C829B2 /* ApplesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC74C1E721B372C000C829B2 /* ApplesTests.swift */; };
 		DC74C1EA21B48C2800C829B2 /* AppleTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC74C1E921B48C2800C829B2 /* AppleTypeTests.swift */; };
+		DC74C1EC21B5514B00C829B2 /* AppleShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC74C1EB21B5514B00C829B2 /* AppleShape.swift */; };
 		DCE87266219B0C8D008F78BE /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE87265219B0C8D008F78BE /* Group.swift */; };
 		DCE87269219B4FFB008F78BE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE87268219B4FFB008F78BE /* User.swift */; };
 		DCE8726B219C53DF008F78BE /* CKManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE8726A219C53DF008F78BE /* CKManager.swift */; };
@@ -118,6 +119,7 @@
 		DC74C1E521B1D5EA00C829B2 /* Apples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apples.swift; sourceTree = "<group>"; };
 		DC74C1E721B372C000C829B2 /* ApplesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplesTests.swift; sourceTree = "<group>"; };
 		DC74C1E921B48C2800C829B2 /* AppleTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleTypeTests.swift; sourceTree = "<group>"; };
+		DC74C1EB21B5514B00C829B2 /* AppleShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleShape.swift; sourceTree = "<group>"; };
 		DCE87265219B0C8D008F78BE /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		DCE87268219B4FFB008F78BE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DCE8726A219C53DF008F78BE /* CKManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKManager.swift; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 				DC74C1B221AED15600C829B2 /* FeedbackViewController.swift */,
 				DC74C1E121B0671000C829B2 /* UserViewCell.swift */,
 				DC74C1E221B0671000C829B2 /* UserViewCell.xib */,
+				DC74C1EB21B5514B00C829B2 /* AppleShape.swift */,
 			);
 			path = "Feedback Group";
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 				DCE87269219B4FFB008F78BE /* User.swift in Sources */,
 				2F022D6921A3C11D00A1293D /* TagsCollectionViewCell.swift in Sources */,
 				DC74C1E321B0671000C829B2 /* UserViewCell.swift in Sources */,
+				DC74C1EC21B5514B00C829B2 /* AppleShape.swift in Sources */,
 				DCE8726B219C53DF008F78BE /* CKManager.swift in Sources */,
 				DCE87275219CB1F9008F78BE /* DaySchedule.swift in Sources */,
 				9206BDB821AD6ED40013437F /* FinalTutorial.swift in Sources */,
