@@ -261,7 +261,7 @@ final class CKManager {
             
             record["user"] = userRef
             record["group"] = groupRef
-            record["red"] = count
+            record["red"] = count-1
             record["yellow"] = 1
             record["green"] = 1
             
@@ -293,7 +293,7 @@ final class CKManager {
                 }
                 
                 records.forEach({ (record) in
-                    record["red"] = count
+                    record["red"] = count-1
                 })
                 
                 let operation = CKModifyRecordsOperation(recordsToSave: records, recordIDsToDelete: nil)

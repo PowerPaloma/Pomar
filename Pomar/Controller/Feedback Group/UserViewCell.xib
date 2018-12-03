@@ -18,7 +18,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MMf-eV-x0Z">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MMf-eV-x0Z">
                         <rect key="frame" x="10" y="10" width="180" height="180"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     </imageView>
@@ -47,11 +47,17 @@
                             <constraint firstItem="kbd-Qp-9of" firstAttribute="height" secondItem="A3Q-og-LO6" secondAttribute="height" id="Npo-pi-Eln"/>
                         </constraints>
                     </stackView>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="UZF-1i-wCD">
+                        <rect key="frame" x="82" y="82" width="37" height="37"/>
+                        <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </activityIndicatorView>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstItem="MMf-eV-x0Z" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="1O8-I7-0nO"/>
                 <constraint firstItem="71b-BI-BhQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="6ej-Im-Cs0"/>
+                <constraint firstItem="UZF-1i-wCD" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="6mI-NJ-Nl2"/>
+                <constraint firstItem="UZF-1i-wCD" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="7cA-UE-3Rp"/>
                 <constraint firstItem="MMf-eV-x0Z" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="Qxi-sQ-Ste"/>
                 <constraint firstItem="MMf-eV-x0Z" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.9" id="TLp-yD-cmT"/>
                 <constraint firstAttribute="trailing" secondItem="71b-BI-BhQ" secondAttribute="trailing" id="b3Q-tE-X29"/>
@@ -62,6 +68,7 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="195" height="166"/>
             <connections>
+                <outlet property="activityIndicator" destination="UZF-1i-wCD" id="1Fd-KN-gFc"/>
                 <outlet property="greenView" destination="kbd-Qp-9of" id="lca-hV-Du3"/>
                 <outlet property="imageView" destination="MMf-eV-x0Z" id="i6V-Sw-3Pj"/>
                 <outlet property="redView" destination="A3Q-og-LO6" id="gSj-Sk-Bu1"/>

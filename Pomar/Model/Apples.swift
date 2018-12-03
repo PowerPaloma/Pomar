@@ -13,6 +13,12 @@ class Apples {
     
     var record: CKRecord
     
+    var id: CKRecord.ID? {
+        get {
+            return record.recordID
+        }
+    }
+    
     var red: Int {
         get {
             return record["red"] as! Int

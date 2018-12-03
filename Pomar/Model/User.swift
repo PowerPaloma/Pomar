@@ -69,10 +69,10 @@ class User {
     
     var yellowApples: Int {
         set {
-            record["yellowApples"] = newValue
+            record["yellowApple"] = newValue
         }
         get {
-            return record["yellowApples"] as! Int
+            return record["yellowApple"] as! Int
         }
     }
     

@@ -16,9 +16,9 @@ enum AppleType {
     
     init?(index: Int) {
         switch index {
-            case 0: self = .red
-            case 1: self = .yellow
-            case 2: self = .green
+            case 1: self = .red
+            case 2: self = .yellow
+            case 3: self = .green
             default: return nil
         }
     }

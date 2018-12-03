@@ -10,12 +10,27 @@ import UIKit
 
 class UserViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageView: UIImageView! {
+        didSet {
+            
+        }
+    }
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var redView: UIImageView!
     @IBOutlet weak var yellowView: UIImageView!
     @IBOutlet weak var greenView: UIImageView!
     
     var user: User?
+    
+    var image: UIImage? {
+        didSet {
+            imageView.image = image
+            if image != nil {
+                activityIndicator.stopAnimating()
+                activityIndicator.isHidden = true
+            }
+        }
+    }
     
     var selectedApple: AppleType? {
         didSet {
@@ -40,6 +55,8 @@ class UserViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        activityIndicator.startAnimating()
         
         redView.image = redView.image?.withRenderingMode(.alwaysTemplate)
         redView.tintColor = UIColor.clear
