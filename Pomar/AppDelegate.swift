@@ -19,12 +19,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
-        let storyboard = UIStoryboard(name: "Tutorial", bundle: nil)
+        let storyboard = UIStoryboard(name: "NewGroup", bundle: nil)
         
-        let initialViewController = storyboard.instantiateViewController(withIdentifier: "TutorialViewController")
+        let initialViewController = storyboard.instantiateInitialViewController()
         
         self.window?.rootViewController = initialViewController
         self.window?.makeKeyAndVisible()
+        print("Chegou aqui no didFinishLaunching")
         
         return true
     }
