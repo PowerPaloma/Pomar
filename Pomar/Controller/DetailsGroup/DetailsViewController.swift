@@ -40,7 +40,7 @@ class DetailsViewController: UIViewController {
 extension DetailsViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 4
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -106,13 +106,13 @@ extension DetailsViewController: UICollectionViewDelegate, UICollectionViewDataS
                 
             }
             return cell
-        case 4:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "members", for: indexPath) as! ParticipantsCollectionViewCell
-            cell.backgroundColor = UIColor.red
-            modelTag = ModelTag(tags: group.tags, isLimited: false)
-            cell.setCollectionViewDataSourceDelegate(modelTag, forRow: indexPath.row)
-            cell.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
-            return cell
+//        case 4:
+//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "members", for: indexPath) as! ParticipantsCollectionViewCell
+//            cell.backgroundColor = UIColor.red
+//            modelTag = ModelTag(tags: group.tags, isLimited: false)
+//            cell.setCollectionViewDataSourceDelegate(modelTag, forRow: indexPath.row)
+//            cell.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
+//            return cell
 //
         default:
             return UICollectionViewCell()
@@ -137,7 +137,7 @@ extension DetailsViewController: UICollectionViewDelegateFlowLayout{
 //                let heigth = cell.collection.contentSize.height + cell.labelTitle.frame.height + 8*3
 //                return CGSize.init(width: itemWidth, height: heigth)
 //            }else{
-                return CGSize.init(width: itemWidth, height: 100)
+                return CGSize.init(width: itemWidth, height: 120)
 //            }
 
         case 3:

@@ -9,36 +9,41 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Initial View Controller-->
         <scene sceneID="zsG-mT-XET">
             <objects>
-                <viewController storyboardIdentifier="firstScreen" id="xWJ-1G-Fc8" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="firstScreen" id="xWJ-1G-Fc8" customClass="InitialViewController" customModule="Pomar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HUk-pa-nyN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pomarNome2" translatesAutoresizingMaskIntoConstraints="NO" id="3bE-zV-afS">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pomar" translatesAutoresizingMaskIntoConstraints="NO" id="3bE-zV-afS">
                                 <rect key="frame" x="75" y="118.5" width="225" height="72"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ptR-KF-Ngk">
-                                <rect key="frame" x="156.5" y="532" width="62" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.87407993719999999" blue="0.91550147439999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Começar"/>
+                                <rect key="frame" x="144.5" y="512" width="86" height="30"/>
+                                <color key="backgroundColor" red="0.2274509804" green="0.78039215689999997" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="contentEdgeInsets" minX="12" minY="6" maxX="12" maxY="6"/>
+                                <state key="normal" title="Começar">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bua-Cu-Xlc">
-                                <rect key="frame" x="166.5" y="594" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bua-Cu-Xlc">
+                                <rect key="frame" x="35.5" y="574" width="304" height="41"/>
+                                <string key="text">Share your time. Share your knowledge 
+                 share your apples.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pomar_Logo" translatesAutoresizingMaskIntoConstraints="NO" id="khp-p4-hRe">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pomarLogo" translatesAutoresizingMaskIntoConstraints="NO" id="khp-p4-hRe">
                                 <rect key="frame" x="121" y="277" width="133" height="133"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="khp-p4-hRe" secondAttribute="height" multiplier="1:1" id="UMa-Vz-4C0"/>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.92156862745098034" green="0.82352941176470584" blue="0.69411764705882351" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="bua-Cu-Xlc" firstAttribute="centerX" secondItem="dOF-J5-YB5" secondAttribute="centerX" id="0bn-fO-YW8"/>
                             <constraint firstItem="3bE-zV-afS" firstAttribute="height" secondItem="HUk-pa-nyN" secondAttribute="height" multiplier="0.1" constant="5" id="0iS-nI-Co9"/>
@@ -66,6 +71,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dOF-J5-YB5"/>
                     </view>
+                    <connections>
+                        <outlet property="startButton" destination="ptR-KF-Ngk" id="eB5-zl-d0u"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I9J-aA-y8a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -73,7 +81,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="pomarNome2" width="159" height="58"/>
-        <image name="pomar_Logo" width="123" height="134"/>
+        <image name="pomar" width="231" height="83"/>
+        <image name="pomarLogo" width="123" height="133.5"/>
     </resources>
 </document>

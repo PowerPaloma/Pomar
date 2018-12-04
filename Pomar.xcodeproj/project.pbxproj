@@ -56,6 +56,7 @@
 		2FCCE12021B64BC1002BC3D3 /* MembersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCCE11E21B64BC1002BC3D3 /* MembersCollectionViewCell.swift */; };
 		2FCCE12121B64BC1002BC3D3 /* MembersCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FCCE11F21B64BC1002BC3D3 /* MembersCollectionViewCell.xib */; };
 		2FCCE12321B64D1F002BC3D3 /* ModelCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCCE12221B64D1F002BC3D3 /* ModelCollection.swift */; };
+		2FE3665821B690F200D7D909 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE3665721B690F200D7D909 /* InitialViewController.swift */; };
 		9205F20F21AC215900F5CA73 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9205F20E21AC215900F5CA73 /* Tutorial.storyboard */; };
 		9205F21321AC238100F5CA73 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205F21121AC238100F5CA73 /* TutorialViewController.swift */; };
 		9205F21621AC30DD00F5CA73 /* SlideTutorial.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9205F21521AC30DD00F5CA73 /* SlideTutorial.xib */; };
@@ -145,6 +146,7 @@
 		2FCCE11E21B64BC1002BC3D3 /* MembersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersCollectionViewCell.swift; sourceTree = "<group>"; };
 		2FCCE11F21B64BC1002BC3D3 /* MembersCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MembersCollectionViewCell.xib; sourceTree = "<group>"; };
 		2FCCE12221B64D1F002BC3D3 /* ModelCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCollection.swift; sourceTree = "<group>"; };
+		2FE3665721B690F200D7D909 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		9205F20E21AC215900F5CA73 /* Tutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
 		9205F21121AC238100F5CA73 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		9205F21521AC30DD00F5CA73 /* SlideTutorial.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlideTutorial.xib; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 				2FCCE0EE21B5629B002BC3D3 /* DetailsGroup */,
 				2F0DABA021A2E5A200217ED5 /* Add Group */,
 				2F0DAB8E219B080D00217ED5 /* Study Groups */,
+				2FE3665721B690F200D7D909 /* InitialViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -579,6 +582,7 @@
 				2F022D6E21A42B7400A1293D /* TextFieldProtocol.swift in Sources */,
 				2FCCE11421B5F196002BC3D3 /* ShowTagsCollectionViewCell.swift in Sources */,
 				2F0DAB52219AF37800217ED5 /* Pomar.xcdatamodeld in Sources */,
+				2FE3665821B690F200D7D909 /* InitialViewController.swift in Sources */,
 				2FCCE0ED21B56186002BC3D3 /* DetailsViewController.swift in Sources */,
 				2F3DDEF321AF911A00A97CA2 /* CustomHeader.swift in Sources */,
 				2F0DAB4A219AF37800217ED5 /* AppDelegate.swift in Sources */,
