@@ -22,18 +22,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="194" height="64"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ARKit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uAR-Z8-74f">
-                                <rect key="frame" x="76" y="21.5" width="42.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.3294117647" green="0.77647058820000003" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="81.5" y="25" width="31.5" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.69803921570000005" green="0.0" blue="0.023529411760000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="uAR-Z8-74f" firstAttribute="centerY" secondItem="sAW-xb-sRN" secondAttribute="centerY" id="9oJ-YR-oJo"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="uAR-Z8-74f" secondAttribute="trailing" constant="16" id="TFN-9j-j6d"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="uAR-Z8-74f" secondAttribute="trailing" constant="4" id="TFN-9j-j6d"/>
                             <constraint firstItem="uAR-Z8-74f" firstAttribute="centerX" secondItem="sAW-xb-sRN" secondAttribute="centerX" id="kqf-qL-dWz"/>
-                            <constraint firstItem="uAR-Z8-74f" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="sAW-xb-sRN" secondAttribute="leading" constant="16" id="vxQ-0F-LNW"/>
+                            <constraint firstItem="uAR-Z8-74f" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="sAW-xb-sRN" secondAttribute="leading" constant="4" id="vxQ-0F-LNW"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -46,6 +46,10 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="194" height="64"/>
+            <connections>
+                <outlet property="background" destination="sAW-xb-sRN" id="LOF-6U-fs3"/>
+                <outlet property="tagName" destination="uAR-Z8-74f" id="5k3-9t-JnF"/>
+            </connections>
             <point key="canvasLocation" x="168" y="42.278860569715143"/>
         </collectionViewCell>
     </objects>

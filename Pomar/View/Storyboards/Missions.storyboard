@@ -28,7 +28,7 @@
         <!--Navigation Controller-->
         <scene sceneID="tKO-uV-HOk">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yz0-VK-5TF" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navMissions" automaticallyAdjustsScrollViewInsets="NO" id="yz0-VK-5TF" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FFh-3J-spz">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

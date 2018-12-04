@@ -10,9 +10,13 @@ import UIKit
 
 class TagsCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var tagName: UILabel!
+    @IBOutlet weak var background: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
+    
 
 }

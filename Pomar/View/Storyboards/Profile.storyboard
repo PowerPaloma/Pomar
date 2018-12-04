@@ -28,7 +28,7 @@
         <!--Profile-->
         <scene sceneID="SNE-ca-rB1">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HNc-42-sxE" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navProfile" automaticallyAdjustsScrollViewInsets="NO" id="HNc-42-sxE" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" id="mQR-pJ-6dx"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>

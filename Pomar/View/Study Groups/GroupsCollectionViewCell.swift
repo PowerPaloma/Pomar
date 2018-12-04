@@ -11,14 +11,25 @@ import UIKit
 class GroupsCollectionViewCell: UICollectionViewCell {
 
 
+    @IBOutlet weak var joinButton: UIButton!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var hoursGroup: UILabel!
     @IBOutlet weak var tagsCollectionView: UICollectionView!
     @IBOutlet weak var daysGroup: UILabel!
     @IBOutlet weak var nameGroup: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        tagsCollectionView.register(UINib(nibName: "TagsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "GroupsCollectionViewCell")
+        tagsCollectionView.register(UINib(nibName: "TagsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "TagsCollectionViewCell")
+//       print(joinButton.frame.size.height)
+        
+    }
+    
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        joinButton.clipsToBounds = true
+        joinButton.layer.cornerRadius = joinButton.frame.size.height / 2
     }
 
 }
