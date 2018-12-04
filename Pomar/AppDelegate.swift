@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+
 //        let teste = Group()
 //        teste.name = "teste Grupo"
 //        teste.description = "Descricap granbde bla, bla, bla"

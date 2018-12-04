@@ -161,25 +161,6 @@ final class CKManager {
         
     }
     
-    func incrementUserApple(userID: CKRecord.ID, type: AppleType, completion: @escaping (CKRecord?, Error?) -> Void) {
-        
-        fetchUser(id: userID) { (record, user, error) in
-            
-            guard let record = record else {
-                completion(nil, error)
-                return
-            }
-            
-            let user = User(record: record)
-            user.incrementeApple(type: type)
-            
-            self.publicDatabase.save(user.record, completionHandler: { (record, error) in
-                completion(record, error)
-            })
-        }
-        
-    }
-    
     //MARK: - Image Functions
     
     func saveimage(_ image: UIImage,  completion: @escaping (CKRecord?, Error?) -> Void) {
@@ -254,12 +235,135 @@ final class CKManager {
             
             let groups = records.map({ (record) -> Group in
                 let group = Group(record: record)
-                return group ?? Group()
+                return group!
             })
             
             completion(groups, nil)
         }
         
     }
+    
+    //MARK: - Apples Functions
+    
+    func createApples(userID: CKRecord.ID, groupID: CKRecord.ID, completion: @escaping (CKRecord?, Error?) -> Void) {
+        
+        let userRef = CKRecord.Reference(recordID: userID, action: .none)
+        let groupRef = CKRecord.Reference(recordID: groupID, action: .none)
+        
+        let record = CKRecord(recordType: "Apples")
+        
+        fetchUsers(groupID: groupID) { (users, error) in
+            
+            guard let count = users?.count else {
+                completion(nil, error)
+                return
+            }
+            
+            record["user"] = userRef
+            record["group"] = groupRef
+            record["red"] = count-1
+            record["yellow"] = 1
+            record["green"] = 1
+            
+            self.publicDatabase.save(record, completionHandler: { (record, error) in
+                completion(record, error)
+            })
+            
+        }
+        
+    }
+    
+    func updateApples(groupID: CKRecord.ID, completion: @escaping ([CKRecord]?, Error?) -> Void) {
+        
+        let ref = CKRecord.Reference(recordID: groupID, action: .none)
+        let predicate = NSPredicate(format: "group = %@", ref)
+        let query = CKQuery(recordType: "Apples", predicate: predicate)
+        
+        fetchUsers(groupID: groupID) { (users, error) in
+            guard let count = users?.count, error == nil else {
+                completion(nil, error)
+                return
+            }
+            
+            self.publicDatabase.perform(query, inZoneWith: nil) { (records, error) in
+                
+                guard let records = records else {
+                    completion(nil, error)
+                    return
+                }
+                
+                records.forEach({ (record) in
+                    record["red"] = count-1
+                })
+                
+                let operation = CKModifyRecordsOperation(recordsToSave: records, recordIDsToDelete: nil)
+                
+                operation.completionBlock = {
+                    completion(records, nil)
+                }
+                
+                self.publicDatabase.add(operation)
+                
+            }
+            
+        }
+        
+    }
+    
+    func available(userID: CKRecord.ID, groupID: CKRecord.ID, completion: @escaping (Apples?, Error?) -> Void) {
+        
+        let userRef = CKRecord.Reference(recordID: userID, action: .none)
+        let groupRef = CKRecord.Reference(recordID: groupID, action: .none)
+        
+        let predicate = NSPredicate(format: "group = %@ AND user = %@", groupRef, userRef)
+        let query = CKQuery(recordType: "Apples", predicate: predicate)
+        
+        publicDatabase.perform(query, inZoneWith: nil) { (records, error) in
+            guard let record = records?.first, error == nil else {
+                completion(nil, error)
+                return
+            }
+            let apples = Apples(record: record)
+            completion(apples, nil)
+            
+        }
+        
+    }
+    
+    func incrementUserApple(userID: CKRecord.ID, type: AppleType, completion: @escaping (CKRecord?, Error?) -> Void) {
+        
+        fetchUser(id: userID) { (record, user, error) in
+            
+            guard let record = record else {
+                completion(nil, error)
+                return
+            }
+            
+            let user = User(record: record)
+            user.incrementeApple(type: type)
+            
+            self.publicDatabase.save(user.record, completionHandler: { (record, error) in
+                completion(record, error)
+            })
+        }
+        
+    }
+    
+    func decrementApples(applesID: CKRecord.ID, type: AppleType, completion: @escaping (CKRecord?, Error?) -> Void){
+        publicDatabase.fetch(withRecordID: applesID) { (record, error) in
+            guard let record = record else {
+                completion(nil, error)
+                return
+            }
+            let apples = Apples(record: record)
+            apples.decrement(type)
+            self.publicDatabase.save(apples.record, completionHandler: { (record, error) in
+                completion(record, error)
+            })
+            
+        }
+    }
+    
+    
     
 }
