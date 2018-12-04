@@ -470,7 +470,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </view>
                                             </collectionViewCell>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="participants" id="hOX-eY-SZo">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="members" id="hOX-eY-SZo">
                                                 <rect key="frame" x="261" y="0.0" width="50" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -520,7 +520,6 @@
         <!--Navigation Controller-->
         <scene sceneID="8S7-f9-oGQ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ske-Ba-dCd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="nav" automaticallyAdjustsScrollViewInsets="NO" id="xH0-1q-a0L" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9z0-Ts-0Q0">
@@ -532,6 +531,7 @@
                         <segue destination="fVK-GN-QHd" kind="relationship" relationship="rootViewController" id="jxv-ou-gDi"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ske-Ba-dCd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4252" y="179.46026986506749"/>
         </scene>

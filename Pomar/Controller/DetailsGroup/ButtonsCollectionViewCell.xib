@@ -22,17 +22,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="314" height="98"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JwR-rj-cL2">
-                                <rect key="frame" x="8" y="36" width="37" height="26"/>
+                                <rect key="frame" x="8" y="36" width="45" height="26"/>
                                 <color key="backgroundColor" red="0.2274509804" green="0.78039215689999997" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <inset key="contentEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
+                                <inset key="contentEdgeInsets" minX="8" minY="4" maxX="8" maxY="4"/>
                                 <state key="normal" title="Join">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqq-JQ-07N">
-                                <rect key="frame" x="230" y="36" width="76" height="26"/>
+                                <rect key="frame" x="222" y="36" width="84" height="26"/>
                                 <color key="backgroundColor" red="0.2274509804" green="0.78039215689999997" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <inset key="contentEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
+                                <inset key="contentEdgeInsets" minX="8" minY="4" maxX="8" maxY="4"/>
                                 <state key="normal" title="FeedBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>

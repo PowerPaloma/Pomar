@@ -16,6 +16,10 @@ class ButtonsCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        joinButton.clipsToBounds = true
+        joinButton.layer.cornerRadius = 10
+        feedbackButton.clipsToBounds = true
+        feedbackButton.layer.cornerRadius = 10
         // Initialization code
     }
 

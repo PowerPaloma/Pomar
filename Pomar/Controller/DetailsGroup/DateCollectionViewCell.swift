@@ -16,6 +16,7 @@ class DateCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var labelMonth: UILabel!
     @IBOutlet var dates: [UIView]!
     @IBOutlet var hours: [UILabel]!
+    @IBOutlet var datesLabels: [UILabel]!
     
     
     override func awakeFromNib() {

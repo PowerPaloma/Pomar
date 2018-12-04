@@ -25,7 +25,8 @@ class DetailsViewController: UIViewController {
         collectionView.register(UINib(nibName: "LabelsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "labels")
         collectionView.register(UINib(nibName: "ShowTagsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "tags")
         collectionView.register(UINib(nibName: "DateCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "date")
-
+        collectionView.register(UINib(nibName: "ParticipantsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "members")
+        
 //        tableView.register(UINib(nibName: "DateAndTimeTableViewCell", bundle: nil), forCellReuseIdentifier: "viewCell")
 //        tableView.register(UINib(nibName: "CollectionTableViewCell", bundle: nil), forCellReuseIdentifier: "tagsCell")
 //        tableView.register(UINib(nibName: "CollectionTableViewCell", bundle: nil), forCellReuseIdentifier: "collectionCell")
@@ -39,7 +40,7 @@ class DetailsViewController: UIViewController {
 extension DetailsViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -61,21 +62,56 @@ extension DetailsViewController: UICollectionViewDelegate, UICollectionViewDataS
             return cell
         case 3:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "date", for: indexPath) as! DateCollectionViewCell
-//            if group.isWeekly {
-//                if let schedulesGroup = group.schedule {
-//                    
-//                    let map:[(Int, Date)] = schedulesGroup.map { (daySchedule) -> (Int, Date) in
-//                        
-//                        return (daySchedule.day)
-//                    }
-//                    let hours = schedulesGroup.map { (daySchedule) -> String in
-//                        return daySchedule.hour
-//                    }
-//                   
-//                }
-//            }else{
-//                
-//            }
+            if group.isWeekly {
+                if let schedulesGroup = group.schedule {
+                    var aux = [(false, ""), (false, "" ), (false, "" ), (false, "" ), (false, "" )]
+                    let scheduleInfo = schedulesGroup.map { (daySchedule) -> (String, String) in
+                        return (daySchedule.day, daySchedule.hour)
+                    }
+                    for d in scheduleInfo {
+                        switch d.0{
+                        case "Monday":
+                            aux[0] = (true, d.1)
+                        case "Tuesday":
+                             aux[1] = (true, d.1)
+                        case "Wednesday":
+                             aux[2] = (true, d.1)
+                        case "Thursday":
+                             aux[3] = (true, d.1)
+                        case "Friday":
+                             aux[4] = (true, d.1)
+                        default:
+                            break
+                        }
+                    }
+                    for (index, info) in aux.enumerated() {
+                        if info.0 {
+                            let date = cell.dates[index]
+                            let hour = cell.hours[index]
+                            date.layer.borderWidth = 1
+                            date.layer.borderColor = UIColor(red: 178/255, green: 0, blue: 6/255, alpha: 1).cgColor
+                            date.backgroundColor = UIColor(red: 178/255, green: 0, blue: 6/255, alpha: 1)
+                            
+                            hour.text = info.1
+                            hour.layer.borderWidth = 1
+                            hour.clipsToBounds = true
+                            hour.layer.cornerRadius = 8
+                            hour.layer.borderColor = UIColor(red: 178/255, green: 0, blue: 6/255, alpha: 1).cgColor
+                        }
+                        
+                    }
+                   
+                }
+            }else{
+                
+            }
+            return cell
+        case 4:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "members", for: indexPath) as! ParticipantsCollectionViewCell
+            cell.backgroundColor = UIColor.red
+            modelTag = ModelTag(tags: group.tags, isLimited: false)
+            cell.setCollectionViewDataSourceDelegate(modelTag, forRow: indexPath.row)
+            cell.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
             return cell
 //
         default:
@@ -101,7 +137,7 @@ extension DetailsViewController: UICollectionViewDelegateFlowLayout{
 //                let heigth = cell.collection.contentSize.height + cell.labelTitle.frame.height + 8*3
 //                return CGSize.init(width: itemWidth, height: heigth)
 //            }else{
-                return CGSize.init(width: itemWidth, height: 80)
+                return CGSize.init(width: itemWidth, height: 100)
 //            }
 
         case 3:

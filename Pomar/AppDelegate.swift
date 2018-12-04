@@ -16,6 +16,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+//        let teste = Group()
+//        teste.name = "teste Grupo"
+//        teste.description = "Descricap granbde bla, bla, bla"
+//        teste.tags = ["UIKit", "COllection", "Delegate"]
+//        teste.isWeekly = true
+//        let mon = DaySchedule(day: "Monday", hour: "15:30")
+//        let fri = DaySchedule(day: "Friday", hour: "16:30")
+//        teste.schedule = [mon, fri]
+//        CKManager.shared.createGroup(group: teste) { (ck, error) in
+//            print("ok")
+//        }
        
 //        self.window = UIWindow(frame: UIScreen.main.bounds)
 //        
