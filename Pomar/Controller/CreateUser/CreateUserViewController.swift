@@ -41,7 +41,17 @@ class CreateUserViewController: UIViewController {
             return
         }
         
-        
+        CKManager.shared.iCloudUserID { (token, error) in
+            guard let token = token else {
+                print(error?.localizedDescription ?? "NO ERROR")
+                return
+            }
+            
+            print(token)
+            
+            let user = User(name: name, token: token, profileImage: image)
+            
+        }
         
     }
 }

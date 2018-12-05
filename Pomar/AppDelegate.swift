@@ -38,6 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window?.rootViewController = initialViewController
         self.window?.makeKeyAndVisible()
+        print("Chegou aqui no didFinishLaunching")
         
         return true
     }
