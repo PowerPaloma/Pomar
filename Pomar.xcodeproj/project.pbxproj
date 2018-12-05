@@ -63,6 +63,9 @@
 		9205F21821AC322400F5CA73 /* SlideTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205F21721AC322400F5CA73 /* SlideTutorial.swift */; };
 		9206BDB621AD6AE50013437F /* FinalTutorial.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9206BDB521AD6AE50013437F /* FinalTutorial.xib */; };
 		9206BDB821AD6ED40013437F /* FinalTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9206BDB721AD6ED40013437F /* FinalTutorial.swift */; };
+		DC0296CC21B7EE480055D61C /* CreateUser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC0296CB21B7EE480055D61C /* CreateUser.storyboard */; };
+		DC0296CE21B7EF5E0055D61C /* UserProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC0296CD21B7EF5E0055D61C /* UserProfile.storyboard */; };
+		DC0296D021B7F3F20055D61C /* CreateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0296CF21B7F3F20055D61C /* CreateUserViewController.swift */; };
 		DC66117B21AD7F7400D329DA /* AppleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC66117A21AD7F7400D329DA /* AppleType.swift */; };
 		DC66117D21AD86AF00D329DA /* GroupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC66117C21AD86AF00D329DA /* GroupTests.swift */; };
 		DC66117F21AD86DA00D329DA /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC66117E21AD86DA00D329DA /* UserTests.swift */; };
@@ -161,6 +164,9 @@
 		9205F21721AC322400F5CA73 /* SlideTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideTutorial.swift; sourceTree = "<group>"; };
 		9206BDB521AD6AE50013437F /* FinalTutorial.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FinalTutorial.xib; sourceTree = "<group>"; };
 		9206BDB721AD6ED40013437F /* FinalTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalTutorial.swift; sourceTree = "<group>"; };
+		DC0296CB21B7EE480055D61C /* CreateUser.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateUser.storyboard; sourceTree = "<group>"; };
+		DC0296CD21B7EF5E0055D61C /* UserProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserProfile.storyboard; sourceTree = "<group>"; };
+		DC0296CF21B7F3F20055D61C /* CreateUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserViewController.swift; sourceTree = "<group>"; };
 		DC66117A21AD7F7400D329DA /* AppleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleType.swift; sourceTree = "<group>"; };
 		DC66117C21AD86AF00D329DA /* GroupTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTests.swift; sourceTree = "<group>"; };
 		DC66117E21AD86DA00D329DA /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
@@ -299,6 +305,7 @@
 		2F0DAB7C219AF99600217ED5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DC0296CA21B7EE1D0055D61C /* CreateUser */,
 				2FCCE0EE21B5629B002BC3D3 /* DetailsGroup */,
 				DC74C1AD21AECD9E00C829B2 /* Feedback Group */,
 				2F0DABA021A2E5A200217ED5 /* Add Group */,
@@ -327,6 +334,8 @@
 				9205F20E21AC215900F5CA73 /* Tutorial.storyboard */,
 				2F3DDEE621ADC34700A97CA2 /* Initial.storyboard */,
 				DC74C1B021AED0C200C829B2 /* Feedback.storyboard */,
+				DC0296CB21B7EE480055D61C /* CreateUser.storyboard */,
+				DC0296CD21B7EF5E0055D61C /* UserProfile.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -427,6 +436,14 @@
 				9206BDB721AD6ED40013437F /* FinalTutorial.swift */,
 			);
 			path = Tutorial;
+			sourceTree = "<group>";
+		};
+		DC0296CA21B7EE1D0055D61C /* CreateUser */ = {
+			isa = PBXGroup;
+			children = (
+				DC0296CF21B7F3F20055D61C /* CreateUserViewController.swift */,
+			);
+			path = CreateUser;
 			sourceTree = "<group>";
 		};
 		DC74C1AD21AECD9E00C829B2 /* Feedback Group */ = {
@@ -561,8 +578,10 @@
 				2FCCE12121B64BC1002BC3D3 /* MembersCollectionViewCell.xib in Resources */,
 				2FCCE11D21B64B13002BC3D3 /* ParticipantsCollectionViewCell.xib in Resources */,
 				2F022D6A21A3C11D00A1293D /* TagsCollectionViewCell.xib in Resources */,
+				DC0296CC21B7EE480055D61C /* CreateUser.storyboard in Resources */,
 				2FCCE10D21B5EAF4002BC3D3 /* LabelsCollectionViewCell.xib in Resources */,
 				2FCCE11521B5F196002BC3D3 /* ShowTagsCollectionViewCell.xib in Resources */,
+				DC0296CE21B7EF5E0055D61C /* UserProfile.storyboard in Resources */,
 				2F0DAB85219B020000217ED5 /* Groups.storyboard in Resources */,
 				2FCCE0EB21B4F8ED002BC3D3 /* DateAndTime.xib in Resources */,
 				9206BDB621AD6AE50013437F /* FinalTutorial.xib in Resources */,
@@ -612,6 +631,7 @@
 				2F0DABA221A2EB1D00217ED5 /* Validation.swift in Sources */,
 				2FCCE0E921B4F8E0002BC3D3 /* DateAndTime.swift in Sources */,
 				2FCCE0FD21B5A3EF002BC3D3 /* Instantiable.swift in Sources */,
+				DC0296D021B7F3F20055D61C /* CreateUserViewController.swift in Sources */,
 				9205F21821AC322400F5CA73 /* SlideTutorial.swift in Sources */,
 				2F022D6C21A3D85B00A1293D /* ModelHourPicker.swift in Sources */,
 				2F0DAB9D21A2E58F00217ED5 /* AddGroupPart1ViewController.swift in Sources */,
@@ -820,7 +840,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Pomar/Pomar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MQ922JMCL6;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Pomar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -840,7 +860,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Pomar/Pomar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MQ922JMCL6;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Pomar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
