@@ -20,29 +20,44 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h6j-Iy-rzO">
                                 <rect key="frame" x="31" y="156" width="262" height="339"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vfe-bu-9Pi">
-                                        <rect key="frame" x="19" y="91" width="45" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vfe-bu-9Pi">
+                                        <rect key="frame" x="19" y="90" width="45" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qYx-Mj-UvP">
-                                        <rect key="frame" x="19" y="131" width="221" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qYx-Mj-UvP">
+                                        <rect key="frame" x="19" y="131" width="224" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Skills" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zxa-Ql-8LD">
-                                        <rect key="frame" x="19" y="183" width="40" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skills" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zxa-Ql-8LD">
+                                        <rect key="frame" x="19" y="181" width="40" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Exd-qf-xmM">
+                                        <rect key="frame" x="19" y="222" width="224" height="109"/>
+                                        <color key="backgroundColor" red="0.2294296026" green="0.78067439790000004" blue="0.37246757749999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Exd-qf-xmM" firstAttribute="leading" secondItem="h6j-Iy-rzO" secondAttribute="leading" constant="19" id="9d4-Ik-GkL"/>
+                                    <constraint firstItem="qYx-Mj-UvP" firstAttribute="leading" secondItem="h6j-Iy-rzO" secondAttribute="leading" constant="19" id="SFu-bQ-3P5"/>
+                                    <constraint firstItem="zxa-Ql-8LD" firstAttribute="leading" secondItem="h6j-Iy-rzO" secondAttribute="leading" constant="19" id="WBO-XI-h6K"/>
+                                    <constraint firstAttribute="trailing" secondItem="qYx-Mj-UvP" secondAttribute="trailing" constant="19" id="XM9-42-c04"/>
+                                    <constraint firstItem="Exd-qf-xmM" firstAttribute="leading" secondItem="h6j-Iy-rzO" secondAttribute="leading" constant="19" id="Yk0-Ls-HNk"/>
+                                    <constraint firstAttribute="trailing" secondItem="Exd-qf-xmM" secondAttribute="trailing" constant="19" id="Zf0-0l-BSP"/>
+                                    <constraint firstItem="Exd-qf-xmM" firstAttribute="top" secondItem="zxa-Ql-8LD" secondAttribute="bottom" constant="20" id="cnT-dZ-WT3"/>
+                                    <constraint firstItem="qYx-Mj-UvP" firstAttribute="top" secondItem="Vfe-bu-9Pi" secondAttribute="bottom" constant="20" id="eTc-l8-Mys"/>
+                                    <constraint firstAttribute="bottom" secondItem="Exd-qf-xmM" secondAttribute="bottom" constant="8" id="kSP-v9-hhb"/>
+                                    <constraint firstItem="zxa-Ql-8LD" firstAttribute="top" secondItem="qYx-Mj-UvP" secondAttribute="bottom" constant="20" id="o6J-QZ-cct"/>
+                                    <constraint firstItem="Vfe-bu-9Pi" firstAttribute="top" secondItem="h6j-Iy-rzO" secondAttribute="top" constant="90" id="vEs-Zz-uqO"/>
+                                    <constraint firstItem="Vfe-bu-9Pi" firstAttribute="leading" secondItem="h6j-Iy-rzO" secondAttribute="leading" constant="19" id="xYD-mp-NY8"/>
+                                </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus" translatesAutoresizingMaskIntoConstraints="NO" id="7qY-n0-xvr">
                                 <rect key="frame" x="96" y="92" width="128" height="128"/>
@@ -93,6 +108,7 @@
                     </view>
                     <connections>
                         <outlet property="nameTextField" destination="qYx-Mj-UvP" id="ePt-aZ-WOj"/>
+                        <outlet property="skillsView" destination="Exd-qf-xmM" id="m1i-e4-HYE"/>
                         <outlet property="userImageView" destination="7qY-n0-xvr" id="c0F-P6-Mbw"/>
                     </connections>
                 </viewController>

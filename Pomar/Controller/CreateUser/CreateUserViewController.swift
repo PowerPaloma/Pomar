@@ -12,8 +12,11 @@ class CreateUserViewController: UIViewController {
 
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var skillsView: UIView!
     
     let imagePicker = UIImagePickerController()
+    
+    let tagsField = WSTagsField()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +36,56 @@ class CreateUserViewController: UIViewController {
         userImageView.layer.borderWidth = 3.0
         userImageView.layer.borderColor = #colorLiteral(red: 0, green: 0.7941015959, blue: 0.3129233718, alpha: 1)
         userImageView.clipsToBounds = true
+        
+        tagsField.placeholder = "Write Tags"
+        tagsField.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        tagsField.layoutMargins = UIEdgeInsets(top: 2, left: 6, bottom: 2, right: 6)
+        tagsField.backgroundColor = UIColor.red
+        
+        tagsField.translatesAutoresizingMaskIntoConstraints = false
+        skillsView.addSubview(tagsField)
+        
+        NSLayoutConstraint.activate([
+            tagsField.topAnchor.constraint(equalTo: skillsView.topAnchor),
+            tagsField.leadingAnchor.constraint(equalTo: skillsView.leadingAnchor, constant: 10),
+            tagsField.trailingAnchor.constraint(equalTo: skillsView.trailingAnchor, constant: -10),
+            tagsField.bottomAnchor.constraint(equalTo: skillsView.bottomAnchor)
+            ])
+        textFieldEvents()
+        
+        
+    }
+    
+    fileprivate func textFieldEvents(){
+        tagsField.onDidAddTag = { _, _ in
+            print("onDidAddTag")
+        }
+        
+        tagsField.onDidRemoveTag = { _, _ in
+            print("onDidRemoveTag")
+        }
+        
+        tagsField.onDidChangeText = { _, text in
+            let suggestionTags = subjects.filter {$0.localizedCaseInsensitiveContains(text ?? "")}
+            print(suggestionTags)
+            print("onDidChangeText")
+        }
+        
+        tagsField.onDidChangeHeightTo = { _, height in
+            print("HeightTo \(height)")
+        }
+        
+        tagsField.onDidSelectTagView = { _, tagView in
+            print("Select \(tagView)")
+        }
+        
+        tagsField.onDidUnselectTagView = { _, tagView in
+            print("Unselect \(tagView)")
+        }
+    }
+    
+    func tapInTag(tagText: String) {
+        tagsField.addTag(tagText)
     }
 
     @IBAction func done(_ sender: Any) {
@@ -49,7 +102,13 @@ class CreateUserViewController: UIViewController {
             
             print(token)
             
-            let user = User(name: name, token: token, profileImage: image)
+            let tags = self.tagsField.tags.map({ (wstag) -> String in
+                return wstag.text
+            })
+            
+            print(tags)
+            
+            
             
         }
         
