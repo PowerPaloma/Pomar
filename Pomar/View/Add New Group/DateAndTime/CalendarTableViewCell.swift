@@ -36,7 +36,7 @@ class CalendarTableViewCell: UITableViewCell {
         hourCollectionView.delegate = hourCollectionViewDelegateAndDataSource
         configLayoutCollection()
         
-        let originDayView = dayView.frame.origin
+//        let originDayView = dayView.frame.origin
         
         viewDatePicker.translatesAutoresizingMaskIntoConstraints = false
 
@@ -61,6 +61,20 @@ class CalendarTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func getDate() -> Date{
+        let viewDatePicker = self.viewDatePicker 
+        
+        let datePicker = viewDatePicker.datePickerView
+        let date = datePicker?.date
+        
+        guard let dateValid = date else {
+            return Date()
+        }
+        
+        return dateValid
+        
+    }
+    
     @IBAction func btnLeftHour(_ sender: UIButton) {
     }
     
@@ -73,10 +87,4 @@ class CalendarTableViewCell: UITableViewCell {
         layoutCollection.itemSize = CGSize(width: customWidth, height: 30)
     }
     
-}
-
-extension CalendarTableViewCell: AddNewGroupDelegate{
-    func getDate() -> Date{
-        return viewDatePicker.datePickerView.date
-    }
 }

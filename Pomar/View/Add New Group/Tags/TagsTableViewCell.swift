@@ -93,10 +93,6 @@ extension TagsTableViewCell:TagsSuggestionCollectionDelegate {
     func tapInTag(tagText: String) {
         tagsField.addTag(tagText)
     }
-    
-}
-
-extension TagsTableViewCell: AddNewGroupDelegate{
     func getTags() -> [String] {
         let wsTags = tagsField.tags
         let tags = wsTags.map { (tags) -> String in
@@ -106,5 +102,7 @@ extension TagsTableViewCell: AddNewGroupDelegate{
         
     }
 }
+
+
 
 

@@ -11,7 +11,7 @@ import UIKit
 class HourCollectionViewDelegateAndDataSource: NSObject, UICollectionViewDelegate, UICollectionViewDataSource {
     
     let hours = ["14:00","14:30","15:00","15:30","16:00","16:30","17:00","17:30"]
-    
+    var hourSelected:String = "14:00"
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return hours.count
     }
@@ -23,10 +23,9 @@ class HourCollectionViewDelegateAndDataSource: NSObject, UICollectionViewDelegat
         return cell
     }
     
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let cell = collectionView.cellForItem(at: indexPath)
-//        cell?.isSelected = true
-//    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        hourSelected = hours[indexPath.row]
+    }
     
 }
 

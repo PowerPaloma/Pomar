@@ -8,19 +8,13 @@
 
 import UIKit
 
-@objc protocol AddNewGroupDelegate: class {
-    @objc optional func getNameText() -> String
-    @objc optional func getSmallDescriptionText() -> String
-    @objc optional func getTags() -> [String]
-    @objc optional func getDate() -> Date
-}
+
 
 class AddNewGroupViewController: UIViewController {
 
     @IBOutlet weak var backgroundCardView: UIView!
     @IBOutlet weak var tableView: UITableView!
     
-    var delegate: AddNewGroupDelegate?
     
    
     @IBAction func cancel(_ sender: Any) {
@@ -28,16 +22,24 @@ class AddNewGroupViewController: UIViewController {
     }
     
     @IBAction func done(_ sender: Any) {
-        let name = delegate!.getNameText!()
-        let smallDescription = delegate?.getSmallDescriptionText!()
-        let tags = delegate?.getTags!()
-        let date = delegate?.getDate!()
-        let daySchedule = DaySchedule(day: "WhatEver",hour: "Awesome")
+        let visibleCells = tableView.visibleCells
+        
+        let nameGroupCell = visibleCells[0] as! DescriptionTableViewCell
+        let nameGroup = nameGroupCell.descriptionTextField.text
+//
+        let smallDescriptionCell = visibleCells[1] as! DescriptionTableViewCell
+        let smallDescription = smallDescriptionCell.descriptionTextField.text
+//
+        let tagsCell = visibleCells[2] as! TagsTableViewCell
+        let tags = tagsCell.getTags()
+        
+        let calendarCell = visibleCells[3] as! CalendarTableViewCell
+        let date = calendarCell.getDate()
         
         
-        let group = Group(name: name, description: smallDescription!, tags: tags!, schedule: [daySchedule], date: date!, isWeekly: false)
-        
-        CKManager.shared.createGroup(group: group) { (_, error) in
+        let group = Group(name: nameGroup!, description: smallDescription!, tags: tags, schedule: [], date: date, isWeekly: false)
+
+        CKManager.shared.createGroup(group: group) { (record, error) in
             if error == nil{
                 print("Criou o grupo com sucesso")
                 self.dismiss(animated: true, completion: nil)
@@ -67,6 +69,10 @@ class AddNewGroupViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+//    func getDataFromXib<T>(indexPath: IndexPath) -> T{
+//
+//    }
+    
 
     /*
     // MARK: - Navigation
@@ -93,7 +99,7 @@ extension AddNewGroupViewController: UITableViewDataSource, UITableViewDelegate{
         if indexPath.section == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: "descriptionCell") as! DescriptionTableViewCell
             cell.loadCell(typeCell: .name)
-            delegate = cell
+            
             return cell
         }else if indexPath.section == 1{
             let cell = tableView.dequeueReusableCell(withIdentifier: "descriptionCell") as! DescriptionTableViewCell
@@ -101,7 +107,7 @@ extension AddNewGroupViewController: UITableViewDataSource, UITableViewDelegate{
             return cell
         }else if indexPath.section == 2{
             let cell = tableView.dequeueReusableCell(withIdentifier: "tagsCell", for: indexPath) as! TagsTableViewCell
-            delegate = cell
+            
             cell.loadCell()
             
             cell.tagsField.onDidChangeHeightTo = {_,_ in
@@ -111,7 +117,7 @@ extension AddNewGroupViewController: UITableViewDataSource, UITableViewDelegate{
             return cell
         }else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "calendarCell", for: indexPath) as! CalendarTableViewCell
-            delegate = cell
+            
             return cell
         }
         

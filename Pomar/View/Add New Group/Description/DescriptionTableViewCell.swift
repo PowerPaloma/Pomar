@@ -36,9 +36,7 @@ class DescriptionTableViewCell: UITableViewCell {
         }
         descriptionLabel.text = title
     }
-}
-
-extension DescriptionTableViewCell: AddNewGroupDelegate{
+    
     func getNameText() -> String{
         return descriptionTextField.text!
     }
@@ -46,6 +44,7 @@ extension DescriptionTableViewCell: AddNewGroupDelegate{
         return descriptionTextField.text!
     }
 }
+
 
 enum TypeCellDescription{
     case name
