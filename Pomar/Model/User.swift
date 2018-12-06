@@ -94,11 +94,11 @@ class User {
         }
     }
     
-    init(name: String, token: String, profileImage: UIImage?) {
+    init(name: String, token: String, imageRef: CKRecord.Reference) {
         record = CKRecord(recordType: "User")
         self.name = name
         self.token = token
-        self.profileImage = profileImage
+        self.imageRef = imageRef
         self.redApples = 0
         self.yellowApples = 0
         self.greenApples = 0

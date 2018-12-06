@@ -15,7 +15,7 @@ public enum WSTagAcceptOption {
 }
 
 open class WSTagsField: UIScrollView {
-    fileprivate let textField = BackspaceDetectingTextField()
+     let textField = BackspaceDetectingTextField()
 
     /// Dedicated text field delegate.
     open weak var textDelegate: UITextFieldDelegate?
@@ -743,6 +743,15 @@ extension WSTagsField {
 }
 
 extension WSTagsField: UITextFieldDelegate {
+    
+    public func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        textDelegate?.textFieldShouldBeginEditing?(textField)
+        return true
+    }
+    
+    public func textFieldShouldBeginEditing(_ textField: UITextField) {
+        textDelegate?.textFieldShouldBeginEditing?(textField)
+    }
 
     public func textFieldDidBeginEditing(_ textField: UITextField) {
         textDelegate?.textFieldDidBeginEditing?(textField)
