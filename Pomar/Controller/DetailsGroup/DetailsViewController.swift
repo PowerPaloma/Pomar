@@ -12,6 +12,7 @@ class DetailsViewController: UIViewController {
     
     var group: Group? = nil
     var modelTag: ModelTag!
+    var modelMember: ModelMembers!
     var storedOffsets = [Int: CGFloat]()
     let minimumInteritemSpacing: CGFloat = 10
     let minimumLineSpacing:CGFloat = 10
@@ -26,11 +27,23 @@ class DetailsViewController: UIViewController {
         collectionView.register(UINib(nibName: "ShowTagsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "tags")
         collectionView.register(UINib(nibName: "DateCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "date")
         collectionView.register(UINib(nibName: "ParticipantsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "members")
-        
-//        tableView.register(UINib(nibName: "DateAndTimeTableViewCell", bundle: nil), forCellReuseIdentifier: "viewCell")
-//        tableView.register(UINib(nibName: "CollectionTableViewCell", bundle: nil), forCellReuseIdentifier: "tagsCell")
-//        tableView.register(UINib(nibName: "CollectionTableViewCell", bundle: nil), forCellReuseIdentifier: "collectionCell")
+        setup()
 
+    }
+    
+
+    func setup(){
+        collectionView.clipsToBounds = true
+        collectionView.layer.cornerRadius = 12.0
+        collectionView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+    }
+    
+    @objc func buttonAction(sender: UIButton!) {
+        let storyboard = UIStoryboard(name: "Feedback", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "feedback") as! FeedbackViewController
+        controller.groupId = self.group?.id
+        print(self.group?.id)
+        self.present(controller, animated: true, completion: nil)
     }
     
 
@@ -40,14 +53,37 @@ class DetailsViewController: UIViewController {
 extension DetailsViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        switch kind {
+            
+        case UICollectionView.elementKindSectionHeader:
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath)
+            return headerView
+            
+        case UICollectionView.elementKindSectionFooter:
+            let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "footer", for: indexPath)
+            guard let view = footerView.viewWithTag(1) else {return footerView}
+            view.clipsToBounds = true
+            view.layer.cornerRadius = 12.0
+            view.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+            return footerView
+            
+        default:
+            
+            assert(false, "Unexpected element kind")
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let group = self.group else {return UICollectionViewCell()}
         switch indexPath.row {
         case 0:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "buttons", for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "buttons", for: indexPath) as! ButtonsCollectionViewCell
+            cell.feedbackButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
             return cell
         case 1:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "labels", for: indexPath) as! LabelsCollectionViewCell
@@ -106,14 +142,23 @@ extension DetailsViewController: UICollectionViewDelegate, UICollectionViewDataS
                 
             }
             return cell
-//        case 4:
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "members", for: indexPath) as! ParticipantsCollectionViewCell
-//            cell.backgroundColor = UIColor.red
-//            modelTag = ModelTag(tags: group.tags, isLimited: false)
-//            cell.setCollectionViewDataSourceDelegate(modelTag, forRow: indexPath.row)
-//            cell.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
-//            return cell
-//
+        case 4:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "members", for: indexPath) as! ParticipantsCollectionViewCell
+            guard let idGroup = group.id else {return cell}
+            CKManager.shared.fetchUsers(groupID: idGroup) { (membersGroup, error) in
+                if error != nil{
+                    return
+                }else{
+                    guard let members = membersGroup else {return}
+                    self.modelMember = ModelMembers(members: members)
+                    cell.setCollectionViewDataSourceDelegate(self.modelMember, forRow: indexPath.row)
+                    cell.collectionViewOffset = self.storedOffsets[indexPath.row] ?? 0
+                }
+            }
+            
+             return cell
+            
+
         default:
             return UICollectionViewCell()
         
@@ -129,19 +174,21 @@ extension DetailsViewController: UICollectionViewDelegateFlowLayout{
         let itemWidth = collectionView.frame.size.width - (minimumInteritemSpacing + minimumLineSpacing)
         switch indexPath.row {
         case 0:
-            return CGSize.init(width: itemWidth, height: 50)
+            return CGSize.init(width: itemWidth, height: 100)
         case 1:
-            return CGSize.init(width: itemWidth, height: 60)
+            return CGSize.init(width: itemWidth, height: 160)
         case 2:
 //            let cell = collectionView.cellForItem(at:indexPath) as! ShowTagsCollectionViewCell
 //                let heigth = cell.collection.contentSize.height + cell.labelTitle.frame.height + 8*3
 //                return CGSize.init(width: itemWidth, height: heigth)
 //            }else{
-                return CGSize.init(width: itemWidth, height: 120)
+                return CGSize.init(width: itemWidth, height: 100)
 //            }
 
         case 3:
-            return CGSize.init(width: itemWidth, height: 160)
+            return CGSize.init(width: itemWidth, height: 200)
+        case 4:
+            return CGSize.init(width: itemWidth, height: 100)
         default:
             return CGSize.zero
         }

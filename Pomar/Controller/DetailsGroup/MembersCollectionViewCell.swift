@@ -10,9 +10,23 @@ import UIKit
 
 class MembersCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
+    @IBOutlet weak var imageMenber: UIImageView!
+    var imageAux: UIImage? {
+        didSet {
+            imageMenber.image = imageAux
+            if imageAux != nil {
+                indicator.stopAnimating()
+                indicator.isHidden = true
+            }
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        indicator.startAnimating()
+        
     }
-
+    
+    
 }

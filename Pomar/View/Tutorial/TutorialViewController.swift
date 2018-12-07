@@ -54,32 +54,20 @@ class TutorialViewController: UIViewController {
     func createSlides() -> [SlideTutorial]{
         let slide1: SlideTutorial = Bundle.main.loadNibNamed("SlideTutorial", owner: self, options: nil)?.first as! SlideTutorial
         
-        slide1.image1.image = UIImage(named: "shapeApple")
-        slide1.text1.text = "Essa é a maçã de presença, você pode consegui-la quando concluir um estudo grupo."
-        slide1.image2.image = UIImage(named: "shapeApple")
-        slide1.text2.text = "Você pode trocá-la por 3 dinheirinhos que desbloqueiam novas skins para seu avatar"
+        slide1.image1.image = UIImage(named: "appleRed")
+        slide1.text1.text = "This mace should be given to the people present in the group"
+        slide1.image2.image = UIImage(named: "appleOrange")
+        slide1.text2.text = "This mace should be given to the people who stood out in the group"
         
-        let slide2: SlideTutorial = Bundle.main.loadNibNamed("SlideTutorial", owner: self, options: nil)?.first as! SlideTutorial
-        slide2.image1.image = UIImage(named: "shapeApple")
-        slide2.text1.text = "Essa é a maçã de presença, você pode consegui-la quando concluir um estudo grupo."
-        slide2.image2.image = UIImage(named: "shapeApple")
-        slide2.text2.text = "Você pode trocá-la por 3 dinheirinhos que desbloqueiam novas skins para seu avatar"
-        
-        let slide3: SlideTutorial = Bundle.main.loadNibNamed("SlideTutorial", owner: self, options: nil)?.first as! SlideTutorial
-        
-        slide3.image1.image = UIImage(named: "shapeApple")
-        slide3.text1.text = "Essa é a maçã de presença, você pode consegui-la quando concluir um estudo grupo."
-        slide3.image2.image = UIImage(named: "shapeApple")
-        slide3.text2.text = "Você pode trocá-la por 3 dinheirinhos que desbloqueiam novas skins para seu avatar"
         
         let finalSlide: FinalTutorial = Bundle.main.loadNibNamed("FinalTutorial", owner: self, options: nil)?.first as! FinalTutorial
         
         finalSlide.imageFinal.image = UIImage(named: "shapeSword")
-        finalSlide.textFinal.text = "Cumpra os desafios para completar suas missões, elas desbloqueiam badges irados para você colecionar e te ajudam a ganhar XP para subir de nível."
+        finalSlide.textFinal.text = "Take on the challenges to complete your quests, they unlock bad badges for you to collect and help you gain XP to level up"
         finalSlide.delegate = self
         
         
-        return [slide1,slide2,slide3,finalSlide]
+        return [slide1,finalSlide]
     }
     
     func setupSlideScrollView(slides : [SlideTutorial]) {

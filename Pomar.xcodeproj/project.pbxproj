@@ -55,7 +55,7 @@
 		2FCCE11D21B64B13002BC3D3 /* ParticipantsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FCCE11B21B64B13002BC3D3 /* ParticipantsCollectionViewCell.xib */; };
 		2FCCE12021B64BC1002BC3D3 /* MembersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCCE11E21B64BC1002BC3D3 /* MembersCollectionViewCell.swift */; };
 		2FCCE12121B64BC1002BC3D3 /* MembersCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FCCE11F21B64BC1002BC3D3 /* MembersCollectionViewCell.xib */; };
-		2FCCE12321B64D1F002BC3D3 /* ModelCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCCE12221B64D1F002BC3D3 /* ModelCollection.swift */; };
+		2FE184CB21B955C20032E042 /* ModelMembers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE184CA21B955C20032E042 /* ModelMembers.swift */; };
 		2FE3665821B690F200D7D909 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE3665721B690F200D7D909 /* InitialViewController.swift */; };
 		9205F20F21AC215900F5CA73 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9205F20E21AC215900F5CA73 /* Tutorial.storyboard */; };
 		9205F21321AC238100F5CA73 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205F21121AC238100F5CA73 /* TutorialViewController.swift */; };
@@ -153,7 +153,7 @@
 		2FCCE11B21B64B13002BC3D3 /* ParticipantsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParticipantsCollectionViewCell.xib; sourceTree = "<group>"; };
 		2FCCE11E21B64BC1002BC3D3 /* MembersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersCollectionViewCell.swift; sourceTree = "<group>"; };
 		2FCCE11F21B64BC1002BC3D3 /* MembersCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MembersCollectionViewCell.xib; sourceTree = "<group>"; };
-		2FCCE12221B64D1F002BC3D3 /* ModelCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCollection.swift; sourceTree = "<group>"; };
+		2FE184CA21B955C20032E042 /* ModelMembers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelMembers.swift; sourceTree = "<group>"; };
 		2FE3665721B690F200D7D909 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		9205F20E21AC215900F5CA73 /* Tutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
 		9205F21121AC238100F5CA73 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
@@ -277,8 +277,8 @@
 				DC66117A21AD7F7400D329DA /* AppleType.swift */,
 				DCE8726A219C53DF008F78BE /* CKManager.swift */,
 				2F3DDEF821B046D600A97CA2 /* ModelTag.swift */,
-				2FCCE12221B64D1F002BC3D3 /* ModelCollection.swift */,
 				DC74C1E521B1D5EA00C829B2 /* Apples.swift */,
+				2FE184CA21B955C20032E042 /* ModelMembers.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -605,7 +605,6 @@
 				2F0DABA421A3505F00217ED5 /* ModelDayPicker.swift in Sources */,
 				2F0DAB9F21A2E59E00217ED5 /* AddGroupPart2ViewController.swift in Sources */,
 				2F0DAB9A219DC3BE00217ED5 /* GroupsCollectionViewCell.swift in Sources */,
-				2FCCE12321B64D1F002BC3D3 /* ModelCollection.swift in Sources */,
 				2FCCE0E421B4E1E5002BC3D3 /* TestingViewController.swift in Sources */,
 				2FCCE10C21B5EAF4002BC3D3 /* LabelsCollectionViewCell.swift in Sources */,
 				DC74C1B321AED15600C829B2 /* FeedbackViewController.swift in Sources */,
@@ -626,6 +625,7 @@
 				9205F21321AC238100F5CA73 /* TutorialViewController.swift in Sources */,
 				DCE87269219B4FFB008F78BE /* User.swift in Sources */,
 				2F022D6921A3C11D00A1293D /* TagsCollectionViewCell.swift in Sources */,
+				2FE184CB21B955C20032E042 /* ModelMembers.swift in Sources */,
 				2F3DDEF921B046D600A97CA2 /* ModelTag.swift in Sources */,
 				2FCCE10821B5E74C002BC3D3 /* ButtonsCollectionViewCell.swift in Sources */,
 				2FCCE11821B6019C002BC3D3 /* DateCollectionViewCell.swift in Sources */,

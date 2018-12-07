@@ -20,7 +20,13 @@ class InitialViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func start(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Tutorial", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "TutorialViewController")
+        self.present(controller, animated: true, completion: nil)
+        
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -14,7 +14,7 @@ class ModelTag: NSObject, UICollectionViewDelegate, UICollectionViewDataSource, 
     let minimumInteritemSpacing: CGFloat = 8
     let minimumLineSpacing:CGFloat = 8
     var tags: [String]!
-    var isLimited: BooleanLiteralType!
+    var isLimited: Bool!
     
     init(tags: [String], isLimited: Bool) {
         self.tags = tags

@@ -25,11 +25,11 @@
             </objects>
             <point key="canvasLocation" x="1056.8" y="23.838080959520241"/>
         </scene>
-        <!--Groups-->
+        <!--Navigation Controller-->
         <scene sceneID="KIr-wL-90E">
             <objects>
                 <navigationController storyboardIdentifier="navQuestion" automaticallyAdjustsScrollViewInsets="NO" id="EI9-yn-JOO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Groups" id="J8j-YP-vuk"/>
+                    <tabBarItem key="tabBarItem" title="" id="J8j-YP-vuk"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nvP-Op-Mk9">

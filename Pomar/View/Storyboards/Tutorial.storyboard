@@ -38,7 +38,7 @@
                                 <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </pageControl>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.92156862750000001" green="0.82352941180000006" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Fgs-9X-p9f" firstAttribute="top" secondItem="kLT-mP-x9W" secondAttribute="top" constant="16" id="A6V-3g-1N9"/>
                             <constraint firstItem="kLT-mP-x9W" firstAttribute="trailing" secondItem="Fgs-9X-p9f" secondAttribute="trailing" constant="16" id="Rhy-EP-bUa"/>

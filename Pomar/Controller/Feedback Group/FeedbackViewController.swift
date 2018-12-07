@@ -53,7 +53,7 @@ class FeedbackViewController: UIViewController {
     var currentUser: User? {
         didSet{
             let id = CKRecord.ID(recordName: "082D5E81-4294-4BEA-BC2B-EEB24294EB03")
-            CKManager.shared.available(userID: currentUser!.id!, groupID: id) { (apples, error) in
+            CKManager.shared.available(userID: currentUser!.id!, groupID: groupId!) { (apples, error) in
                 guard let apples = apples else {
                     print(error!.localizedDescription)
                     return
@@ -112,7 +112,7 @@ class FeedbackViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        groupId = CKRecord.ID(recordName: "082D5E81-4294-4BEA-BC2B-EEB24294EB03")
+        groupId = CKRecord.ID(recordName: "9CC2D79C-EF90-95BC-45ED-1CD17A89A283")
         
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -141,6 +141,9 @@ class FeedbackViewController: UIViewController {
 
     }
     
+    @IBAction func back(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     override func viewDidLayoutSubviews() {
         indicatorView.layer.cornerRadius = indicatorView.frame.width/2
     }
