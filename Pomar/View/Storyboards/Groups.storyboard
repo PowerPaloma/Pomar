@@ -17,9 +17,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="C05-fW-vEp">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="z6C-1G-Hhq">
                                 <rect key="frame" x="0.0" y="112.5" width="375" height="554.5"/>
-                                <color key="backgroundColor" red="0.92156862750000001" green="0.82352941180000006" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="a51-eB-7Cb">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -53,12 +56,16 @@
                             <constraint firstItem="6eS-B8-ye0" firstAttribute="trailing" secondItem="msK-8c-m9Q" secondAttribute="trailing" constant="20" id="0wk-4W-IsH"/>
                             <constraint firstItem="msK-8c-m9Q" firstAttribute="top" secondItem="Gey-Vn-sHa" secondAttribute="bottom" constant="-12" id="51m-cG-eJS"/>
                             <constraint firstItem="z6C-1G-Hhq" firstAttribute="top" secondItem="msK-8c-m9Q" secondAttribute="bottom" id="5Sf-IV-brj"/>
+                            <constraint firstItem="C05-fW-vEp" firstAttribute="leading" secondItem="6eS-B8-ye0" secondAttribute="leading" id="CYJ-Iv-HFQ"/>
                             <constraint firstItem="Gey-Vn-sHa" firstAttribute="top" secondItem="6eS-B8-ye0" secondAttribute="top" id="QTv-n2-I98"/>
                             <constraint firstItem="z6C-1G-Hhq" firstAttribute="leading" secondItem="6eS-B8-ye0" secondAttribute="leading" id="VBp-0q-FHY"/>
                             <constraint firstItem="Gey-Vn-sHa" firstAttribute="centerX" secondItem="6eS-B8-ye0" secondAttribute="centerX" id="dtk-xR-mNJ"/>
+                            <constraint firstItem="C05-fW-vEp" firstAttribute="top" secondItem="Fft-vt-Kpw" secondAttribute="top" id="gDq-xK-JPV"/>
+                            <constraint firstItem="6eS-B8-ye0" firstAttribute="bottom" secondItem="C05-fW-vEp" secondAttribute="bottom" id="jJp-L9-pid"/>
                             <constraint firstItem="6eS-B8-ye0" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Gey-Vn-sHa" secondAttribute="trailing" constant="32" id="nq2-58-h0a"/>
                             <constraint firstItem="z6C-1G-Hhq" firstAttribute="trailing" secondItem="6eS-B8-ye0" secondAttribute="trailing" id="r2P-Qy-qYO"/>
                             <constraint firstItem="Gey-Vn-sHa" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6eS-B8-ye0" secondAttribute="leading" constant="32" id="rDX-Uc-ZEh"/>
+                            <constraint firstItem="6eS-B8-ye0" firstAttribute="trailing" secondItem="C05-fW-vEp" secondAttribute="trailing" id="tpm-bj-15z"/>
                             <constraint firstItem="z6C-1G-Hhq" firstAttribute="bottom" secondItem="6eS-B8-ye0" secondAttribute="bottom" id="zRs-Ji-xDR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6eS-B8-ye0"/>
@@ -80,7 +87,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q8x-S1-FAp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2678" y="181"/>
+            <point key="canvasLocation" x="2677.5999999999999" y="180.35982008995504"/>
         </scene>
         <!--Add Group Part1 View Controller-->
         <scene sceneID="j2w-MT-od6">
@@ -426,6 +433,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="gSY-kc-4LE">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w0e-DG-P7n">
                                 <rect key="frame" x="32" y="133" width="311" height="502"/>
                                 <subviews>
@@ -500,10 +510,14 @@
                         <color key="backgroundColor" red="0.92156862750000001" green="0.82352941180000006" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="w0e-DG-P7n" firstAttribute="leading" secondItem="ukH-2d-iCC" secondAttribute="leading" constant="32" id="244-uK-Z90"/>
+                            <constraint firstItem="ukH-2d-iCC" firstAttribute="trailing" secondItem="gSY-kc-4LE" secondAttribute="trailing" id="BLz-7y-KJU"/>
+                            <constraint firstItem="ukH-2d-iCC" firstAttribute="bottom" secondItem="gSY-kc-4LE" secondAttribute="bottom" id="ETF-k4-Wer"/>
                             <constraint firstItem="w0e-DG-P7n" firstAttribute="top" secondItem="ZIM-qX-9Xq" secondAttribute="bottom" constant="32" id="Fbk-Sa-TKA"/>
                             <constraint firstItem="ukH-2d-iCC" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ZIM-qX-9Xq" secondAttribute="trailing" constant="32" id="GmS-Pi-2SX"/>
                             <constraint firstItem="ZIM-qX-9Xq" firstAttribute="top" secondItem="ukH-2d-iCC" secondAttribute="top" constant="16" id="OJJ-m2-kjI"/>
                             <constraint firstItem="ZIM-qX-9Xq" firstAttribute="centerX" secondItem="ukH-2d-iCC" secondAttribute="centerX" id="Uo1-WB-uTm"/>
+                            <constraint firstItem="gSY-kc-4LE" firstAttribute="top" secondItem="NpX-qr-3Ea" secondAttribute="top" id="bbk-pm-pao"/>
+                            <constraint firstItem="gSY-kc-4LE" firstAttribute="leading" secondItem="ukH-2d-iCC" secondAttribute="leading" id="fqB-gK-N1z"/>
                             <constraint firstItem="ZIM-qX-9Xq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ukH-2d-iCC" secondAttribute="leading" constant="32" id="jEa-2w-0ae"/>
                             <constraint firstItem="ukH-2d-iCC" firstAttribute="bottom" secondItem="w0e-DG-P7n" secondAttribute="bottom" constant="32" id="nWk-qP-nFS"/>
                             <constraint firstItem="ukH-2d-iCC" firstAttribute="trailing" secondItem="w0e-DG-P7n" secondAttribute="trailing" constant="32" id="sSz-zR-1SX"/>
@@ -516,7 +530,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hUD-eF-r6O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3537" y="179"/>
+            <point key="canvasLocation" x="3536.8000000000002" y="178.56071964017991"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8S7-f9-oGQ">
@@ -557,5 +571,6 @@
     </scenes>
     <resources>
         <image name="addButton" width="39" height="39"/>
+        <image name="background" width="375" height="667"/>
     </resources>
 </document>
