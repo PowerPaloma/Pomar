@@ -32,7 +32,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
-        let storyboard = UIStoryboard(name: "CreateUser", bundle: nil)
+        var storyboard: UIStoryboard
+        
+        KeychainWrapper.standard.removeObject(forKey: "userID")
+        
+        if KeychainWrapper.standard.string(forKey: "userID") != nil {
+            storyboard = UIStoryboard(name: "Groups", bundle: nil)
+        } else {
+            storyboard = UIStoryboard(name: "CreateUser", bundle: nil)
+        }
+        
+        
         
         let initialViewController = storyboard.instantiateInitialViewController()
         

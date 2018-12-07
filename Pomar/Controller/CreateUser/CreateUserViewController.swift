@@ -24,7 +24,7 @@ class CreateUserViewController: UIViewController {
     @IBOutlet weak var constraintHeight: NSLayoutConstraint!
     var activeField: UITextField?
     var lastOffset: CGPoint!
-    var keyboardHeight: CGFloat!
+    var keyboardHeight: CGFloat! = 0.0
     
     let imagePicker = UIImagePickerController()
     
@@ -98,6 +98,7 @@ class CreateUserViewController: UIViewController {
         }
         
         CKManager.shared.iCloudUserID { (token, error) in
+            
             guard let token = token else {
                 print(error?.localizedDescription ?? "NO ERROR")
                     self.showErrorAlert(message: error!.localizedDescription)
@@ -117,16 +118,19 @@ class CreateUserViewController: UIViewController {
                 let imageRef = CKRecord.Reference(record: record, action: .none)
                 let user = User(name: name, token: token, imageRef: imageRef)
                 CKManager.shared.createUser(user: user, completion: { (record, error) in
-                    if record != nil {
-                        print(record)
-                        DispatchQueue.main.async {
-                            self.activityIndicator.stopAnimating()
-                            self.activityIndicator.isHidden = true
-                            self.loadingView.isHidden = true
-                        }
-                        
-                    }else {
+                    
+                    guard let record = record else {
                         self.showErrorAlert(message: error!.localizedDescription)
+                        return
+                    }
+                
+                    print(record)
+                    let saveSuccessful = KeychainWrapper.standard.set(record.recordID.recordName, forKey: "userID")
+                    print("saveSuccessful=\(saveSuccessful)") //saveSuccessful=true
+                    DispatchQueue.main.async {
+                        self.activityIndicator.stopAnimating()
+                        self.activityIndicator.isHidden = true
+                        self.loadingView.isHidden = true
                     }
                 })
 
@@ -217,7 +221,7 @@ extension CreateUserViewController {
             return
         }
         
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             keyboardHeight = keyboardSize.height
             
             // so increase contentView's height by keyboard height
@@ -243,21 +247,24 @@ extension CreateUserViewController {
                 
                 self.scrollView.contentOffset = CGPoint(x: self.lastOffset.x, y: collapseSpace + 10)
             })
-            
-            if self.activeField is BackspaceDetectingTextField {
-                UIView.animate(withDuration: 0.3) {
-                    self.userImageView.isHidden = true
-                }
-            }
+//
+//            if self.activeField is BackspaceDetectingTextField {
+//                UIView.animate(withDuration: 0.3) {
+//                    self.userImageView.isHidden = true
+//                }
+//            }
         }
     }
     
     @objc func keyboardWillHideNotification(_ notification: NSNotification) {
+        if self.keyboardHeight == nil {
+            return
+        }
         UIView.animate(withDuration: 0.3) {
             self.constraintHeight.constant -= self.keyboardHeight
             self.scrollView.contentOffset = self.lastOffset
         }
-        self.userImageView.isHidden = false
+        //self.userImageView.isHidden = false
         
         keyboardHeight = nil
     }
