@@ -1195,7 +1195,7 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_ENTITLEMENTS = "PomarKit Extension/PomarKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MQ922JMCL6;
+				DEVELOPMENT_TEAM = 7ZRHSKUH65;
 				INFOPLIST_FILE = "PomarKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1218,7 +1218,7 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_ENTITLEMENTS = "PomarKit Extension/PomarKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MQ922JMCL6;
+				DEVELOPMENT_TEAM = 7ZRHSKUH65;
 				INFOPLIST_FILE = "PomarKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
