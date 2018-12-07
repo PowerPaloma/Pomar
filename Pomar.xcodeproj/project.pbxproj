@@ -56,6 +56,12 @@
 		2FCCE12021B64BC1002BC3D3 /* MembersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCCE11E21B64BC1002BC3D3 /* MembersCollectionViewCell.swift */; };
 		2FCCE12121B64BC1002BC3D3 /* MembersCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FCCE11F21B64BC1002BC3D3 /* MembersCollectionViewCell.xib */; };
 		2FE184CB21B955C20032E042 /* ModelMembers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE184CA21B955C20032E042 /* ModelMembers.swift */; };
+		2FE184CD21BA315A0032E042 /* FlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE184CC21BA315A0032E042 /* FlowLayout.swift */; };
+		2FE336FC21BAA83D00983DA3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE336F721BAA83C00983DA3 /* Constants.swift */; };
+		2FE336FD21BAA83D00983DA3 /* WSTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE336F821BAA83D00983DA3 /* WSTag.swift */; };
+		2FE336FE21BAA83D00983DA3 /* WSTagsField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE336F921BAA83D00983DA3 /* WSTagsField.swift */; };
+		2FE336FF21BAA83D00983DA3 /* WSTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE336FA21BAA83D00983DA3 /* WSTagView.swift */; };
+		2FE3370021BAA83D00983DA3 /* BackspaceDetectingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE336FB21BAA83D00983DA3 /* BackspaceDetectingTextField.swift */; };
 		2FE3665821B690F200D7D909 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE3665721B690F200D7D909 /* InitialViewController.swift */; };
 		9205F20F21AC215900F5CA73 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9205F20E21AC215900F5CA73 /* Tutorial.storyboard */; };
 		9205F21321AC238100F5CA73 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205F21121AC238100F5CA73 /* TutorialViewController.swift */; };
@@ -154,6 +160,12 @@
 		2FCCE11E21B64BC1002BC3D3 /* MembersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersCollectionViewCell.swift; sourceTree = "<group>"; };
 		2FCCE11F21B64BC1002BC3D3 /* MembersCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MembersCollectionViewCell.xib; sourceTree = "<group>"; };
 		2FE184CA21B955C20032E042 /* ModelMembers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelMembers.swift; sourceTree = "<group>"; };
+		2FE184CC21BA315A0032E042 /* FlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowLayout.swift; sourceTree = SOURCE_ROOT; };
+		2FE336F721BAA83C00983DA3 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2FE336F821BAA83D00983DA3 /* WSTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSTag.swift; sourceTree = "<group>"; };
+		2FE336F921BAA83D00983DA3 /* WSTagsField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSTagsField.swift; sourceTree = "<group>"; };
+		2FE336FA21BAA83D00983DA3 /* WSTagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSTagView.swift; sourceTree = "<group>"; };
+		2FE336FB21BAA83D00983DA3 /* BackspaceDetectingTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackspaceDetectingTextField.swift; sourceTree = "<group>"; };
 		2FE3665721B690F200D7D909 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		9205F20E21AC215900F5CA73 /* Tutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
 		9205F21121AC238100F5CA73 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
@@ -267,6 +279,7 @@
 		2F0DAB7A219AF98300217ED5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2FE336F621BAA81F00983DA3 /* Tags */,
 				DCE87265219B0C8D008F78BE /* Group.swift */,
 				DCE87268219B4FFB008F78BE /* User.swift */,
 				DCE87274219CB1F9008F78BE /* DaySchedule.swift */,
@@ -291,7 +304,6 @@
 				2F3DDEE821ADD00500A97CA2 /* User Points */,
 				9205F21021AC232F00F5CA73 /* Tutorial */,
 				2F0DAB8F219B082400217ED5 /* Study Groups */,
-				2F0DAB83219B01D000217ED5 /* Storyboards */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -349,6 +361,7 @@
 				2F022D6821A3C11D00A1293D /* TagsCollectionViewCell.xib */,
 				2F3DDEF421B023D700A97CA2 /* HeaderCollectionViewCell.swift */,
 				2F3DDEF521B023D700A97CA2 /* HeaderCollectionViewCell.xib */,
+				2F0DAB83219B01D000217ED5 /* Storyboards */,
 			);
 			path = "Study Groups";
 			sourceTree = "<group>";
@@ -405,6 +418,7 @@
 				2FCCE11B21B64B13002BC3D3 /* ParticipantsCollectionViewCell.xib */,
 				2FCCE11E21B64BC1002BC3D3 /* MembersCollectionViewCell.swift */,
 				2FCCE11F21B64BC1002BC3D3 /* MembersCollectionViewCell.xib */,
+				2FE184CC21BA315A0032E042 /* FlowLayout.swift */,
 			);
 			path = DetailsGroup;
 			sourceTree = "<group>";
@@ -415,6 +429,18 @@
 				2FCCE0FC21B5A3EF002BC3D3 /* Instantiable.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		2FE336F621BAA81F00983DA3 /* Tags */ = {
+			isa = PBXGroup;
+			children = (
+				2FE336FB21BAA83D00983DA3 /* BackspaceDetectingTextField.swift */,
+				2FE336F721BAA83C00983DA3 /* Constants.swift */,
+				2FE336F821BAA83D00983DA3 /* WSTag.swift */,
+				2FE336F921BAA83D00983DA3 /* WSTagsField.swift */,
+				2FE336FA21BAA83D00983DA3 /* WSTagView.swift */,
+			);
+			path = Tags;
 			sourceTree = "<group>";
 		};
 		9205F21021AC232F00F5CA73 /* Tutorial */ = {
@@ -618,12 +644,16 @@
 				2FCCE11421B5F196002BC3D3 /* ShowTagsCollectionViewCell.swift in Sources */,
 				2F0DAB52219AF37800217ED5 /* Pomar.xcdatamodeld in Sources */,
 				2FE3665821B690F200D7D909 /* InitialViewController.swift in Sources */,
+				2FE184CD21BA315A0032E042 /* FlowLayout.swift in Sources */,
 				2FCCE0ED21B56186002BC3D3 /* DetailsViewController.swift in Sources */,
 				2F3DDEF321AF911A00A97CA2 /* CustomHeader.swift in Sources */,
 				2F0DAB4A219AF37800217ED5 /* AppDelegate.swift in Sources */,
 				2F0DAB8D219B076C00217ED5 /* StudyGroupsViewController.swift in Sources */,
 				9205F21321AC238100F5CA73 /* TutorialViewController.swift in Sources */,
+				2FE336FF21BAA83D00983DA3 /* WSTagView.swift in Sources */,
 				DCE87269219B4FFB008F78BE /* User.swift in Sources */,
+				2FE3370021BAA83D00983DA3 /* BackspaceDetectingTextField.swift in Sources */,
+				2FE336FC21BAA83D00983DA3 /* Constants.swift in Sources */,
 				2F022D6921A3C11D00A1293D /* TagsCollectionViewCell.swift in Sources */,
 				2FE184CB21B955C20032E042 /* ModelMembers.swift in Sources */,
 				2F3DDEF921B046D600A97CA2 /* ModelTag.swift in Sources */,
@@ -633,7 +663,9 @@
 				DC74C1E321B0671000C829B2 /* UserViewCell.swift in Sources */,
 				DC74C1EC21B5514B00C829B2 /* AppleShape.swift in Sources */,
 				DCE8726B219C53DF008F78BE /* CKManager.swift in Sources */,
+				2FE336FD21BAA83D00983DA3 /* WSTag.swift in Sources */,
 				2FCCE12021B64BC1002BC3D3 /* MembersCollectionViewCell.swift in Sources */,
+				2FE336FE21BAA83D00983DA3 /* WSTagsField.swift in Sources */,
 				DCE87275219CB1F9008F78BE /* DaySchedule.swift in Sources */,
 				9206BDB821AD6ED40013437F /* FinalTutorial.swift in Sources */,
 				DC66117B21AD7F7400D329DA /* AppleType.swift in Sources */,

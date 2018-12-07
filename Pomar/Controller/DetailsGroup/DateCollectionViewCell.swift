@@ -43,10 +43,13 @@ class DateCollectionViewCell: UICollectionViewCell {
             view.clipsToBounds = true
             view.layer.cornerRadius = view.frame.width/2
         }
-        
-       
-        
-       
+    }
+    
+    override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
+        layoutIfNeeded()
+        let layoutAttributes = super.preferredLayoutAttributesFitting(layoutAttributes)
+        layoutAttributes.bounds.size = systemLayoutSizeFitting(UIView.layoutFittingCompressedSize, withHorizontalFittingPriority: .required, verticalFittingPriority: .defaultLow)
+        return layoutAttributes
     }
 
 

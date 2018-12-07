@@ -15,6 +15,13 @@ class ParticipantsCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         collection.register(UINib(nibName: "MembersCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MembersCollectionViewCell")
     }
+    
+    override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
+        layoutIfNeeded()
+        let layoutAttributes = super.preferredLayoutAttributesFitting(layoutAttributes)
+        layoutAttributes.bounds.size = systemLayoutSizeFitting(UIView.layoutFittingCompressedSize, withHorizontalFittingPriority: .required, verticalFittingPriority: .defaultLow)
+        return layoutAttributes
+    }
 
 }
 

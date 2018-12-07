@@ -13,10 +13,14 @@ class DetailsViewController: UIViewController {
     var group: Group? = nil
     var modelTag: ModelTag!
     var modelMember: ModelMembers!
+    var tags: [String] = []
     var storedOffsets = [Int: CGFloat]()
     let minimumInteritemSpacing: CGFloat = 10
     let minimumLineSpacing:CGFloat = 10
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var joinButton: UIButton!
+    @IBOutlet weak var feedbackButton: UIButton!
+    let flowLayout = FlowLayout()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,14 +31,20 @@ class DetailsViewController: UIViewController {
         collectionView.register(UINib(nibName: "ShowTagsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "tags")
         collectionView.register(UINib(nibName: "DateCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "date")
         collectionView.register(UINib(nibName: "ParticipantsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "members")
+        collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "footer")
+        collectionView.collectionViewLayout = flowLayout
+        collectionView.contentInsetAdjustmentBehavior = .always
         setup()
 
     }
-    
 
     func setup(){
         collectionView.clipsToBounds = true
         collectionView.layer.cornerRadius = 12.0
+        joinButton.clipsToBounds = true
+        joinButton.layer.cornerRadius = 8.0
+        feedbackButton.clipsToBounds = true
+        feedbackButton.layer.cornerRadius = 8.0
         collectionView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
     }
     
@@ -42,11 +52,8 @@ class DetailsViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Feedback", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "feedback") as! FeedbackViewController
         controller.groupId = self.group?.id
-        print(self.group?.id)
         self.present(controller, animated: true, completion: nil)
     }
-    
-
 }
 
 
@@ -66,14 +73,13 @@ extension DetailsViewController: UICollectionViewDelegate, UICollectionViewDataS
             
         case UICollectionView.elementKindSectionFooter:
             let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "footer", for: indexPath)
-            guard let view = footerView.viewWithTag(1) else {return footerView}
+            guard let view = footerView.viewWithTag(2) else {return footerView}
             view.clipsToBounds = true
             view.layer.cornerRadius = 12.0
             view.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
             return footerView
             
         default:
-            
             assert(false, "Unexpected element kind")
         }
     }
@@ -91,10 +97,15 @@ extension DetailsViewController: UICollectionViewDelegate, UICollectionViewDataS
             return cell
         case 2:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tags", for: indexPath) as! ShowTagsCollectionViewCell
-            cell.backgroundColor = UIColor.red
-            modelTag = ModelTag(tags: group.tags, isLimited: false)
-            cell.setCollectionViewDataSourceDelegate(modelTag, forRow: indexPath.row)
-            cell.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
+            cell.tableView.dataSource = self
+            cell.tableView.delegate = self
+            cell.tableView.rowHeight = UITableView.automaticDimension
+            cell.tableView.estimatedRowHeight = 100
+
+            tags = group.tags
+//            modelTag = ModelTag(tags: group.tags, isLimited: false)
+//            cell.setCollectionViewDataSourceDelegate(modelTag, forRow: indexPath.row)
+//            cell.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
             return cell
         case 3:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "date", for: indexPath) as! DateCollectionViewCell
@@ -149,7 +160,7 @@ extension DetailsViewController: UICollectionViewDelegate, UICollectionViewDataS
                 if error != nil{
                     return
                 }else{
-                    guard let members = membersGroup else {return}
+                        guard let members = membersGroup else {return}
                     self.modelMember = ModelMembers(members: members)
                     cell.setCollectionViewDataSourceDelegate(self.modelMember, forRow: indexPath.row)
                     cell.collectionViewOffset = self.storedOffsets[indexPath.row] ?? 0
@@ -160,7 +171,7 @@ extension DetailsViewController: UICollectionViewDelegate, UICollectionViewDataS
             
 
         default:
-            return UICollectionViewCell()
+            assert(false, "Unexpected element kind")
         
         }
     }
@@ -168,120 +179,63 @@ extension DetailsViewController: UICollectionViewDelegate, UICollectionViewDataS
     
 }
 
-extension DetailsViewController: UICollectionViewDelegateFlowLayout{
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let itemWidth = collectionView.frame.size.width - (minimumInteritemSpacing + minimumLineSpacing)
-        switch indexPath.row {
-        case 0:
-            return CGSize.init(width: itemWidth, height: 100)
-        case 1:
-            return CGSize.init(width: itemWidth, height: 160)
-        case 2:
-//            let cell = collectionView.cellForItem(at:indexPath) as! ShowTagsCollectionViewCell
-//                let heigth = cell.collection.contentSize.height + cell.labelTitle.frame.height + 8*3
-//                return CGSize.init(width: itemWidth, height: heigth)
-//            }else{
-                return CGSize.init(width: itemWidth, height: 100)
-//            }
-
-        case 3:
-            return CGSize.init(width: itemWidth, height: 200)
-        case 4:
-            return CGSize.init(width: itemWidth, height: 100)
-        default:
-            return CGSize.zero
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return minimumLineSpacing
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return minimumInteritemSpacing
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: minimumInteritemSpacing, left: minimumInteritemSpacing, bottom: minimumInteritemSpacing, right: minimumInteritemSpacing)
-        
-        
-    }
-    
-}
-
-
-//extension DetailsViewController: UITableViewDelegate, UITableViewDataSource{
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return 5
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        guard let group = self.group else {return UITableViewCell()}
-//
+//extension DetailsViewController: UICollectionViewDelegateFlowLayout{
+//    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        let itemWidth = collectionView.frame.size.width - (minimumInteritemSpacing + minimumLineSpacing)
 //        switch indexPath.row {
-//        case 0:
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "buttonsCell", for: indexPath) as! ButtonsTableViewCell
-//            cell.backgroundColor = UIColor.red
-//            return cell
+////        case 0:
+////            return CGSize.init(width: itemWidth, height: 100)
 //        case 1:
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "labelCell", for: indexPath) as! LabelsTableViewCell
-//            cell.backgroundColor = UIColor.white
-//            return cell
+//            return CGSize.init(width: itemWidth, height: 160)
 //        case 2:
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "tagsCell", for: indexPath) as! CollectionTableViewCell
-//            cell.backgroundColor = UIColor.blue
-//            cell.labelTitle.text = "Tags"
-//            modelTag = ModelTag(tags: group.tags)
-//            cell.setCollectionViewDataSourceDelegate(modelTag, forRow: indexPath.row)
-//            cell.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
+//            return CGSize.init(width: itemWidth, height: 100)
 //
-//            return cell
 //        case 3:
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "viewCell", for: indexPath) as! DateAndTimeTableViewCell
-//            cell.backgroundColor = UIColor.black
-//            cell.labelTitle.text = "Date and Time"
-//            return cell
+//            return CGSize.init(width: itemWidth, height: 200)
 //        case 4:
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "collectionCell", for: indexPath) as! CollectionTableViewCell
-//            cell.labelTitle.text = "Date and Time"
-//            cell.backgroundColor = UIColor.green
-////            let view = DateAndTime()
-////            view.translatesAutoresizingMaskIntoConstraints = false
-//            return cell
-//
+//            return CGSize.init(width: itemWidth, height: 100)
 //        default:
-//            let cell = UITableViewCell()
-//            return cell
-//        }
-//
-//
-//    }
-//
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        switch indexPath.row {
-//        case 0:
-//            return 10
-//        case 1:
-//            return 10
-//        case 2:
-//            return 100
-//        case 3:
-//            return 100
-//        default:
-//            return 100
+//            return CGSize.zero
 //        }
 //    }
-//
-//
-//
+//    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//        return minimumLineSpacing
+//    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+//        return minimumInteritemSpacing
+//    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+//        return UIEdgeInsets(top: minimumInteritemSpacing, left: minimumInteritemSpacing, bottom: minimumInteritemSpacing, right: minimumInteritemSpacing)
+//        
+//        
+//    }
+//    
 //}
-//
-//extension Bundle {
-//
-//    static func loadView<T>(fromNib name: String, withType type: T.Type) -> T {
-//        if let view = Bundle.main.loadNibNamed(name, owner: nil, options: nil)?.first as? T {
-//            return view
-//        }
-//
-//        fatalError("Could not load view with type " + String(describing: type))
-//    }
-//}
+
+
+
+extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.tags.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TagsTableViewCell", for: indexPath) as! TagsTableViewCell
+        cell.tagName.text = tags[indexPath.row]
+        cell.tagName.sizeToFit()
+        cell.background.layer.borderColor = UIColor(red: 0.7, green: 0, blue: 0.02, alpha: 1).cgColor
+        cell.background.layer.borderWidth = 0.5
+        cell.background.clipsToBounds = true
+        cell.background.layer.cornerRadius = 10
+        return cell
+    }
+    
+    
+    
+    
+    
+}
