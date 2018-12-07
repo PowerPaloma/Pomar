@@ -57,6 +57,23 @@
 		2FCCE12121B64BC1002BC3D3 /* MembersCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FCCE11F21B64BC1002BC3D3 /* MembersCollectionViewCell.xib */; };
 		2FCCE12321B64D1F002BC3D3 /* ModelCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCCE12221B64D1F002BC3D3 /* ModelCollection.swift */; };
 		2FE3665821B690F200D7D909 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE3665721B690F200D7D909 /* InitialViewController.swift */; };
+		570B037E21B9652500CB37B4 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE87265219B0C8D008F78BE /* Group.swift */; };
+		570B037F21B9652F00CB37B4 /* CKManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE8726A219C53DF008F78BE /* CKManager.swift */; };
+		570B038021B9656800CB37B4 /* DaySchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE87274219CB1F9008F78BE /* DaySchedule.swift */; };
+		570B038121B9658A00CB37B4 /* AppleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC66117A21AD7F7400D329DA /* AppleType.swift */; };
+		570B038221B9659100CB37B4 /* Apples.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC74C1E521B1D5EA00C829B2 /* Apples.swift */; };
+		570B038321B965D400CB37B4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE87268219B4FFB008F78BE /* User.swift */; };
+		576DD71B21B7F4A600E7A769 /* FeedbackGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576DD71A21B7F4A600E7A769 /* FeedbackGroup.swift */; };
+		576DD72221B7FC3E00E7A769 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 576DD72021B7FC3E00E7A769 /* Interface.storyboard */; };
+		576DD72421B7FC4100E7A769 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 576DD72321B7FC4100E7A769 /* Assets.xcassets */; };
+		576DD72B21B7FC4100E7A769 /* PomarKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 576DD72A21B7FC4100E7A769 /* PomarKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		576DD73221B7FC4100E7A769 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576DD73121B7FC4100E7A769 /* ExtensionDelegate.swift */; };
+		576DD73421B7FC4100E7A769 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576DD73321B7FC4100E7A769 /* NotificationController.swift */; };
+		576DD73621B7FC4200E7A769 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 576DD73521B7FC4200E7A769 /* Assets.xcassets */; };
+		576DD73B21B7FC4200E7A769 /* PomarKit.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 576DD71E21B7FC3E00E7A769 /* PomarKit.app */; };
+		576DD74521B806CA00E7A769 /* GroupInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576DD74421B806CA00E7A769 /* GroupInterfaceController.swift */; };
+		576DD75421B9422300E7A769 /* RowCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576DD75321B9422300E7A769 /* RowCellController.swift */; };
+		576DD75721B9574600E7A769 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 576DD75621B9574600E7A769 /* CloudKit.framework */; };
 		9205F20F21AC215900F5CA73 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9205F20E21AC215900F5CA73 /* Tutorial.storyboard */; };
 		9205F21321AC238100F5CA73 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205F21121AC238100F5CA73 /* TutorialViewController.swift */; };
 		9205F21621AC30DD00F5CA73 /* SlideTutorial.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9205F21521AC30DD00F5CA73 /* SlideTutorial.xib */; };
@@ -95,7 +112,46 @@
 			remoteGlobalIDString = 2F0DAB45219AF37800217ED5;
 			remoteInfo = Pomar;
 		};
+		576DD72C21B7FC4100E7A769 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2F0DAB3E219AF37800217ED5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 576DD72921B7FC4100E7A769;
+			remoteInfo = "PomarKit Extension";
+		};
+		576DD73921B7FC4200E7A769 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2F0DAB3E219AF37800217ED5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 576DD71D21B7FC3E00E7A769;
+			remoteInfo = PomarKit;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		576DD74121B7FC4200E7A769 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				576DD72B21B7FC4100E7A769 /* PomarKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		576DD74321B7FC4200E7A769 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				576DD73B21B7FC4200E7A769 /* PomarKit.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2F022D6721A3C11D00A1293D /* TagsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -155,6 +211,21 @@
 		2FCCE11F21B64BC1002BC3D3 /* MembersCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MembersCollectionViewCell.xib; sourceTree = "<group>"; };
 		2FCCE12221B64D1F002BC3D3 /* ModelCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCollection.swift; sourceTree = "<group>"; };
 		2FE3665721B690F200D7D909 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		576DD71A21B7F4A600E7A769 /* FeedbackGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackGroup.swift; sourceTree = "<group>"; };
+		576DD71E21B7FC3E00E7A769 /* PomarKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PomarKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		576DD72121B7FC3E00E7A769 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		576DD72321B7FC4100E7A769 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		576DD72521B7FC4100E7A769 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		576DD72A21B7FC4100E7A769 /* PomarKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "PomarKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		576DD73121B7FC4100E7A769 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		576DD73321B7FC4100E7A769 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		576DD73521B7FC4200E7A769 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		576DD73721B7FC4200E7A769 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		576DD73821B7FC4200E7A769 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		576DD74421B806CA00E7A769 /* GroupInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupInterfaceController.swift; sourceTree = "<group>"; };
+		576DD75321B9422300E7A769 /* RowCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowCellController.swift; sourceTree = "<group>"; };
+		576DD75521B9574200E7A769 /* PomarKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "PomarKit Extension.entitlements"; sourceTree = "<group>"; };
+		576DD75621B9574600E7A769 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS5.1.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		9205F20E21AC215900F5CA73 /* Tutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
 		9205F21121AC238100F5CA73 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		9205F21521AC30DD00F5CA73 /* SlideTutorial.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlideTutorial.xib; sourceTree = "<group>"; };
@@ -201,6 +272,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		576DD72721B7FC4100E7A769 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				576DD75721B9574600E7A769 /* CloudKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -210,6 +289,8 @@
 				2F0DAB48219AF37800217ED5 /* Pomar */,
 				2F0DAB60219AF37A00217ED5 /* PomarTests */,
 				2F0DAB6B219AF37A00217ED5 /* PomarUITests */,
+				576DD71F21B7FC3E00E7A769 /* PomarKit */,
+				576DD72E21B7FC4100E7A769 /* PomarKit Extension */,
 				2F0DAB47219AF37800217ED5 /* Products */,
 				2F0DAB7E219AFA1200217ED5 /* Frameworks */,
 			);
@@ -221,6 +302,8 @@
 				2F0DAB46219AF37800217ED5 /* Pomar.app */,
 				2F0DAB5D219AF37A00217ED5 /* PomarTests.xctest */,
 				2F0DAB68219AF37A00217ED5 /* PomarUITests.xctest */,
+				576DD71E21B7FC3E00E7A769 /* PomarKit.app */,
+				576DD72A21B7FC4100E7A769 /* PomarKit Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -245,6 +328,7 @@
 		2F0DAB60219AF37A00217ED5 /* PomarTests */ = {
 			isa = PBXGroup;
 			children = (
+				576DD71A21B7F4A600E7A769 /* FeedbackGroup.swift */,
 				DC66117C21AD86AF00D329DA /* GroupTests.swift */,
 				DC66117E21AD86DA00D329DA /* UserTests.swift */,
 				2F0DAB61219AF37A00217ED5 /* PomarTests.swift */,
@@ -311,6 +395,7 @@
 		2F0DAB7E219AFA1200217ED5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				576DD75621B9574600E7A769 /* CloudKit.framework */,
 				2F0DAB81219AFA7C00217ED5 /* CloudKit.framework */,
 			);
 			name = Frameworks;
@@ -417,6 +502,31 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
+		576DD71F21B7FC3E00E7A769 /* PomarKit */ = {
+			isa = PBXGroup;
+			children = (
+				576DD72021B7FC3E00E7A769 /* Interface.storyboard */,
+				576DD72321B7FC4100E7A769 /* Assets.xcassets */,
+				576DD72521B7FC4100E7A769 /* Info.plist */,
+			);
+			path = PomarKit;
+			sourceTree = "<group>";
+		};
+		576DD72E21B7FC4100E7A769 /* PomarKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				576DD75521B9574200E7A769 /* PomarKit Extension.entitlements */,
+				576DD73121B7FC4100E7A769 /* ExtensionDelegate.swift */,
+				576DD74421B806CA00E7A769 /* GroupInterfaceController.swift */,
+				576DD73321B7FC4100E7A769 /* NotificationController.swift */,
+				576DD73521B7FC4200E7A769 /* Assets.xcassets */,
+				576DD75321B9422300E7A769 /* RowCellController.swift */,
+				576DD73721B7FC4200E7A769 /* Info.plist */,
+				576DD73821B7FC4200E7A769 /* PushNotificationPayload.apns */,
+			);
+			path = "PomarKit Extension";
+			sourceTree = "<group>";
+		};
 		9205F21021AC232F00F5CA73 /* Tutorial */ = {
 			isa = PBXGroup;
 			children = (
@@ -450,10 +560,12 @@
 				2F0DAB42219AF37800217ED5 /* Sources */,
 				2F0DAB43219AF37800217ED5 /* Frameworks */,
 				2F0DAB44219AF37800217ED5 /* Resources */,
+				576DD74321B7FC4200E7A769 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				576DD73A21B7FC4200E7A769 /* PBXTargetDependency */,
 			);
 			name = Pomar;
 			productName = Pomar;
@@ -496,6 +608,40 @@
 			productReference = 2F0DAB68219AF37A00217ED5 /* PomarUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		576DD71D21B7FC3E00E7A769 /* PomarKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 576DD74221B7FC4200E7A769 /* Build configuration list for PBXNativeTarget "PomarKit" */;
+			buildPhases = (
+				576DD71C21B7FC3E00E7A769 /* Resources */,
+				576DD74121B7FC4200E7A769 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				576DD72D21B7FC4100E7A769 /* PBXTargetDependency */,
+			);
+			name = PomarKit;
+			productName = PomarKit;
+			productReference = 576DD71E21B7FC3E00E7A769 /* PomarKit.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		576DD72921B7FC4100E7A769 /* PomarKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 576DD74021B7FC4200E7A769 /* Build configuration list for PBXNativeTarget "PomarKit Extension" */;
+			buildPhases = (
+				576DD72621B7FC4100E7A769 /* Sources */,
+				576DD72721B7FC4100E7A769 /* Frameworks */,
+				576DD72821B7FC4100E7A769 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PomarKit Extension";
+			productName = "PomarKit Extension";
+			productReference = 576DD72A21B7FC4100E7A769 /* PomarKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -525,6 +671,20 @@
 						CreatedOnToolsVersion = 10.1;
 						TestTargetID = 2F0DAB45219AF37800217ED5;
 					};
+					576DD71D21B7FC3E00E7A769 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					576DD72921B7FC4100E7A769 = {
+						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
+					};
 				};
 			};
 			buildConfigurationList = 2F0DAB41219AF37800217ED5 /* Build configuration list for PBXProject "Pomar" */;
@@ -543,6 +703,8 @@
 				2F0DAB45219AF37800217ED5 /* Pomar */,
 				2F0DAB5C219AF37A00217ED5 /* PomarTests */,
 				2F0DAB67219AF37A00217ED5 /* PomarUITests */,
+				576DD71D21B7FC3E00E7A769 /* PomarKit */,
+				576DD72921B7FC4100E7A769 /* PomarKit Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -591,6 +753,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		576DD71C21B7FC3E00E7A769 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				576DD72421B7FC4100E7A769 /* Assets.xcassets in Resources */,
+				576DD72221B7FC3E00E7A769 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		576DD72821B7FC4100E7A769 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				576DD73621B7FC4200E7A769 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -647,6 +826,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				576DD71B21B7F4A600E7A769 /* FeedbackGroup.swift in Sources */,
 				DC74C1E821B372C000C829B2 /* ApplesTests.swift in Sources */,
 				DC74C1EA21B48C2800C829B2 /* AppleTypeTests.swift in Sources */,
 				DC66117F21AD86DA00D329DA /* UserTests.swift in Sources */,
@@ -663,6 +843,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		576DD72621B7FC4100E7A769 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				576DD75421B9422300E7A769 /* RowCellController.swift in Sources */,
+				576DD73421B7FC4100E7A769 /* NotificationController.swift in Sources */,
+				570B037F21B9652F00CB37B4 /* CKManager.swift in Sources */,
+				576DD74521B806CA00E7A769 /* GroupInterfaceController.swift in Sources */,
+				570B037E21B9652500CB37B4 /* Group.swift in Sources */,
+				576DD73221B7FC4100E7A769 /* ExtensionDelegate.swift in Sources */,
+				570B038221B9659100CB37B4 /* Apples.swift in Sources */,
+				570B038021B9656800CB37B4 /* DaySchedule.swift in Sources */,
+				570B038321B965D400CB37B4 /* User.swift in Sources */,
+				570B038121B9658A00CB37B4 /* AppleType.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -675,6 +872,16 @@
 			isa = PBXTargetDependency;
 			target = 2F0DAB45219AF37800217ED5 /* Pomar */;
 			targetProxy = 2F0DAB69219AF37A00217ED5 /* PBXContainerItemProxy */;
+		};
+		576DD72D21B7FC4100E7A769 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 576DD72921B7FC4100E7A769 /* PomarKit Extension */;
+			targetProxy = 576DD72C21B7FC4100E7A769 /* PBXContainerItemProxy */;
+		};
+		576DD73A21B7FC4200E7A769 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 576DD71D21B7FC3E00E7A769 /* PomarKit */;
+			targetProxy = 576DD73921B7FC4200E7A769 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -693,6 +900,14 @@
 				2F0DAB56219AF37A00217ED5 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		576DD72021B7FC3E00E7A769 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				576DD72121B7FC3E00E7A769 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -936,6 +1151,90 @@
 			};
 			name = Release;
 		};
+		576DD73C21B7FC4200E7A769 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MQ922JMCL6;
+				IBSC_MODULE = PomarKit_Extension;
+				INFOPLIST_FILE = PomarKit/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = "Paloma-Bispo.Pomar.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+			};
+			name = Debug;
+		};
+		576DD73D21B7FC4200E7A769 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MQ922JMCL6;
+				IBSC_MODULE = PomarKit_Extension;
+				INFOPLIST_FILE = PomarKit/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = "Paloma-Bispo.Pomar.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+			};
+			name = Release;
+		};
+		576DD73E21B7FC4200E7A769 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "PomarKit Extension/PomarKit Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MQ922JMCL6;
+				INFOPLIST_FILE = "PomarKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Paloma-Bispo.Pomar.watchkitapp.watchkitextension2";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+			};
+			name = Debug;
+		};
+		576DD73F21B7FC4200E7A769 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "PomarKit Extension/PomarKit Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MQ922JMCL6;
+				INFOPLIST_FILE = "PomarKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Paloma-Bispo.Pomar.watchkitapp.watchkitextension2";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -971,6 +1270,24 @@
 			buildConfigurations = (
 				2F0DAB78219AF37A00217ED5 /* Debug */,
 				2F0DAB79219AF37A00217ED5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		576DD74021B7FC4200E7A769 /* Build configuration list for PBXNativeTarget "PomarKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				576DD73E21B7FC4200E7A769 /* Debug */,
+				576DD73F21B7FC4200E7A769 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		576DD74221B7FC4200E7A769 /* Build configuration list for PBXNativeTarget "PomarKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				576DD73C21B7FC4200E7A769 /* Debug */,
+				576DD73D21B7FC4200E7A769 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
