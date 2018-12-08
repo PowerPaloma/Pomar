@@ -44,6 +44,18 @@ class DetailsViewController: UIViewController {
         collectionView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
     }
     
+    
+    @IBAction func feedback(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Feedback", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "feedback") as! FeedbackViewController
+        controller.groupId = self.group?.id
+        self.present(controller, animated: true, completion: nil)
+    }
+    
+    @IBAction func join(_ sender: Any) {
+        
+    }
+    
     @objc func buttonAction(sender: UIButton!) {
         let storyboard = UIStoryboard(name: "Feedback", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "feedback") as! FeedbackViewController
