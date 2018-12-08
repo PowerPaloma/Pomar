@@ -18,14 +18,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pomar" translatesAutoresizingMaskIntoConstraints="NO" id="3bE-zV-afS">
-                                <rect key="frame" x="75" y="118.5" width="225" height="72"/>
+                                <rect key="frame" x="75" y="101.5" width="225" height="72"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ptR-KF-Ngk">
-                                <rect key="frame" x="122.5" y="492" width="130" height="50"/>
+                                <rect key="frame" x="112.5" y="502" width="150" height="40"/>
                                 <color key="backgroundColor" red="0.2274509804" green="0.78039215689999997" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="SbH-Nt-e35"/>
-                                    <constraint firstAttribute="width" constant="130" id="uOp-B5-iwF"/>
+                                    <constraint firstAttribute="height" constant="40" id="SbH-Nt-e35"/>
+                                    <constraint firstAttribute="width" constant="150" id="uOp-B5-iwF"/>
                                 </constraints>
                                 <inset key="contentEdgeInsets" minX="12" minY="6" maxX="12" maxY="6"/>
                                 <state key="normal" title="Começar">
@@ -35,10 +35,8 @@
                                     <action selector="start:" destination="xWJ-1G-Fc8" eventType="touchUpInside" id="QHb-gG-OQM"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bua-Cu-Xlc">
-                                <rect key="frame" x="35.5" y="574" width="304" height="41"/>
-                                <string key="text">Share your time. Share your knowledge 
-                 share your apples.</string>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share your time. Share your knowledge. Share your apples." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bua-Cu-Xlc">
+                                <rect key="frame" x="16" y="574" width="343" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -54,27 +52,21 @@
                         <constraints>
                             <constraint firstItem="bua-Cu-Xlc" firstAttribute="centerX" secondItem="dOF-J5-YB5" secondAttribute="centerX" id="0bn-fO-YW8"/>
                             <constraint firstItem="3bE-zV-afS" firstAttribute="height" secondItem="HUk-pa-nyN" secondAttribute="height" multiplier="0.1" constant="5" id="0iS-nI-Co9"/>
-                            <constraint firstItem="khp-p4-hRe" firstAttribute="centerY" secondItem="dOF-J5-YB5" secondAttribute="centerY" id="1iB-c6-Lof"/>
-                            <constraint firstItem="khp-p4-hRe" firstAttribute="top" relation="greaterThanOrEqual" secondItem="3bE-zV-afS" secondAttribute="bottom" constant="16" id="3gm-jO-qFo"/>
                             <constraint firstItem="bua-Cu-Xlc" firstAttribute="top" secondItem="ptR-KF-Ngk" secondAttribute="bottom" constant="32" id="7of-ZC-7Kx"/>
-                            <constraint firstItem="khp-p4-hRe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dOF-J5-YB5" secondAttribute="leading" constant="16" id="8Kf-PL-7D1"/>
                             <constraint firstItem="ptR-KF-Ngk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dOF-J5-YB5" secondAttribute="leading" constant="16" id="9jZ-P7-8Y4"/>
-                            <constraint firstItem="dOF-J5-YB5" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bua-Cu-Xlc" secondAttribute="trailing" constant="16" id="LeH-DT-F7y"/>
+                            <constraint firstItem="dOF-J5-YB5" firstAttribute="trailing" secondItem="bua-Cu-Xlc" secondAttribute="trailing" constant="16" id="LeH-DT-F7y"/>
                             <constraint firstItem="dOF-J5-YB5" firstAttribute="bottom" secondItem="bua-Cu-Xlc" secondAttribute="bottom" constant="52" id="NAX-WG-Nig"/>
+                            <constraint firstItem="3bE-zV-afS" firstAttribute="centerY" secondItem="dOF-J5-YB5" secondAttribute="centerY" multiplier="0.4" id="VNc-1c-RzZ"/>
                             <constraint firstItem="3bE-zV-afS" firstAttribute="width" secondItem="HUk-pa-nyN" secondAttribute="width" multiplier="0.6" id="WKj-ua-oZH"/>
-                            <constraint firstItem="ptR-KF-Ngk" firstAttribute="top" relation="greaterThanOrEqual" secondItem="khp-p4-hRe" secondAttribute="bottom" constant="32" id="WgZ-ZE-ght"/>
                             <constraint firstItem="3bE-zV-afS" firstAttribute="centerX" secondItem="dOF-J5-YB5" secondAttribute="centerX" id="dFd-xd-6DJ"/>
-                            <constraint firstItem="bua-Cu-Xlc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dOF-J5-YB5" secondAttribute="leading" constant="16" id="fzU-AO-IF7"/>
+                            <constraint firstItem="khp-p4-hRe" firstAttribute="centerY" secondItem="dOF-J5-YB5" secondAttribute="centerY" id="eAC-Ks-HSV"/>
+                            <constraint firstItem="bua-Cu-Xlc" firstAttribute="leading" secondItem="dOF-J5-YB5" secondAttribute="leading" constant="16" id="fzU-AO-IF7"/>
                             <constraint firstItem="dOF-J5-YB5" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ptR-KF-Ngk" secondAttribute="trailing" constant="16" id="iaC-r6-WJZ"/>
                             <constraint firstItem="khp-p4-hRe" firstAttribute="height" secondItem="HUk-pa-nyN" secondAttribute="height" multiplier="0.2" id="kbN-NI-n8I">
                                 <variation key="heightClass=compact-widthClass=compact" constant="40"/>
                             </constraint>
-                            <constraint firstItem="dOF-J5-YB5" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="khp-p4-hRe" secondAttribute="trailing" constant="16" id="neC-rG-iNX"/>
                             <constraint firstItem="ptR-KF-Ngk" firstAttribute="centerX" secondItem="dOF-J5-YB5" secondAttribute="centerX" id="oCX-Mn-7zX"/>
-                            <constraint firstItem="dOF-J5-YB5" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3bE-zV-afS" secondAttribute="trailing" constant="16" id="uEB-R7-scr"/>
-                            <constraint firstItem="3bE-zV-afS" firstAttribute="centerY" secondItem="dOF-J5-YB5" secondAttribute="centerY" multiplier="0.45" id="x9u-4v-xBQ"/>
                             <constraint firstItem="khp-p4-hRe" firstAttribute="centerX" secondItem="dOF-J5-YB5" secondAttribute="centerX" id="yVL-rc-JhS"/>
-                            <constraint firstItem="3bE-zV-afS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dOF-J5-YB5" secondAttribute="leading" constant="16" id="zeX-Or-U8A"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dOF-J5-YB5"/>
                     </view>

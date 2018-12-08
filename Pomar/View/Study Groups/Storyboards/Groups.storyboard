@@ -429,7 +429,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qyT-Gg-ouj">
                                 <rect key="frame" x="16" y="182" width="343" height="436"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xdz-zg-UWh" customClass="FlowLayout" customModule="Pomar" customModuleProvider="target">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xdz-zg-UWh">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="50" height="36"/>
@@ -512,7 +512,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="heg-nO-e5O">
-                                <rect key="frame" x="16" y="131" width="163.5" height="35"/>
+                                <rect key="frame" x="16" y="131" width="155.5" height="35"/>
                                 <color key="backgroundColor" red="0.2274509804" green="0.78039215689999997" blue="0.37254901959999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="xFE-n8-XbH"/>
@@ -522,7 +522,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psn-9P-7Ow">
-                                <rect key="frame" x="195.5" y="131" width="163.5" height="35"/>
+                                <rect key="frame" x="203.5" y="131" width="155.5" height="35"/>
                                 <color key="backgroundColor" red="0.2274509804" green="0.78039215689999997" blue="0.37254901959999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Feedback">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -536,7 +536,7 @@
                             <constraint firstItem="qyT-Gg-ouj" firstAttribute="top" secondItem="psn-9P-7Ow" secondAttribute="bottom" constant="16" id="Bvg-2h-S4W"/>
                             <constraint firstItem="qyT-Gg-ouj" firstAttribute="top" secondItem="heg-nO-e5O" secondAttribute="bottom" constant="16" id="Iaw-D0-KxU"/>
                             <constraint firstItem="ukH-2d-iCC" firstAttribute="bottom" secondItem="qyT-Gg-ouj" secondAttribute="bottom" id="J88-4r-Vxu"/>
-                            <constraint firstItem="psn-9P-7Ow" firstAttribute="leading" secondItem="heg-nO-e5O" secondAttribute="trailing" constant="16" id="Qxe-Ga-hRY"/>
+                            <constraint firstItem="psn-9P-7Ow" firstAttribute="leading" secondItem="heg-nO-e5O" secondAttribute="trailing" constant="32" id="Qxe-Ga-hRY"/>
                             <constraint firstItem="ukH-2d-iCC" firstAttribute="trailing" secondItem="psn-9P-7Ow" secondAttribute="trailing" constant="16" id="UgC-gK-MPe"/>
                             <constraint firstItem="heg-nO-e5O" firstAttribute="leading" secondItem="ukH-2d-iCC" secondAttribute="leading" constant="16" id="WtU-p8-05B"/>
                             <constraint firstItem="qyT-Gg-ouj" firstAttribute="leading" secondItem="NpX-qr-3Ea" secondAttribute="leading" constant="16" id="ZCm-tT-ezj"/>

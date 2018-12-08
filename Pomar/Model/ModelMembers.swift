@@ -11,8 +11,8 @@ import UIKit
 class ModelMembers: NSObject, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     
-    let minimumInteritemSpacing: CGFloat = 8
-    let minimumLineSpacing:CGFloat = 8
+    let minimumInteritemSpacing: CGFloat = 0
+    let minimumLineSpacing:CGFloat = 4
     var members: [User]!
     
     init(members: [User]) {

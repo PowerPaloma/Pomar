@@ -13,14 +13,13 @@ class DetailsViewController: UIViewController {
     var group: Group? = nil
     var modelTag: ModelTag!
     var modelMember: ModelMembers!
-    var tags: [String] = []
+    var height: CGFloat!
     var storedOffsets = [Int: CGFloat]()
     let minimumInteritemSpacing: CGFloat = 10
     let minimumLineSpacing:CGFloat = 10
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var joinButton: UIButton!
     @IBOutlet weak var feedbackButton: UIButton!
-    let flowLayout = FlowLayout()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,9 +30,6 @@ class DetailsViewController: UIViewController {
         collectionView.register(UINib(nibName: "ShowTagsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "tags")
         collectionView.register(UINib(nibName: "DateCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "date")
         collectionView.register(UINib(nibName: "ParticipantsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "members")
-        collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "footer")
-        collectionView.collectionViewLayout = flowLayout
-        collectionView.contentInsetAdjustmentBehavior = .always
         setup()
 
     }
@@ -97,12 +93,10 @@ extension DetailsViewController: UICollectionViewDelegate, UICollectionViewDataS
             return cell
         case 2:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tags", for: indexPath) as! ShowTagsCollectionViewCell
-            cell.tableView.dataSource = self
-            cell.tableView.delegate = self
-            cell.tableView.rowHeight = UITableView.automaticDimension
-            cell.tableView.estimatedRowHeight = 100
+            cell.loadCellWith(tags: group.tags)
+            
 
-            tags = group.tags
+
 //            modelTag = ModelTag(tags: group.tags, isLimited: false)
 //            cell.setCollectionViewDataSourceDelegate(modelTag, forRow: indexPath.row)
 //            cell.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
@@ -160,10 +154,13 @@ extension DetailsViewController: UICollectionViewDelegate, UICollectionViewDataS
                 if error != nil{
                     return
                 }else{
-                        guard let members = membersGroup else {return}
+                    guard let members = membersGroup else {return}
                     self.modelMember = ModelMembers(members: members)
-                    cell.setCollectionViewDataSourceDelegate(self.modelMember, forRow: indexPath.row)
-                    cell.collectionViewOffset = self.storedOffsets[indexPath.row] ?? 0
+                    DispatchQueue.main.async {
+                        cell.setCollectionViewDataSourceDelegate(self.modelMember, forRow: indexPath.row)
+                        cell.collectionViewOffset = self.storedOffsets[indexPath.row] ?? 0
+                    }
+                    
                 }
             }
             
@@ -179,63 +176,65 @@ extension DetailsViewController: UICollectionViewDelegate, UICollectionViewDataS
     
 }
 
-//extension DetailsViewController: UICollectionViewDelegateFlowLayout{
-//    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        let itemWidth = collectionView.frame.size.width - (minimumInteritemSpacing + minimumLineSpacing)
-//        switch indexPath.row {
-////        case 0:
-////            return CGSize.init(width: itemWidth, height: 100)
-//        case 1:
-//            return CGSize.init(width: itemWidth, height: 160)
-//        case 2:
-//            return CGSize.init(width: itemWidth, height: 100)
-//
-//        case 3:
-//            return CGSize.init(width: itemWidth, height: 200)
-//        case 4:
-//            return CGSize.init(width: itemWidth, height: 100)
-//        default:
-//            return CGSize.zero
-//        }
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//        return minimumLineSpacing
-//    }
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-//        return minimumInteritemSpacing
-//    }
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        return UIEdgeInsets(top: minimumInteritemSpacing, left: minimumInteritemSpacing, bottom: minimumInteritemSpacing, right: minimumInteritemSpacing)
-//        
-//        
-//    }
-//    
-//}
-
-
-
-extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
+extension DetailsViewController: UICollectionViewDelegateFlowLayout{
     
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.tags.count
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        var itemWidth = collectionView.frame.size.width - (minimumInteritemSpacing + minimumLineSpacing)
+        switch indexPath.row {
+//        case 0:
+//            return CGSize.init(width: itemWidth, height: 100)
+        case 1:
+            guard let group  = self.group else {return CGSize.init(width: itemWidth, height: 50)}
+            let desc = group.description as NSString
+             let size = desc.size(withAttributes: [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 12)])
+            let sizeTitle = "Description".size(withAttributes: [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 16)])
+            return CGSize.init(width: itemWidth, height: size.height + (8*3) + sizeTitle.height)
+        case 2:
+   
+            let padding: CGFloat = 8
+            let constraintTitle: CGFloat = 8
+            var numberOfLines: CGFloat = 1
+            guard let group  = self.group else {return CGSize.init(width: itemWidth, height: 50)}
+            var widthTagsAux: CGFloat = 0.0
+            let sizeTitle = "Tags".size(withAttributes: [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 16)]).height
+            for tag in group.tags {
+                let nsTag = tag as NSString
+                let tagWidth = nsTag.size(withAttributes: [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 12)]).width + padding * 2 + 16
+                if widthTagsAux + tagWidth < itemWidth - 16{
+                    widthTagsAux += tagWidth
+                }else{
+                    numberOfLines += 1
+                    widthTagsAux = tagWidth
+                }
+            }
+            
+            let tagsHeight = "Tags".size(withAttributes: [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 16)]).height + padding * 2 + 10
+            
+            return CGSize.init(width: itemWidth, height: (tagsHeight * numberOfLines + sizeTitle + constraintTitle * 2 - 10))
+
+        case 3:
+            return CGSize.init(width: itemWidth, height: 200)
+        case 4:
+             let sizeTitle = "Members".size(withAttributes: [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 16)]).height
+            return CGSize.init(width: itemWidth, height: sizeTitle + 32 + 40)
+        default:
+            return CGSize.zero
+        }
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TagsTableViewCell", for: indexPath) as! TagsTableViewCell
-        cell.tagName.text = tags[indexPath.row]
-        cell.tagName.sizeToFit()
-        cell.background.layer.borderColor = UIColor(red: 0.7, green: 0, blue: 0.02, alpha: 1).cgColor
-        cell.background.layer.borderWidth = 0.5
-        cell.background.clipsToBounds = true
-        cell.background.layer.cornerRadius = 10
-        return cell
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return minimumLineSpacing
     }
-    
-    
-    
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return minimumInteritemSpacing
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: minimumInteritemSpacing, left: minimumInteritemSpacing, bottom: minimumInteritemSpacing, right: minimumInteritemSpacing)
+        
+        
+    }
     
 }
+
+
+

@@ -25,8 +25,7 @@ class MembersCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         indicator.startAnimating()
-        
     }
-    
+        
     
 }
