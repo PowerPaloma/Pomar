@@ -30,14 +30,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            print("ok")
 //        }
        
-//        self.window = UIWindow(frame: UIScreen.main.bounds)
-//        
-//        let storyboard = UIStoryboard(name: "Groups", bundle: nil)
-//        
-//        let initialViewController = storyboard.instantiateInitialViewController()
-//        
-//        self.window?.rootViewController = initialViewController
-//        self.window?.makeKeyAndVisible()
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        
+        let storyboard = UIStoryboard(name: "Exchange", bundle: nil)
+        
+        let initialViewController = storyboard.instantiateInitialViewController()
+        
+        self.window?.rootViewController = initialViewController
+        self.window?.makeKeyAndVisible()
         
         return true
     }

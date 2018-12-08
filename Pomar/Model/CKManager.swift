@@ -364,6 +364,25 @@ final class CKManager {
         }
     }
     
+    func exchangeApple(userId:CKRecord.ID,appleType: AppleType, completion: @escaping (CKRecord?, Error?) -> Void){
+        publicDatabase.fetch(withRecordID: userId) { (record, error) in
+            guard let record = record else {
+                completion(nil, error)
+                return
+            }
+            
+            let user = User(record: record)
+            user.exchangeApple(type: appleType)
+            
+            self.publicDatabase.save(user.record, completionHandler: { (record, error) in
+                completion(record,error)
+            })
+            
+        }
+        
+        
+    }
+    
     
     
 }
