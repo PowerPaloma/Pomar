@@ -31,6 +31,16 @@
 		2F0DABA221A2EB1D00217ED5 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0DABA121A2EB1D00217ED5 /* Validation.swift */; };
 		2F0DABA421A3505F00217ED5 /* ModelDayPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0DABA321A3505F00217ED5 /* ModelDayPicker.swift */; };
 		2F3DDEE721ADC34700A97CA2 /* Initial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F3DDEE621ADC34700A97CA2 /* Initial.storyboard */; };
+		2F60CCEF21BC448B00BCE0F0 /* AddGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F60CCEE21BC448B00BCE0F0 /* AddGroupViewController.swift */; };
+		2F60CCF221BC44F300BCE0F0 /* ModelMonths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F60CCF121BC44F300BCE0F0 /* ModelMonths.swift */; };
+		2F60CCF621BC479400BCE0F0 /* MonthCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F60CCF421BC479400BCE0F0 /* MonthCollectionViewCell.swift */; };
+		2F60CCF721BC479400BCE0F0 /* MonthCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F60CCF521BC479400BCE0F0 /* MonthCollectionViewCell.xib */; };
+		2F60CCF921BC6FE000BCE0F0 /* ModelDays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F60CCF821BC6FE000BCE0F0 /* ModelDays.swift */; };
+		2F60CCFC21BC744700BCE0F0 /* DayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F60CCFA21BC744700BCE0F0 /* DayCollectionViewCell.swift */; };
+		2F60CCFD21BC744700BCE0F0 /* DayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F60CCFB21BC744700BCE0F0 /* DayCollectionViewCell.xib */; };
+		2F60CD0021BD754900BCE0F0 /* HourCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F60CCFE21BD754900BCE0F0 /* HourCollectionViewCell.swift */; };
+		2F60CD0121BD754900BCE0F0 /* HourCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F60CCFF21BD754900BCE0F0 /* HourCollectionViewCell.xib */; };
+		2F60CD0321BD76A100BCE0F0 /* ModelHours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F60CD0221BD76A100BCE0F0 /* ModelHours.swift */; };
 		9205F20F21AC215900F5CA73 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9205F20E21AC215900F5CA73 /* Tutorial.storyboard */; };
 		9205F21321AC238100F5CA73 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205F21121AC238100F5CA73 /* TutorialViewController.swift */; };
 		9205F21621AC30DD00F5CA73 /* SlideTutorial.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9205F21521AC30DD00F5CA73 /* SlideTutorial.xib */; };
@@ -115,6 +125,16 @@
 		2F0DABA121A2EB1D00217ED5 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		2F0DABA321A3505F00217ED5 /* ModelDayPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDayPicker.swift; sourceTree = "<group>"; };
 		2F3DDEE621ADC34700A97CA2 /* Initial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Initial.storyboard; sourceTree = "<group>"; };
+		2F60CCEE21BC448B00BCE0F0 /* AddGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupViewController.swift; sourceTree = "<group>"; };
+		2F60CCF121BC44F300BCE0F0 /* ModelMonths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelMonths.swift; sourceTree = "<group>"; };
+		2F60CCF421BC479400BCE0F0 /* MonthCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthCollectionViewCell.swift; sourceTree = "<group>"; };
+		2F60CCF521BC479400BCE0F0 /* MonthCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonthCollectionViewCell.xib; sourceTree = "<group>"; };
+		2F60CCF821BC6FE000BCE0F0 /* ModelDays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDays.swift; sourceTree = "<group>"; };
+		2F60CCFA21BC744700BCE0F0 /* DayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCollectionViewCell.swift; sourceTree = "<group>"; };
+		2F60CCFB21BC744700BCE0F0 /* DayCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DayCollectionViewCell.xib; sourceTree = "<group>"; };
+		2F60CCFE21BD754900BCE0F0 /* HourCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourCollectionViewCell.swift; sourceTree = "<group>"; };
+		2F60CCFF21BD754900BCE0F0 /* HourCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HourCollectionViewCell.xib; sourceTree = "<group>"; };
+		2F60CD0221BD76A100BCE0F0 /* ModelHours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelHours.swift; sourceTree = "<group>"; };
 		9205F20E21AC215900F5CA73 /* Tutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
 		9205F21121AC238100F5CA73 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		9205F21521AC30DD00F5CA73 /* SlideTutorial.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlideTutorial.xib; sourceTree = "<group>"; };
@@ -236,6 +256,7 @@
 		2F0DAB7A219AF98300217ED5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2F60CCF021BC44DD00BCE0F0 /* AddGroup */,
 				92A4710421B80E10002E7C46 /* Tags */,
 				DCE87265219B0C8D008F78BE /* Group.swift */,
 				92BFF23221B197AD00026FE8 /* Subjects.swift */,
@@ -254,6 +275,7 @@
 		2F0DAB7B219AF98E00217ED5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2F60CCF321BC477A00BCE0F0 /* Add Group */,
 				92269E9421B01B5B0053DAB5 /* Add New Group */,
 				9205F21021AC232F00F5CA73 /* Tutorial */,
 				2F0DAB8F219B082400217ED5 /* Study Groups */,
@@ -319,6 +341,30 @@
 				2F0DAB9C21A2E58F00217ED5 /* AddGroupPart1ViewController.swift */,
 				2F0DAB9E21A2E59E00217ED5 /* AddGroupPart2ViewController.swift */,
 				92269E5821AED9010053DAB5 /* AddNewGroupViewController.swift */,
+				2F60CCEE21BC448B00BCE0F0 /* AddGroupViewController.swift */,
+			);
+			path = "Add Group";
+			sourceTree = "<group>";
+		};
+		2F60CCF021BC44DD00BCE0F0 /* AddGroup */ = {
+			isa = PBXGroup;
+			children = (
+				2F60CCF121BC44F300BCE0F0 /* ModelMonths.swift */,
+				2F60CCF821BC6FE000BCE0F0 /* ModelDays.swift */,
+				2F60CD0221BD76A100BCE0F0 /* ModelHours.swift */,
+			);
+			path = AddGroup;
+			sourceTree = "<group>";
+		};
+		2F60CCF321BC477A00BCE0F0 /* Add Group */ = {
+			isa = PBXGroup;
+			children = (
+				2F60CCF421BC479400BCE0F0 /* MonthCollectionViewCell.swift */,
+				2F60CCF521BC479400BCE0F0 /* MonthCollectionViewCell.xib */,
+				2F60CCFA21BC744700BCE0F0 /* DayCollectionViewCell.swift */,
+				2F60CCFB21BC744700BCE0F0 /* DayCollectionViewCell.xib */,
+				2F60CCFE21BD754900BCE0F0 /* HourCollectionViewCell.swift */,
+				2F60CCFF21BD754900BCE0F0 /* HourCollectionViewCell.xib */,
 			);
 			path = "Add Group";
 			sourceTree = "<group>";
@@ -502,12 +548,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F60CCF721BC479400BCE0F0 /* MonthCollectionViewCell.xib in Resources */,
 				9205F20F21AC215900F5CA73 /* Tutorial.storyboard in Resources */,
 				2F0DAB89219B022A00217ED5 /* Profile.storyboard in Resources */,
 				2F3DDEE721ADC34700A97CA2 /* Initial.storyboard in Resources */,
 				2F022D6A21A3C11D00A1293D /* TagsCollectionViewCell.xib in Resources */,
 				2F0DAB85219B020000217ED5 /* Groups.storyboard in Resources */,
 				9206BDB621AD6AE50013437F /* FinalTutorial.xib in Resources */,
+				2F60CD0121BD754900BCE0F0 /* HourCollectionViewCell.xib in Resources */,
+				2F60CCFD21BC744700BCE0F0 /* DayCollectionViewCell.xib in Resources */,
 				2F0DAB87219B021C00217ED5 /* Questions.storyboard in Resources */,
 				2F0DAB57219AF37A00217ED5 /* LaunchScreen.storyboard in Resources */,
 				92BFF21821B029CF00026FE8 /* TagsTableViewCell.xib in Resources */,
@@ -548,6 +597,7 @@
 				92ED0C2E21B57C0600AA32CB /* HourCollectionViewCell.swift in Sources */,
 				2F0DABA421A3505F00217ED5 /* ModelDayPicker.swift in Sources */,
 				2F0DAB9F21A2E59E00217ED5 /* AddGroupPart2ViewController.swift in Sources */,
+				2F60CD0021BD754900BCE0F0 /* HourCollectionViewCell.swift in Sources */,
 				92A4710D21B80E64002E7C46 /* BackspaceDetectingTextField.swift in Sources */,
 				92BFF21721B029CF00026FE8 /* TagsTableViewCell.swift in Sources */,
 				2F0DAB9A219DC3BE00217ED5 /* GroupsCollectionViewCell.swift in Sources */,
@@ -570,12 +620,18 @@
 				92A4710E21B80E64002E7C46 /* WSTagsField.swift in Sources */,
 				2F022D6921A3C11D00A1293D /* TagsCollectionViewCell.swift in Sources */,
 				DCE8726B219C53DF008F78BE /* CKManager.swift in Sources */,
+				2F60CCF221BC44F300BCE0F0 /* ModelMonths.swift in Sources */,
 				DCE87275219CB1F9008F78BE /* DaySchedule.swift in Sources */,
+				2F60CCFC21BC744700BCE0F0 /* DayCollectionViewCell.swift in Sources */,
 				92A470FF21B5BA1A002E7C46 /* DatePickerView.swift in Sources */,
 				9206BDB821AD6ED40013437F /* FinalTutorial.swift in Sources */,
+				2F60CCF921BC6FE000BCE0F0 /* ModelDays.swift in Sources */,
+				2F60CD0321BD76A100BCE0F0 /* ModelHours.swift in Sources */,
+				2F60CCEF21BC448B00BCE0F0 /* AddGroupViewController.swift in Sources */,
 				92269E5921AED9010053DAB5 /* AddNewGroupViewController.swift in Sources */,
 				92BFF23921B354B000026FE8 /* TagsSuggestionCollectionViewCell.swift in Sources */,
 				DC66117B21AD7F7400D329DA /* AppleType.swift in Sources */,
+				2F60CCF621BC479400BCE0F0 /* MonthCollectionViewCell.swift in Sources */,
 				92269E9721B01BC40053DAB5 /* DescriptionTableViewCell.swift in Sources */,
 				DCE87266219B0C8D008F78BE /* Group.swift in Sources */,
 			);
