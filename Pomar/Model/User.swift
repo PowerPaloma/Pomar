@@ -29,6 +29,15 @@ class User {
         }
     }
     
+    var skills: [String] {
+        set {
+            record["skills"] = newValue
+        }
+        get {
+            return record["skills"] as! [String]
+        }
+    }
+    
     var token: String {
         set {
             record["token"] = newValue
@@ -94,9 +103,10 @@ class User {
         }
     }
     
-    init(name: String, token: String, imageRef: CKRecord.Reference) {
+    init(name: String, skills: [String], token: String, imageRef: CKRecord.Reference) {
         record = CKRecord(recordType: "User")
         self.name = name
+        self.skills = skills
         self.token = token
         self.imageRef = imageRef
         self.redApples = 0

@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if KeychainWrapper.standard.string(forKey: "userID") != nil {
             storyboard = UIStoryboard(name: "Groups", bundle: nil)
         } else {
-            storyboard = UIStoryboard(name: "Groups", bundle: nil)
+            storyboard = UIStoryboard(name: "CreateUser", bundle: nil)
         }
         
         

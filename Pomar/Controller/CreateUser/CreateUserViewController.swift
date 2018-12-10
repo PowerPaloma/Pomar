@@ -97,6 +97,13 @@ class CreateUserViewController: UIViewController {
             return
         }
         
+        if image == UIImage(named: "arrow") || name.isEmpty {
+            AlertError(controller: self).showErrorAlert(message: "Profile Image and Name are mandatory")
+            loadingView.isHidden = true
+            activityIndicator.stopAnimating()
+            return
+        }
+        
         CKManager.shared.iCloudUserID { (token, error) in
             
             guard let token = token else {
@@ -105,7 +112,7 @@ class CreateUserViewController: UIViewController {
                 return
             }
 
-            let tags = self.tagsField.tags.map({ (wstag) -> String in
+            let skills = self.tagsField.tags.map({ (wstag) -> String in
                 return wstag.text
             })
 
@@ -116,7 +123,7 @@ class CreateUserViewController: UIViewController {
                     return
                 }
                 let imageRef = CKRecord.Reference(record: record, action: .none)
-                let user = User(name: name, token: token, imageRef: imageRef)
+                let user = User(name: name, skills: skills, token: token, imageRef: imageRef)
                 CKManager.shared.createUser(user: user, completion: { (record, error) in
                     
                     guard let record = record else {
