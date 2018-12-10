@@ -243,6 +243,37 @@ final class CKManager {
         
     }
     
+    func fetchGroups(userID: CKRecord.ID, completion: @escaping ([Group]?, Error?) -> Void) {
+        
+        publicDatabase.fetch(withRecordID: userID) { (record, error) in
+            guard let record = record else {
+                completion(nil, error)
+                return
+            }
+            
+            let user = User(record: record)
+            
+            let groups = user.groups
+            
+            let predicate = NSPredicate(format: "%K IN %@", "recordID", groups!)
+            let query = CKQuery(recordType: "Group", predicate: predicate)
+            
+            self.publicDatabase.perform(query, inZoneWith: nil, completionHandler: { (records, error) in
+                guard let records = records else {
+                    completion(nil, error)
+                    return
+                }
+                let groups = records.map({ (record) -> Group in
+                    return Group(record: record)!
+                })
+                
+                completion(groups, nil)
+            })
+            
+        }
+        
+    }
+    
     //MARK: - Apples Functions
     
     func createApples(userID: CKRecord.ID, groupID: CKRecord.ID, completion: @escaping (CKRecord?, Error?) -> Void) {
