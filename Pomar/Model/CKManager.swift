@@ -16,9 +16,9 @@ final class CKManager {
     
     private init() {}
     
-    var container = CKContainer.default()
+    var container = CKContainer(identifier: "iCloud.Paloma-Bispo.Pomar")
     
-    var publicDatabase = CKContainer.default().publicCloudDatabase
+    var publicDatabase = CKContainer(identifier: "iCloud.Paloma-Bispo.Pomar").publicCloudDatabase
     
     //MARK: - User functions
     

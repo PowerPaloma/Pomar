@@ -13,7 +13,7 @@ protocol Instantiable {
     static func instance() -> Self?
 }
 
-extension Instantiable where Self:UIView {
+extension Instantiable where Self: UIView {
     
     static func instance() -> Self? {
         let className = String(describing: Self.self)
