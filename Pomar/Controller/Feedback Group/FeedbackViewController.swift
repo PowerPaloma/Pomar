@@ -13,6 +13,8 @@ class FeedbackViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var stackBackgroundView: UIView!
+    
     @IBOutlet weak var redAppleImageView: UIImageView! {
         didSet {
             redAppleImageView.tintColor = AppleType.red.color()
@@ -143,6 +145,8 @@ class FeedbackViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         indicatorView.layer.cornerRadius = indicatorView.frame.width/2
+        
+        stackBackgroundView.layer.cornerRadius = 10
     }
 
 }
