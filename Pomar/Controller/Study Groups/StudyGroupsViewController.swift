@@ -39,7 +39,6 @@ class StudyGroupsViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        
         collectionView.register(UINib(nibName: "GroupsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cellGroup")
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
@@ -68,7 +67,7 @@ class StudyGroupsViewController: UIViewController {
                     }
                 }
             }else {
-                fatalError("\(String(describing: error?.localizedDescription))")
+                AlertError(controller: self).showErrorAlert(message: (error?.localizedDescription)!)
             }
         }
     }
@@ -85,7 +84,7 @@ class StudyGroupsViewController: UIViewController {
                         }
                     }
                 }else {
-                    fatalError("\(String(describing: error?.localizedDescription))")
+                    AlertError(controller: self).showErrorAlert(message: (error?.localizedDescription)!)
                 }
             }
         case 1:
@@ -100,7 +99,7 @@ class StudyGroupsViewController: UIViewController {
                         }
                     }
                 }else {
-                    fatalError("\(String(describing: error?.localizedDescription))")
+                    AlertError(controller: self).showErrorAlert(message: (error?.localizedDescription)!)
                 }
             }
         default:
