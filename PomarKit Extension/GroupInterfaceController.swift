@@ -24,8 +24,8 @@ class GroupInterfaceController: WKInterfaceController {
                 return
             }
             
-            self?.groups = self?.sortDays(groups: groups) ?? []
-            
+//            groups.forEach{print($0.date, $0.schedule?.first?.day)}
+//            self?.groups = self?.sortDays(groups: groups) ?? []
             
             self?.tableView.setNumberOfRows(groups.count, withRowType: "groups")
    
@@ -55,45 +55,36 @@ class GroupInterfaceController: WKInterfaceController {
             if group2.isWeekly{
                 guard let weekday = Weekday(rawValue: (group2.schedule?.first?.day)!.lowercased()) else {return false}
                 day2 = Date.today().next(weekday)
+
             }else{
                 guard let day = group2.date else {return false}
                 day2 = day
             }
             
-            if day1 < day2{
-                return true
-                
-            }else if day1 == day2{
-                guard let scheduleList1 = group1.schedule, let scheduleList2 = group2.schedule else {return false}
-                 guard let schedule1 = scheduleList1.first, let schedule2 = scheduleList2.first else {return false}
-                let hour1 = schedule1.hour
-                let hour2 = schedule2.hour
-                
-                return hour1 < hour2
-                
-                
-            } else {
-                return false
-            }
+            
+            print("\(day1) --- \(day2) = \(day1 < day2)", separator: "\n", terminator: "\n")
+            
+            return day1 < day2
+            
+//            else if day1 == day2{
+//                guard let scheduleList1 = group1.schedule, let scheduleList2 = group2.schedule else {return false}
+//                 guard let schedule1 = scheduleList1.first, let schedule2 = scheduleList2.first else {return false}
+//                let hour1 = schedule1.hour
+//                let hour2 = schedule2.hour
+//
+//                if hour1 < hour2 {
+//                    return true
+//                }else {
+//                    return false
+//                }
+//            }
             
         }
     }
     
-    func sortDaysWeekly(groups: [Group]) -> [Group] {
-        return groups.sorted { (group1, group2) -> Bool in
-            
-            var day1 = Date()
-            var day2 = Date()
-            
-            guard let weekday1 = Weekday(rawValue: (group1.schedule?.first?.day)!.lowercased()) else {return false}
-            day1 = Date.today().next(weekday1)
-            
-            guard let weekday2 = Weekday(rawValue: (group2.schedule?.first?.day)!.lowercased()) else {return false}
-            day2 = Date.today().next(weekday2)
-            
-            return true
-        }
-    }
+
 
 
 }
+
+

@@ -43,8 +43,6 @@ class RowCellController: NSObject {
                 let day = Date.today().next(weekday)
                 //let dayHour = Date.today().next(weekdayHour)
                 date.setText(formatter.string(from: day))
-                print(day)
-                print(hour)
 
             } else {
                 let day = group.date
