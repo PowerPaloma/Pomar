@@ -12,12 +12,14 @@ import UIKit
 
 class ModelDays: NSObject, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    let minimumInteritemSpacing: CGFloat = 16
-    let minimumLineSpacing:CGFloat = 16
+    let minimumInteritemSpacing: CGFloat = 20
+    let minimumLineSpacing:CGFloat = 20
     var numDays = 0
     var collection: UICollectionView!
     var offsetDays = 0
     var weekStart = 0
+    var selectedDaysProtocol: SelectedDaysProtocol? = nil
+    var selectedDays: [Bool] = [false, false, false, false, false]
     
     init(month: Int) {
         super.init()
@@ -59,20 +61,22 @@ class ModelDays: NSObject, UICollectionViewDelegate, UICollectionViewDataSource,
         
         if indexPath.row < weekStart {
              cell.dayLabel.text = ""
+            cell.isUserInteractionEnabled = false
         }else if indexPath.row < numDays + weekStart {
              cell.dayLabel.text = "\(indexPath.row + 1 - weekStart )"
         }else if indexPath.row > numDays {
             cell.dayLabel.text = ""
+            cell.isUserInteractionEnabled = false
         }
-        cell.background.backgroundColor = #colorLiteral(red: 0.8844738603, green: 0.879216373, blue: 0.8885154724, alpha: 1)
+        cell.background.backgroundColor = #colorLiteral(red: 0.9628338218, green: 0.9729439616, blue: 0.9768897891, alpha: 1)
         cell.clipsToBounds = true
         cell.layer.cornerRadius = cell.frame.height / 2
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            let itemWidth = collectionView.frame.width - 16
-            return CGSize(width: itemWidth/7, height: itemWidth/7 )
+            let itemWidth = collectionView.frame.width - (20*6)
+            return CGSize(width: itemWidth/5, height: itemWidth/5 )
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return minimumLineSpacing
@@ -81,14 +85,20 @@ class ModelDays: NSObject, UICollectionViewDelegate, UICollectionViewDataSource,
         return minimumInteritemSpacing
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 8, left: 12, bottom: 8, right: 12)
+        return UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
     }
     
-    
-    
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-//    }
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let index = indexPath.row % 5
+        self.selectedDays[index] = false
+        selectedDaysProtocol?.selected(days: selectedDays)
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let index = indexPath.row % 5
+        self.selectedDays[index] = true
+        selectedDaysProtocol?.selected(days: selectedDays)
+        
+    }
 }
 
 
@@ -96,7 +106,10 @@ extension ModelDays: UIScrollViewDelegate {
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         
-        let pageWidth: CGFloat = ((self.collection.frame.width - 16)/7 + 16) * 5
+        let pageWidth: CGFloat = self.collection.frame.width - 20
+//            ((((self.collection.frame.width - 20))/5) - 20) * 5
+        
+//            ((self.collection.frame.width - (20*6) - 20*2)/5) * 5
         
         let currentOffset = scrollView.contentOffset.x
         let targetOffset = targetContentOffset.pointee.x
@@ -114,6 +127,8 @@ extension ModelDays: UIScrollViewDelegate {
         }
         targetContentOffset.pointee.x = currentOffset;
             scrollView.setContentOffset(CGPoint(x: CGFloat(newTargetOffset), y: scrollView.contentOffset.y), animated: true)
+        selectedDays = [false, false, false, false, false]
+        selectedDaysProtocol?.selected(days: selectedDays)
           
     }
    

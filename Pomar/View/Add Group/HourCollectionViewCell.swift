@@ -10,6 +10,8 @@ import UIKit
 
 class HourCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var hourTxtField: UITextField!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

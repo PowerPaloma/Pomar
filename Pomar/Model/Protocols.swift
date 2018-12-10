@@ -11,3 +11,7 @@ import Foundation
 protocol TextFieldProtocol {
     func send(text: String)
 }
+
+protocol SelectedDaysProtocol {
+    func selected(days: [Bool])
+}

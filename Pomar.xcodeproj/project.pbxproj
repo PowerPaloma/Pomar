@@ -10,7 +10,7 @@
 		2F022D6921A3C11D00A1293D /* TagsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F022D6721A3C11D00A1293D /* TagsCollectionViewCell.swift */; };
 		2F022D6A21A3C11D00A1293D /* TagsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F022D6821A3C11D00A1293D /* TagsCollectionViewCell.xib */; };
 		2F022D6C21A3D85B00A1293D /* ModelHourPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F022D6B21A3D85B00A1293D /* ModelHourPicker.swift */; };
-		2F022D6E21A42B7400A1293D /* TextFieldProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F022D6D21A42B7400A1293D /* TextFieldProtocol.swift */; };
+		2F022D6E21A42B7400A1293D /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F022D6D21A42B7400A1293D /* Protocols.swift */; };
 		2F0DAB4A219AF37800217ED5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0DAB49219AF37800217ED5 /* AppDelegate.swift */; };
 		2F0DAB4F219AF37800217ED5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F0DAB4D219AF37800217ED5 /* Main.storyboard */; };
 		2F0DAB52219AF37800217ED5 /* Pomar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2F0DAB50219AF37800217ED5 /* Pomar.xcdatamodeld */; };
@@ -66,7 +66,6 @@
 		92ED0C2921B572C800AA32CB /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ED0C2721B572C800AA32CB /* CalendarTableViewCell.swift */; };
 		92ED0C2A21B572C800AA32CB /* CalendarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92ED0C2821B572C800AA32CB /* CalendarTableViewCell.xib */; };
 		92ED0C2C21B57ACB00AA32CB /* HourCollectionViewDelegateAndDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ED0C2B21B57ACB00AA32CB /* HourCollectionViewDelegateAndDataSource.swift */; };
-		92ED0C2E21B57C0600AA32CB /* HourCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ED0C2D21B57C0600AA32CB /* HourCollectionViewCell.swift */; };
 		DC66117B21AD7F7400D329DA /* AppleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC66117A21AD7F7400D329DA /* AppleType.swift */; };
 		DC66117D21AD86AF00D329DA /* GroupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC66117C21AD86AF00D329DA /* GroupTests.swift */; };
 		DC66117F21AD86DA00D329DA /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC66117E21AD86DA00D329DA /* UserTests.swift */; };
@@ -97,7 +96,7 @@
 		2F022D6721A3C11D00A1293D /* TagsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsCollectionViewCell.swift; sourceTree = "<group>"; };
 		2F022D6821A3C11D00A1293D /* TagsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagsCollectionViewCell.xib; sourceTree = "<group>"; };
 		2F022D6B21A3D85B00A1293D /* ModelHourPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelHourPicker.swift; sourceTree = "<group>"; };
-		2F022D6D21A42B7400A1293D /* TextFieldProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldProtocol.swift; sourceTree = "<group>"; };
+		2F022D6D21A42B7400A1293D /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		2F0DAB46219AF37800217ED5 /* Pomar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pomar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F0DAB49219AF37800217ED5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F0DAB4E219AF37800217ED5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -160,7 +159,6 @@
 		92ED0C2721B572C800AA32CB /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
 		92ED0C2821B572C800AA32CB /* CalendarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarTableViewCell.xib; sourceTree = "<group>"; };
 		92ED0C2B21B57ACB00AA32CB /* HourCollectionViewDelegateAndDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourCollectionViewDelegateAndDataSource.swift; sourceTree = "<group>"; };
-		92ED0C2D21B57C0600AA32CB /* HourCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourCollectionViewCell.swift; sourceTree = "<group>"; };
 		DC66117A21AD7F7400D329DA /* AppleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleType.swift; sourceTree = "<group>"; };
 		DC66117C21AD86AF00D329DA /* GroupTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTests.swift; sourceTree = "<group>"; };
 		DC66117E21AD86DA00D329DA /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
@@ -265,7 +263,7 @@
 				2F0DABA121A2EB1D00217ED5 /* Validation.swift */,
 				2F0DABA321A3505F00217ED5 /* ModelDayPicker.swift */,
 				2F022D6B21A3D85B00A1293D /* ModelHourPicker.swift */,
-				2F022D6D21A42B7400A1293D /* TextFieldProtocol.swift */,
+				2F022D6D21A42B7400A1293D /* Protocols.swift */,
 				DC66117A21AD7F7400D329DA /* AppleType.swift */,
 				DCE8726A219C53DF008F78BE /* CKManager.swift */,
 			);
@@ -408,7 +406,6 @@
 			children = (
 				92ED0C2721B572C800AA32CB /* CalendarTableViewCell.swift */,
 				92ED0C2821B572C800AA32CB /* CalendarTableViewCell.xib */,
-				92ED0C2D21B57C0600AA32CB /* HourCollectionViewCell.swift */,
 				92ED0C2B21B57ACB00AA32CB /* HourCollectionViewDelegateAndDataSource.swift */,
 				92A470FE21B5BA19002E7C46 /* DatePickerView.swift */,
 				92A4710221B5BA44002E7C46 /* DatePickerView.xib */,
@@ -594,7 +591,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				92BFF23321B197AD00026FE8 /* Subjects.swift in Sources */,
-				92ED0C2E21B57C0600AA32CB /* HourCollectionViewCell.swift in Sources */,
 				2F0DABA421A3505F00217ED5 /* ModelDayPicker.swift in Sources */,
 				2F0DAB9F21A2E59E00217ED5 /* AddGroupPart2ViewController.swift in Sources */,
 				2F60CD0021BD754900BCE0F0 /* HourCollectionViewCell.swift in Sources */,
@@ -609,7 +605,7 @@
 				2F0DAB9D21A2E58F00217ED5 /* AddGroupPart1ViewController.swift in Sources */,
 				92A4710C21B80E64002E7C46 /* WSTag.swift in Sources */,
 				92ED0C2921B572C800AA32CB /* CalendarTableViewCell.swift in Sources */,
-				2F022D6E21A42B7400A1293D /* TextFieldProtocol.swift in Sources */,
+				2F022D6E21A42B7400A1293D /* Protocols.swift in Sources */,
 				2F0DAB52219AF37800217ED5 /* Pomar.xcdatamodeld in Sources */,
 				2F0DAB4A219AF37800217ED5 /* AppDelegate.swift in Sources */,
 				2F0DAB8D219B076C00217ED5 /* StudyGroupsViewController.swift in Sources */,
