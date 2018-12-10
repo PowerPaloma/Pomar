@@ -33,6 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
+
         var storyboard: UIStoryboard
         
         KeychainWrapper.standard.removeObject(forKey: "userID")
@@ -40,15 +41,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if KeychainWrapper.standard.string(forKey: "userID") != nil {
             storyboard = UIStoryboard(name: "Groups", bundle: nil)
         } else {
-            storyboard = UIStoryboard(name: "Feedback", bundle: nil)
+            storyboard = UIStoryboard(name: "Groups", bundle: nil)
         }
         
         let initialViewController = storyboard.instantiateInitialViewController()
         
         self.window?.rootViewController = initialViewController
         self.window?.makeKeyAndVisible()
-        print("Chegou aqui no didFinishLaunching")
-        
+
         return true
     }
 

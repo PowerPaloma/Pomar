@@ -12,6 +12,7 @@ import CloudKit
 class StudyGroupsViewController: UIViewController {
     
    
+    @IBOutlet weak var userMoney: UserMoney!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     let minimumInteritemSpacing: CGFloat = 20
@@ -38,6 +39,8 @@ class StudyGroupsViewController: UIViewController {
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        let tapGestureInUserMoney = UITapGestureRecognizer(target: self, action: #selector(barButtonMoney))
+        userMoney.addGestureRecognizer(tapGestureInUserMoney)
         
         collectionView.register(UINib(nibName: "GroupsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cellGroup")
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
@@ -53,6 +56,12 @@ class StudyGroupsViewController: UIViewController {
         }
     }
     
+    @objc func barButtonMoney() {
+        guard let exchangeViewController = UIStoryboard(name: "Exchange", bundle: nil).instantiateInitialViewController() else {return}
+        
+        present(exchangeViewController, animated: true, completion: nil)
+        
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -67,7 +76,7 @@ class StudyGroupsViewController: UIViewController {
                     }
                 }
             }else {
-                AlertError(controller: self).showErrorAlert(message: (error?.localizedDescription)!)
+               print(error.debugDescription)
             }
         }
     }
