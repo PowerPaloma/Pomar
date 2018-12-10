@@ -287,10 +287,10 @@
                                                             </imageView>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mJm-FH-ztW">
                                                                 <rect key="frame" x="0.0" y="0.0" width="301" height="30"/>
-                                                                <color key="backgroundColor" red="0.56011506840000003" green="0.55740919850000004" blue="0.56282093830000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </view>
                                                         </subviews>
-                                                        <color key="backgroundColor" red="1" green="0.87407993719999999" blue="0.91550147439999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstItem="mJm-FH-ztW" firstAttribute="leading" secondItem="Gsl-NQ-zo4" secondAttribute="leading" id="28X-sh-6bY"/>
                                                             <constraint firstAttribute="bottom" secondItem="mJm-FH-ztW" secondAttribute="bottom" id="4z7-3Q-kXE"/>
@@ -303,7 +303,7 @@
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fod-Re-A8a">
                                                         <rect key="frame" x="8" y="268.5" width="327" height="45"/>
-                                                        <color key="backgroundColor" red="0.69803921570000005" green="0.0" blue="0.023529411760000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date and Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LRC-Ni-ZRC">
                                                         <rect key="frame" x="8" y="333.5" width="105.5" height="19.5"/>
@@ -542,11 +542,14 @@
                         <outlet property="card" destination="6Vn-5q-N51" id="OFa-1j-XL2"/>
                         <outlet property="collectionDays" destination="0Fb-yP-hdf" id="hCL-3l-8wJ"/>
                         <outlet property="collectionMonths" destination="3dP-ru-1Ci" id="hln-Nv-4Di"/>
+                        <outlet property="containerSearch" destination="Gsl-NQ-zo4" id="4Nk-sP-9Fl"/>
                         <outlet property="dateAndTimeView" destination="9uS-Vn-IfA" id="rbo-6Z-6ob"/>
                         <outlet property="hourView" destination="aUD-oc-ncF" id="AWT-Vw-v6q"/>
                         <outlet property="nameTxtField" destination="nSj-rP-Zyh" id="Nfz-Qm-LrO"/>
                         <outlet property="scroll" destination="Uie-ry-Df3" id="FFM-MM-Qp9"/>
+                        <outlet property="searchView" destination="mJm-FH-ztW" id="Zm2-Q0-My3"/>
                         <outlet property="smallDescriptionTxtView" destination="3Vi-Rk-WCG" id="MFH-NB-EAm"/>
+                        <outlet property="suggestionsView" destination="fod-Re-A8a" id="3rr-MP-loG"/>
                         <outletCollection property="hoursTxtF" destination="4FF-ek-WcN" collectionClass="NSMutableArray" id="Thb-2J-a3j"/>
                         <outletCollection property="hoursTxtF" destination="ewW-SQ-2yw" collectionClass="NSMutableArray" id="x3z-rV-com"/>
                         <outletCollection property="hoursTxtF" destination="SeV-mM-M6B" collectionClass="NSMutableArray" id="Oh6-Tz-gmB"/>

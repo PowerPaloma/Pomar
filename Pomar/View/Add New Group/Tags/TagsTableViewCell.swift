@@ -73,7 +73,6 @@ extension TagsTableViewCell:TagsSuggestionCollectionDelegate {
             let suggestionTags = subjects.filter {$0.localizedCaseInsensitiveContains(text ?? "")}
             print(suggestionTags)
             TagsCollectionViewDelegateAndDataSource.tags = suggestionTags
-            self.collectionView.reloadData()
             print("onDidChangeText")
         }
         

@@ -10,6 +10,9 @@ import UIKit
 
 class AddGroupViewController: UIViewController {
 
+    @IBOutlet weak var containerSearch: UIView!
+    @IBOutlet weak var searchView: UIView!
+    @IBOutlet weak var suggestionsView: UIView!
     @IBOutlet weak var smallDescriptionTxtView: UITextView!
     @IBOutlet weak var nameTxtField: UITextField!
     @IBOutlet weak var hourView: UIView!
@@ -27,6 +30,9 @@ class AddGroupViewController: UIViewController {
     var activeField: UITextField!
     var hoursPickerController = UIPickerView()
     var modelHoursPicker: HourPicker!
+    let tagsFieldSearch = WSTagsField()
+    let tagsFieldSuggestions = WSTagsField()
+    var tagsCollectionViewDelegateAndDataSource = TagsCollectionViewDelegateAndDataSource()
     var accessoryToolbar: UIToolbar {
         get {
             let toolbarFrame = CGRect(x: 0, y: 0,
@@ -65,6 +71,7 @@ class AddGroupViewController: UIViewController {
         modelHoursPicker.textFieldDelegate = self
         
         setupTextFields()
+        setupTags()
         setup()
         observeKeyboardNotifications()
     }
@@ -82,10 +89,15 @@ class AddGroupViewController: UIViewController {
         self.hourView.layer.borderWidth = 0.5
         self.hourView.clipsToBounds = true
         self.hourView.layer.cornerRadius = 8
-        self.smallDescriptionTxtView.layer.borderColor = #colorLiteral(red: 0.8844738603, green: 0.879216373, blue: 0.8885154724, alpha: 1)
-        self.smallDescriptionTxtView.layer.borderWidth = 0.5
+        self.smallDescriptionTxtView.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        self.smallDescriptionTxtView.layer.borderWidth = 0.6
         self.smallDescriptionTxtView.layer.cornerRadius = 8
         self.smallDescriptionTxtView.clipsToBounds = true
+        self.containerSearch.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        self.containerSearch.layer.borderWidth = 0.6
+        self.containerSearch.clipsToBounds = true
+        self.containerSearch.layer.cornerRadius = 8
+        textFieldEvents()
         
 //        card.layer.cornerRadius = 12.0
 //        card.layer.borderWidth = 1.0
@@ -106,6 +118,47 @@ class AddGroupViewController: UIViewController {
             txtField.inputAccessoryView = accessoryToolbar
             txtField.delegate = self
         }
+    }
+    
+    private func setupTags(){
+        tagsFieldSearch.placeholder = "Search Tags"
+        tagsFieldSearch.font =  UIFont.systemFont(ofSize: 14)
+        tagsFieldSearch.cornerRadius = 12
+        tagsFieldSearch.textColor = #colorLiteral(red: 0.6980392157, green: 0, blue: 0.02352941176, alpha: 1)
+        tagsFieldSearch.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        tagsFieldSearch.borderColor = #colorLiteral(red: 0.6980392157, green: 0, blue: 0.02352941176, alpha: 1)
+        tagsFieldSearch.borderWidth = 0.5
+        tagsFieldSearch.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        searchView.addSubview(tagsFieldSearch)
+        tagsFieldSearch.contentInset = UIEdgeInsets(top: 8 , left: 8, bottom: 8, right: 8)
+        tagsFieldSearch.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        tagsFieldSearch.translatesAutoresizingMaskIntoConstraints = false
+        tagsCollectionViewDelegateAndDataSource.delegate = self
+        NSLayoutConstraint.activate([
+            tagsFieldSearch.topAnchor.constraint(equalTo: searchView.topAnchor),
+            tagsFieldSearch.leadingAnchor.constraint(equalTo: searchView.leadingAnchor, constant: 0),
+            tagsFieldSearch.trailingAnchor.constraint(equalTo: searchView.trailingAnchor, constant: 0),
+            searchView.bottomAnchor.constraint(equalTo: tagsFieldSearch.bottomAnchor)
+            ])
+        suggestionsView.addSubview(tagsFieldSuggestions)
+        tagsFieldSuggestions.placeholder = ""
+        tagsFieldSuggestions.contentInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        tagsFieldSuggestions.layoutMargins = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
+        tagsFieldSuggestions.font =  UIFont.systemFont(ofSize: 14)
+        tagsFieldSuggestions.cornerRadius = 12
+        tagsFieldSuggestions.textColor = #colorLiteral(red: 0.6980392157, green: 0, blue: 0.02352941176, alpha: 1)
+        tagsFieldSuggestions.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        tagsFieldSuggestions.borderColor = #colorLiteral(red: 0.6980392157, green: 0, blue: 0.02352941176, alpha: 1)
+        tagsFieldSuggestions.borderWidth = 0.5
+        tagsFieldSuggestions.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        tagsFieldSuggestions.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            tagsFieldSuggestions.topAnchor.constraint(equalTo: suggestionsView.topAnchor),
+            tagsFieldSuggestions.leadingAnchor.constraint(equalTo: suggestionsView.leadingAnchor, constant: 0),
+            tagsFieldSuggestions.trailingAnchor.constraint(equalTo: suggestionsView.trailingAnchor, constant: 0),
+            suggestionsView.bottomAnchor.constraint(equalTo: tagsFieldSuggestions.bottomAnchor)
+            ])
+
     }
     
     
@@ -207,6 +260,70 @@ extension AddGroupViewController: TextFieldProtocol {
         }
     }
     
+}
+
+extension AddGroupViewController:TagsSuggestionCollectionDelegate {
+    
+    fileprivate func textFieldEvents(){
+        tagsFieldSearch.onDidAddTag = { _, _ in
+            print("onDidAddTag")
+        }
+        
+        tagsFieldSearch.onDidRemoveTag = { _, _ in
+            print("onDidRemoveTag")
+        }
+        
+        tagsFieldSearch.onDidChangeText = { _, text in
+            let suggestionTags = subjects.filter {$0.localizedCaseInsensitiveContains(text ?? "")}
+            self.tagsFieldSuggestions.removeTags()
+            if suggestionTags.count < 3 {
+                self.tagsFieldSuggestions.addTags(suggestionTags)
+            }else{
+                self.tagsFieldSuggestions.addTags(Array(suggestionTags[0...2]))
+            }
+            self.tagsFieldSuggestions.cornerRadius = 12
+            self.tagsFieldSuggestions.textColor = #colorLiteral(red: 0.6980392157, green: 0, blue: 0.02352941176, alpha: 1)
+            self.tagsFieldSuggestions.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            self.tagsFieldSuggestions.borderColor = #colorLiteral(red: 0.6980392157, green: 0, blue: 0.02352941176, alpha: 1)
+            self.tagsFieldSuggestions.borderWidth = 0.5
+            self.tagsFieldSuggestions.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            
+            print(suggestionTags)
+            print("onDidChangeText")
+        }
+        
+        tagsFieldSearch.onDidChangeHeightTo = { _, height in
+            print("HeightTo \(height)")
+        }
+        
+        tagsFieldSuggestions.onDidSelectTagView = { tgField, tagView in
+            self.tagsFieldSearch.addTag(tagView.displayText)
+            subjects
+        }
+        
+        tagsFieldSearch.onDidUnselectTagView = { _, tagView in
+            print("Unselect \(tagView)")
+        }
+    }
+    
+    func remove(subject: String){
+        for sub in subjects{
+            subjects
+        }
+        
+    }
+    
+    func tapInTag(tagText: String) {
+        tagsFieldSearch.addTag(tagText)
+    }
+    func getTags() -> [String] {
+        let wsTags = tagsFieldSearch.tags
+        let tags = wsTags.map { (tags) -> String in
+            return tags.text
+        }
+        return tags
+        
+    }
 }
 
 

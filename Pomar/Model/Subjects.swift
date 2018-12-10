@@ -8,5 +8,7 @@
 
 import Foundation
 
-let subjects:[String] = ["UIKit","CollectionView","Delegate","TableView","alin","alin","alin","alin","alin","alin","alin"]
+let subjects:[String] = ["UIKit","UICollectionView","Delegate","UITableView","UILabel","UIButton","Protótipo","XD","ARKit","ComeML","Design"]
+
+
 
