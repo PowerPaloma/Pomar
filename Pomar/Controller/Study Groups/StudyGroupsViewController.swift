@@ -61,7 +61,7 @@ class StudyGroupsViewController: UIViewController {
                     }
                 }
             }else {
-                fatalError("\(String(describing: error?.localizedDescription))")
+               print(error.debugDescription)
             }
         }
     }
