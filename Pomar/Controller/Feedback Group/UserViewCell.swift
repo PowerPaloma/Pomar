@@ -32,15 +32,22 @@ class UserViewCell: UICollectionViewCell {
         }
     }
     
+    var redApple: Bool = false
+    var yellowApple: Bool = false
+    var greenApple: Bool = false
+    
     var selectedApple: AppleType? {
         didSet {
             var selectedView: UIImageView?
             switch selectedApple {
                 case .red?:
+                    redApple = true
                     selectedView = redView
                 case .yellow?:
+                    yellowApple = true
                     selectedView = yellowView
                 case .green?:
+                    greenApple = true
                     selectedView = greenView
                 default:
                     break

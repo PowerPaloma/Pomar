@@ -9,8 +9,23 @@
 import UIKit
 import CloudKit
 
+extension Bool {
+    var intValue: Int {
+        return self ? 1 : 0
+    }
+}
+
 class FeedbackViewController: UIViewController {
     
+    @IBOutlet weak var navigationBar: UINavigationBar! {
+        didSet {
+            navigationBar.isTranslucent = true
+            navigationBar.setBackgroundImage(UIImage(), for: .default)
+            navigationBar.shadowImage = UIImage()
+        }
+    }
+    @IBOutlet weak var loadingView: UIView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var stackBackgroundView: UIView!
@@ -116,6 +131,9 @@ class FeedbackViewController: UIViewController {
         
         groupId = CKRecord.ID(recordName: "082D5E81-4294-4BEA-BC2B-EEB24294EB03")
         
+        loadingView.isHidden = true
+        activityIndicator.isHidden = true
+        
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.dropDelegate = self
@@ -148,7 +166,35 @@ class FeedbackViewController: UIViewController {
         
         stackBackgroundView.layer.cornerRadius = 10
     }
-
+    
+    @IBAction func save(_ sender: Any) {
+        
+        loadingView.isHidden = false
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
+    
+        var records: [CKRecord] = []
+        records.append((myApples?.record)!)
+        for (index, _) in users.enumerated() {
+            let cell = collectionView.cellForItem(at: IndexPath(row: index, section: 0)) as! UserViewCell
+            let user = cell.user!
+            records.append(user.record)
+        }
+        CKManager.shared.update(records: records) { (records, error) in
+            guard let records = records else {
+                print(error?.localizedDescription)
+                return
+            }
+            DispatchQueue.main.async {
+                self.loadingView.isHidden = true
+                self.activityIndicator.stopAnimating()
+                self.activityIndicator.isHidden = true
+                print(records)
+            }
+            
+        }
+    }
+    
 }
 
 extension FeedbackViewController: UICollectionViewDataSource , UICollectionViewDelegate {
@@ -213,23 +259,37 @@ extension FeedbackViewController: UICollectionViewDropDelegate {
         let cell = collectionView.cellForItem(at: destinationIndexPath) as! UserViewCell
         cell.selectedApple = type
         
-        CKManager.shared.incrementUserApple(userID: (cell.user?.id)!, type: type!) { (record, error) in
-            guard record != nil else {
-                print(error!.localizedDescription)
-                return
-            }
-            
-            CKManager.shared.decrementApples(applesID: (self.myApples?.id!)!, type: type!, completion: { (record, error) in
-                guard let record = record else {
-                    print(error!.localizedDescription)
-                    return
-                }
-                
-                self.myApples = Apples(record: record)
-                
-            })
-            
+        cell.user?.incrementeApple(type: type!)
+        self.myApples?.decrement(type!)
+        
+        switch type! {
+        case .red:
+            redApples = redApples - 1
+        case .yellow:
+            yellowApples = yellowApples - 1
+        case .green:
+            greenApples = greenApples - 1
+        default:
+            break
         }
+        
+//        CKManager.shared.incrementUserApple(userID: (cell.user?.id)!, type: type!) { (record, error) in
+//            guard record != nil else {
+//                print(error!.localizedDescription)
+//                return
+//            }
+//
+//            CKManager.shared.decrementApples(applesID: (self.myApples?.id!)!, type: type!, completion: { (record, error) in
+//                guard let record = record else {
+//                    print(error!.localizedDescription)
+//                    return
+//                }
+//
+//                self.myApples = Apples(record: record)
+//
+//            })
+//
+//        }
         
     }
     

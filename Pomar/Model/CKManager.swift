@@ -395,6 +395,16 @@ final class CKManager {
         }
     }
     
+    func update(records: [CKRecord], completion: @escaping ([CKRecord]?, Error?) -> Void) {
+        let operation = CKModifyRecordsOperation(recordsToSave: records, recordIDsToDelete: nil)
+        
+        operation.completionBlock = {
+            completion(records, nil)
+        }
+        
+        self.publicDatabase.add(operation)
+    }
+    
     
     
 }

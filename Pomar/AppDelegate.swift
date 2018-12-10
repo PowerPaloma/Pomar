@@ -40,10 +40,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if KeychainWrapper.standard.string(forKey: "userID") != nil {
             storyboard = UIStoryboard(name: "Groups", bundle: nil)
         } else {
-            storyboard = UIStoryboard(name: "CreateUser", bundle: nil)
+            storyboard = UIStoryboard(name: "Feedback", bundle: nil)
         }
-        
-        
         
         let initialViewController = storyboard.instantiateInitialViewController()
         
