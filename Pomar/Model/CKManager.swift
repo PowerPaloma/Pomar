@@ -395,6 +395,7 @@ final class CKManager {
         }
     }
     
+
     func update(records: [CKRecord], completion: @escaping ([CKRecord]?, Error?) -> Void) {
         let operation = CKModifyRecordsOperation(recordsToSave: records, recordIDsToDelete: nil)
         
@@ -405,6 +406,37 @@ final class CKManager {
         self.publicDatabase.add(operation)
     }
     
-    
-    
+
+    func exchangeApple(userId:CKRecord.ID,appleType: AppleType, completion: @escaping (CKRecord?, Error?) -> Void){
+        publicDatabase.fetch(withRecordID: userId) { (record, error) in
+            guard let record = record else {
+                completion(nil, error)
+                return
+            }
+            
+            let user = User(record: record)
+            
+            var couldExchange = true
+            
+            switch appleType{
+            case .green:
+                if user.greenApples < 100{couldExchange = false}
+            case .red:
+                if user.redApples < 100{couldExchange = false}
+            case .yellow:
+                if user.yellowApples < 100{couldExchange = false}
+            }
+            
+            if couldExchange{
+                user.exchangeApple(type: appleType)
+                self.publicDatabase.save(user.record, completionHandler: { (record, error) in
+                    completion(record,error)
+                })
+            }else{
+                let error = NSError(domain: "You does not have enough apples", code: 1, userInfo: nil)
+                completion(nil, error)
+            }
+        }
+    }
+
 }

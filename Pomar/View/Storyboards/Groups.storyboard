@@ -92,11 +92,15 @@
                                 <color key="backgroundColor" red="0.92156862750000001" green="0.82352941180000006" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <color key="tintColor" red="0.92156862750000001" green="0.82352941180000006" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="barButtonMoney:" destination="6rZ-uc-HR8" id="7Rl-gl-oTI"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="z6C-1G-Hhq" id="YLk-Su-wow"/>
                         <outlet property="segmentedControl" destination="lDr-No-QTm" id="7Tb-cZ-1Pa"/>
+                        <outlet property="userMoney" destination="VIX-o8-PY8" id="ZwU-wg-Bw6"/>
                         <segue destination="vaR-AD-6j9" kind="show" identifier="detailsGroup" id="KFA-Ng-5tt"/>
                     </connections>
                 </viewController>

@@ -99,6 +99,16 @@
 		DC0296CE21B7EF5E0055D61C /* UserProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC0296CD21B7EF5E0055D61C /* UserProfile.storyboard */; };
 		DC0296D021B7F3F20055D61C /* CreateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0296CF21B7F3F20055D61C /* CreateUserViewController.swift */; };
 		DC20EDE921BEA6A80060CEC8 /* AlertError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC20EDE821BEA6A80060CEC8 /* AlertError.swift */; };
+		92444D4821BEB1DF00F4E6AF /* BadgesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92444D4621BEB1DF00F4E6AF /* BadgesCollectionViewCell.swift */; };
+		92444D4921BEB1E000F4E6AF /* BadgesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92444D4721BEB1DF00F4E6AF /* BadgesCollectionViewCell.xib */; };
+		92A4711021B955E4002E7C46 /* Exchange.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92A4710F21B955E4002E7C46 /* Exchange.storyboard */; };
+		92A4711321B96367002E7C46 /* ValueCoin.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92A4711221B96367002E7C46 /* ValueCoin.xib */; };
+		92A4711521B96534002E7C46 /* ValueCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A4711421B96534002E7C46 /* ValueCoin.swift */; };
+		92A4711821B99F62002E7C46 /* ExchangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A4711721B99F62002E7C46 /* ExchangeViewController.swift */; };
+		92FE184121BDF8500069AA99 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE184021BDF8500069AA99 /* ProfileViewController.swift */; };
+		92FE184321BDFB760069AA99 /* CollectionSkillsDelegateAndDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE184221BDFB760069AA99 /* CollectionSkillsDelegateAndDataSource.swift */; };
+		92FE184521BDFBB10069AA99 /* CollectionBadgesDelegateAndDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE184421BDFBB10069AA99 /* CollectionBadgesDelegateAndDataSource.swift */; };
+		92FE184721BDFF410069AA99 /* SkillsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE184621BDFF410069AA99 /* SkillsCollectionViewCell.swift */; };
 		DC66117B21AD7F7400D329DA /* AppleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC66117A21AD7F7400D329DA /* AppleType.swift */; };
 		DC66117D21AD86AF00D329DA /* GroupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC66117C21AD86AF00D329DA /* GroupTests.swift */; };
 		DC66117F21AD86DA00D329DA /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC66117E21AD86DA00D329DA /* UserTests.swift */; };
@@ -277,6 +287,16 @@
 		DC0296CD21B7EF5E0055D61C /* UserProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserProfile.storyboard; sourceTree = "<group>"; };
 		DC0296CF21B7F3F20055D61C /* CreateUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserViewController.swift; sourceTree = "<group>"; };
 		DC20EDE821BEA6A80060CEC8 /* AlertError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertError.swift; sourceTree = "<group>"; };
+		92444D4621BEB1DF00F4E6AF /* BadgesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesCollectionViewCell.swift; sourceTree = "<group>"; };
+		92444D4721BEB1DF00F4E6AF /* BadgesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BadgesCollectionViewCell.xib; sourceTree = "<group>"; };
+		92A4710F21B955E4002E7C46 /* Exchange.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Exchange.storyboard; sourceTree = "<group>"; };
+		92A4711221B96367002E7C46 /* ValueCoin.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ValueCoin.xib; sourceTree = "<group>"; };
+		92A4711421B96534002E7C46 /* ValueCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueCoin.swift; sourceTree = "<group>"; };
+		92A4711721B99F62002E7C46 /* ExchangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeViewController.swift; sourceTree = "<group>"; };
+		92FE184021BDF8500069AA99 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		92FE184221BDFB760069AA99 /* CollectionSkillsDelegateAndDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionSkillsDelegateAndDataSource.swift; sourceTree = "<group>"; };
+		92FE184421BDFBB10069AA99 /* CollectionBadgesDelegateAndDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionBadgesDelegateAndDataSource.swift; sourceTree = "<group>"; };
+		92FE184621BDFF410069AA99 /* SkillsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsCollectionViewCell.swift; sourceTree = "<group>"; };
 		DC66117A21AD7F7400D329DA /* AppleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleType.swift; sourceTree = "<group>"; };
 		DC66117C21AD86AF00D329DA /* GroupTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTests.swift; sourceTree = "<group>"; };
 		DC66117E21AD86DA00D329DA /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
@@ -425,6 +445,7 @@
 		2F0DAB7B219AF98E00217ED5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				92A4711121B9634A002E7C46 /* Exchange */,
 				2FCCE0E521B4F8A1002BC3D3 /* Date and Time */,
 				2F3DDEEF21AF8F6900A97CA2 /* Custon Navigation */,
 				2F3DDEE821ADD00500A97CA2 /* User Points */,
@@ -440,6 +461,8 @@
 			isa = PBXGroup;
 			children = (
 				DC0296CA21B7EE1D0055D61C /* CreateUser */,
+				92FE183E21BDF7AF0069AA99 /* Profile */,
+				92A4711621B99F03002E7C46 /* Exchange */,
 				2FCCE0EE21B5629B002BC3D3 /* DetailsGroup */,
 				DC74C1AD21AECD9E00C829B2 /* Feedback Group */,
 				2F0DABA021A2E5A200217ED5 /* Add Group */,
@@ -472,6 +495,7 @@
 				DC0296CB21B7EE480055D61C /* CreateUser.storyboard */,
 				DC0296CD21B7EF5E0055D61C /* UserProfile.storyboard */,
 				92269E5621AED7EF0053DAB5 /* NewGroup.storyboard */,
+				92A4710F21B955E4002E7C46 /* Exchange.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -651,6 +675,36 @@
 				DCA6E34921BA9BBF000E75A2 /* KeychainAcessibility.swift */,
 			);
 			path = CreateUser;
+            sourceTree = "<group>";
+        };
+		92A4711121B9634A002E7C46 /* Exchange */ = {
+			isa = PBXGroup;
+			children = (
+				92A4711221B96367002E7C46 /* ValueCoin.xib */,
+				92A4711421B96534002E7C46 /* ValueCoin.swift */,
+			);
+			path = Exchange;
+			sourceTree = "<group>";
+		};
+		92A4711621B99F03002E7C46 /* Exchange */ = {
+			isa = PBXGroup;
+			children = (
+				92A4711721B99F62002E7C46 /* ExchangeViewController.swift */,
+			);
+			path = Exchange;
+			sourceTree = "<group>";
+		};
+		92FE183E21BDF7AF0069AA99 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				92FE184021BDF8500069AA99 /* ProfileViewController.swift */,
+				92FE184221BDFB760069AA99 /* CollectionSkillsDelegateAndDataSource.swift */,
+				92FE184421BDFBB10069AA99 /* CollectionBadgesDelegateAndDataSource.swift */,
+				92FE184621BDFF410069AA99 /* SkillsCollectionViewCell.swift */,
+				92444D4621BEB1DF00F4E6AF /* BadgesCollectionViewCell.swift */,
+				92444D4721BEB1DF00F4E6AF /* BadgesCollectionViewCell.xib */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		DC74C1AD21AECD9E00C829B2 /* Feedback Group */ = {
@@ -847,6 +901,7 @@
 				DC74C1E421B0671000C829B2 /* UserViewCell.xib in Resources */,
 				2F3DDEE721ADC34700A97CA2 /* Initial.storyboard in Resources */,
 				2FCCE12121B64BC1002BC3D3 /* MembersCollectionViewCell.xib in Resources */,
+				92A4711321B96367002E7C46 /* ValueCoin.xib in Resources */,
 				2FCCE11D21B64B13002BC3D3 /* ParticipantsCollectionViewCell.xib in Resources */,
 				2F022D6A21A3C11D00A1293D /* TagsCollectionViewCell.xib in Resources */,
 				DC0296CC21B7EE480055D61C /* CreateUser.storyboard in Resources */,
@@ -865,6 +920,11 @@
 				2FCCE10921B5E74C002BC3D3 /* ButtonsCollectionViewCell.xib in Resources */,
 				2F0DAB8B219B026300217ED5 /* Missions.storyboard in Resources */,
 				92A4710321B5BA44002E7C46 /* DatePickerView.xib in Resources */,
+				92A4711021B955E4002E7C46 /* Exchange.storyboard in Resources */,
+				2F0DAB9B219DC3BE00217ED5 /* GroupsCollectionViewCell.xib in Resources */,
+				2FCCE10921B5E74C002BC3D3 /* ButtonsCollectionViewCell.xib in Resources */,
+				2F0DAB8B219B026300217ED5 /* Missions.storyboard in Resources */,
+				92444D4921BEB1E000F4E6AF /* BadgesCollectionViewCell.xib in Resources */,
 				9205F21621AC30DD00F5CA73 /* SlideTutorial.xib in Resources */,
 				2F3DDEF721B023D700A97CA2 /* HeaderCollectionViewCell.xib in Resources */,
 				2FCCE11921B6019C002BC3D3 /* DateCollectionViewCell.xib in Resources */,
@@ -913,6 +973,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92A4711521B96534002E7C46 /* ValueCoin.swift in Sources */,
+				92FE184521BDFBB10069AA99 /* CollectionBadgesDelegateAndDataSource.swift in Sources */,
 				DC74C1E621B1D5EA00C829B2 /* Apples.swift in Sources */,
 				92BFF23321B197AD00026FE8 /* Subjects.swift in Sources */,
 				92ED0C2E21B57C0600AA32CB /* HourCollectionViewCell.swift in Sources */,
@@ -940,6 +1002,7 @@
 				DCEF356221B810B80025B699 /* WSTagView.swift in Sources */,
 				2F0DAB52219AF37800217ED5 /* Pomar.xcdatamodeld in Sources */,
 				DCEF355F21B810B80025B699 /* WSTagsField.swift in Sources */,
+				92FE184121BDF8500069AA99 /* ProfileViewController.swift in Sources */,
 				2FE3665821B690F200D7D909 /* InitialViewController.swift in Sources */,
 				2FCCE0ED21B56186002BC3D3 /* DetailsViewController.swift in Sources */,
 				2F3DDEF321AF911A00A97CA2 /* CustomHeader.swift in Sources */,
@@ -948,13 +1011,17 @@
 				9205F21321AC238100F5CA73 /* TutorialViewController.swift in Sources */,
 				DCE87269219B4FFB008F78BE /* User.swift in Sources */,
 				92BFF23721B3513500026FE8 /* TagsCollectionViewDelegateAndDataSource.swift in Sources */,
+				92A4711821B99F62002E7C46 /* ExchangeViewController.swift in Sources */,
 				2F022D6921A3C11D00A1293D /* TagsCollectionViewCell.swift in Sources */,
 				2F3DDEF921B046D600A97CA2 /* ModelTag.swift in Sources */,
+				92FE184721BDFF410069AA99 /* SkillsCollectionViewCell.swift in Sources */,
+				92FE184321BDFB760069AA99 /* CollectionSkillsDelegateAndDataSource.swift in Sources */,
 				2FCCE10821B5E74C002BC3D3 /* ButtonsCollectionViewCell.swift in Sources */,
 				2FCCE11821B6019C002BC3D3 /* DateCollectionViewCell.swift in Sources */,
 				DC20EDE921BEA6A80060CEC8 /* AlertError.swift in Sources */,
 				2FCCE11C21B64B13002BC3D3 /* ParticipantsCollectionViewCell.swift in Sources */,
 				DC74C1E321B0671000C829B2 /* UserViewCell.swift in Sources */,
+				92444D4821BEB1DF00F4E6AF /* BadgesCollectionViewCell.swift in Sources */,
 				DC74C1EC21B5514B00C829B2 /* AppleShape.swift in Sources */,
 				DCE8726B219C53DF008F78BE /* CKManager.swift in Sources */,
 				2FCCE12021B64BC1002BC3D3 /* MembersCollectionViewCell.swift in Sources */,

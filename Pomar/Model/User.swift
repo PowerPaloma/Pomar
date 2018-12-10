@@ -130,4 +130,20 @@ class User {
         }
     }
     
+    func exchangeApple(type: AppleType){
+        switch type {
+        case .red:
+            self.redApples -= 100
+            self.money += 100
+            
+        case .green:
+            self.greenApples -= 100
+            self.money += 150
+        default:
+            self.yellowApples -= 100
+            self.money += 200
+        }
+        
+    }
+    
 }
