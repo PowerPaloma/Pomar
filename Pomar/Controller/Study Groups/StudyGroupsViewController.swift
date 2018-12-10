@@ -13,16 +13,29 @@ class StudyGroupsViewController: UIViewController {
     
    
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     let minimumInteritemSpacing: CGFloat = 20
     let minimumLineSpacing:CGFloat = 20
     var storedOffsets = [Int: CGFloat]()
     var navBar: UINavigationBar = UINavigationBar()
-    var groups: [Group] = []
+    var groups: [Group] = [] {
+        didSet {
+            if groups.count > 0 {
+                groups = groups.sorted(by: { (group1, group2) -> Bool in
+                    return group1.createdAt > group2.createdAt
+                })
+            }
+        }
+    }
+    
     var modelTag: ModelTag!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        groups = []
+        
         collectionView.delegate = self
         collectionView.dataSource = self
         
@@ -43,6 +56,9 @@ class StudyGroupsViewController: UIViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        segmentedControl.layer.cornerRadius = 5
+        
         CKManager.shared.fetchGroups { (groups, error) in
             if error == nil{
                 if let groups = groups{
@@ -57,7 +73,41 @@ class StudyGroupsViewController: UIViewController {
         }
     }
     
-
+    @IBAction func indexChanged(_ sender: Any) {
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            CKManager.shared.fetchGroups { (groups, error) in
+                if error == nil{
+                    if let groups = groups{
+                        self.groups = groups
+                        DispatchQueue.main.async {
+                            self.collectionView.reloadData()
+                        }
+                    }
+                }else {
+                    fatalError("\(String(describing: error?.localizedDescription))")
+                }
+            }
+        case 1:
+//            let id = CKRecord.ID(recordName: KeychainWrapper.standard.string(forKey: "userID"))
+            let id = CKRecord.ID(recordName: "1546BAB5-0964-C0AF-AE35-0D55349183EF")
+            CKManager.shared.fetchGroups(userID: id) { (groups, error) in
+                if error == nil{
+                    if let groups = groups{
+                        self.groups = groups
+                        DispatchQueue.main.async {
+                            self.collectionView.reloadData()
+                        }
+                    }
+                }else {
+                    fatalError("\(String(describing: error?.localizedDescription))")
+                }
+            }
+        default:
+            break
+        }
+    }
+    
     
 }
 

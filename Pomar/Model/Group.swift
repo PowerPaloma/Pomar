@@ -68,6 +68,12 @@ class Group {
     var date: Date?
     var isWeekly: Bool
     
+    var record: CKRecord?
+    
+    var createdAt: Date {
+        return record!.creationDate!
+    }
+    
     init(name: String, description: String, tags: [String], schedule: [DaySchedule], date: Date, isWeekly: Bool) {
         self.name = name
         self.description = description
@@ -76,6 +82,7 @@ class Group {
         self.date = date
         self.isWeekly = isWeekly
     }
+    
     init() {
         self.name = ""
         self.description = ""
@@ -89,6 +96,8 @@ class Group {
     
     
     init?(record: CKRecord){
+        
+        self.record = record
         
         self.id = record.recordID
         guard let name = record["name"] as? String , let description = record["description"]  as? String, let isWeekly = record["isWeekly"]  as? Bool, let tags = record["tags"] as? [String] else {return nil}

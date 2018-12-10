@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="z6C-1G-Hhq">
-                                <rect key="frame" x="0.0" y="112.5" width="375" height="554.5"/>
+                                <rect key="frame" x="0.0" y="166" width="375" height="501"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="a51-eB-7Cb">
                                     <size key="itemSize" width="50" height="50"/>
@@ -50,16 +50,30 @@
                                 <rect key="frame" x="316" y="73.5" width="39" height="39"/>
                                 <state key="normal" image="addButton"/>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lDr-No-QTm">
+                                <rect key="frame" x="107" y="128" width="161" height="29"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <segments>
+                                    <segment title="All Groups"/>
+                                    <segment title="My Groups"/>
+                                </segments>
+                                <color key="tintColor" red="0.40410113334655762" green="0.76852041482925415" blue="0.41954410076141357" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="indexChanged:" destination="6rZ-uc-HR8" eventType="valueChanged" id="CP3-cc-v4x"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="0.92156862750000001" green="0.82352941180000006" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="6eS-B8-ye0" firstAttribute="trailing" secondItem="msK-8c-m9Q" secondAttribute="trailing" constant="20" id="0wk-4W-IsH"/>
                             <constraint firstItem="msK-8c-m9Q" firstAttribute="top" secondItem="Gey-Vn-sHa" secondAttribute="bottom" constant="-12" id="51m-cG-eJS"/>
-                            <constraint firstItem="z6C-1G-Hhq" firstAttribute="top" secondItem="msK-8c-m9Q" secondAttribute="bottom" id="5Sf-IV-brj"/>
+                            <constraint firstItem="lDr-No-QTm" firstAttribute="centerX" secondItem="C05-fW-vEp" secondAttribute="centerX" id="6dI-2P-c2x"/>
                             <constraint firstItem="C05-fW-vEp" firstAttribute="leading" secondItem="6eS-B8-ye0" secondAttribute="leading" id="CYJ-Iv-HFQ"/>
                             <constraint firstItem="Gey-Vn-sHa" firstAttribute="top" secondItem="6eS-B8-ye0" secondAttribute="top" id="QTv-n2-I98"/>
                             <constraint firstItem="z6C-1G-Hhq" firstAttribute="leading" secondItem="6eS-B8-ye0" secondAttribute="leading" id="VBp-0q-FHY"/>
+                            <constraint firstItem="lDr-No-QTm" firstAttribute="top" secondItem="Gey-Vn-sHa" secondAttribute="bottom" constant="42.5" id="X4c-V5-7bA"/>
                             <constraint firstItem="Gey-Vn-sHa" firstAttribute="centerX" secondItem="6eS-B8-ye0" secondAttribute="centerX" id="dtk-xR-mNJ"/>
+                            <constraint firstItem="z6C-1G-Hhq" firstAttribute="top" secondItem="lDr-No-QTm" secondAttribute="bottom" constant="10" id="e8k-oA-NLB"/>
                             <constraint firstItem="C05-fW-vEp" firstAttribute="top" secondItem="Fft-vt-Kpw" secondAttribute="top" id="gDq-xK-JPV"/>
                             <constraint firstItem="6eS-B8-ye0" firstAttribute="bottom" secondItem="C05-fW-vEp" secondAttribute="bottom" id="jJp-L9-pid"/>
                             <constraint firstItem="6eS-B8-ye0" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Gey-Vn-sHa" secondAttribute="trailing" constant="32" id="nq2-58-h0a"/>
@@ -82,6 +96,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="z6C-1G-Hhq" id="YLk-Su-wow"/>
+                        <outlet property="segmentedControl" destination="lDr-No-QTm" id="7Tb-cZ-1Pa"/>
                         <segue destination="vaR-AD-6j9" kind="show" identifier="detailsGroup" id="KFA-Ng-5tt"/>
                     </connections>
                 </viewController>
