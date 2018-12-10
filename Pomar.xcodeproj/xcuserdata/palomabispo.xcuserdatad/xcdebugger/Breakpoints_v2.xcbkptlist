@@ -9,6 +9,7 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
+<<<<<<< HEAD
             filePath = "Pomar/Controller/DetailsGroup/DetailsViewController.swift"
             timestampString = "565613508.291737"
             startingColumnNumber = "9223372036854775807"
@@ -44,6 +45,15 @@
             startingLineNumber = "139"
             endingLineNumber = "139"
             landmarkName = "collectionView(_:layout:sizeForItemAt:)"
+=======
+            filePath = "Pomar/Controller/Add Group/AddGroupViewController.swift"
+            timestampString = "566164450.629112"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "245"
+            endingLineNumber = "245"
+            landmarkName = "done(_:)"
+>>>>>>> newGroup
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -53,6 +63,7 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
+<<<<<<< HEAD
             filePath = "Pomar/Controller/DetailsGroup/DetailsViewController.swift"
             timestampString = "565613508.291871"
             startingColumnNumber = "9223372036854775807"
@@ -60,12 +71,22 @@
             startingLineNumber = "48"
             endingLineNumber = "48"
             landmarkName = "collectionView(_:cellForItemAt:)"
+=======
+            filePath = "Pomar/Controller/Add Group/AddGroupViewController.swift"
+            timestampString = "566164450.629517"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "248"
+            endingLineNumber = "248"
+            landmarkName = "done(_:)"
+>>>>>>> newGroup
             landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
+<<<<<<< HEAD
                   symbolName = "Pomar.DetailsViewController.collectionView(_: __C.UICollectionView, cellForItemAt: Foundation.IndexPath) -&gt; __C.UICollectionViewCell"
                   moduleName = "Pomar"
                   usesParentBreakpointCondition = "Yes"
@@ -76,11 +97,24 @@
                   startingLineNumber = "48"
                   endingLineNumber = "48"
                   offsetFromSymbolStart = "176">
+=======
+                  symbolName = "Pomar.AddGroupViewController.done(Any) -&gt; ()"
+                  moduleName = "Pomar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/palomabispo/Documents/Xcode%20Projects/Pomar/Pomar/Controller/Add%20Group/AddGroupViewController.swift"
+                  timestampString = "566159059.621382"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "244"
+                  endingLineNumber = "244"
+                  offsetFromSymbolStart = "2502">
+>>>>>>> newGroup
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
+<<<<<<< HEAD
                   symbolName = "Pomar.DetailsViewController.collectionView(_: __C.UICollectionView, cellForItemAt: Foundation.IndexPath) -&gt; __C.UICollectionViewCell"
                   moduleName = "Pomar"
                   usesParentBreakpointCondition = "Yes"
@@ -91,6 +125,18 @@
                   startingLineNumber = "48"
                   endingLineNumber = "48"
                   offsetFromSymbolStart = "196">
+=======
+                  symbolName = "closure #1 (Pomar.WSTag) -&gt; Swift.String in Pomar.AddGroupViewController.done(Any) -&gt; ()"
+                  moduleName = "Pomar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/palomabispo/Documents/Xcode%20Projects/Pomar/Pomar/Controller/Add%20Group/AddGroupViewController.swift"
+                  timestampString = "566159059.62316"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "245"
+                  endingLineNumber = "245"
+                  offsetFromSymbolStart = "16">
+>>>>>>> newGroup
                </Location>
             </Locations>
          </BreakpointContent>
@@ -101,6 +147,7 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
+<<<<<<< HEAD
             filePath = "Pomar/Controller/Study Groups/StudyGroupsViewController.swift"
             timestampString = "565611250.2790411"
             startingColumnNumber = "9223372036854775807"
@@ -108,6 +155,14 @@
             startingLineNumber = "112"
             endingLineNumber = "112"
             landmarkName = "collectionView(_:cellForItemAt:)"
+=======
+            filePath = "Pomar/Controller/Add Group/AddGroupViewController.swift"
+            timestampString = "566164450.629566"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "253"
+            endingLineNumber = "253"
+            landmarkName = "done(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -117,6 +172,24 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
+            filePath = "Pomar/Controller/Add Group/AddGroupViewController.swift"
+            timestampString = "566164450.629606"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "255"
+            endingLineNumber = "255"
+            landmarkName = "done(_:)"
+>>>>>>> newGroup
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+<<<<<<< HEAD
             filePath = "Pomar/Model/ModelTag.swift"
             timestampString = "565611309.784655"
             startingColumnNumber = "9223372036854775807"
@@ -124,6 +197,15 @@
             startingLineNumber = "59"
             endingLineNumber = "59"
             landmarkName = "collectionView(_:numberOfItemsInSection:)"
+=======
+            filePath = "Pomar/Controller/Add Group/AddGroupViewController.swift"
+            timestampString = "566164450.6296639"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "257"
+            endingLineNumber = "257"
+            landmarkName = "done(_:)"
+>>>>>>> newGroup
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -10,7 +10,7 @@
 		2F022D6921A3C11D00A1293D /* TagsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F022D6721A3C11D00A1293D /* TagsCollectionViewCell.swift */; };
 		2F022D6A21A3C11D00A1293D /* TagsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F022D6821A3C11D00A1293D /* TagsCollectionViewCell.xib */; };
 		2F022D6C21A3D85B00A1293D /* ModelHourPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F022D6B21A3D85B00A1293D /* ModelHourPicker.swift */; };
-		2F022D6E21A42B7400A1293D /* TextFieldProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F022D6D21A42B7400A1293D /* TextFieldProtocol.swift */; };
+		2F022D6E21A42B7400A1293D /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F022D6D21A42B7400A1293D /* Protocols.swift */; };
 		2F0DAB4A219AF37800217ED5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0DAB49219AF37800217ED5 /* AppDelegate.swift */; };
 		2F0DAB4F219AF37800217ED5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F0DAB4D219AF37800217ED5 /* Main.storyboard */; };
 		2F0DAB52219AF37800217ED5 /* Pomar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2F0DAB50219AF37800217ED5 /* Pomar.xcdatamodeld */; };
@@ -22,7 +22,6 @@
 		2F0DAB85219B020000217ED5 /* Groups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F0DAB84219B020000217ED5 /* Groups.storyboard */; };
 		2F0DAB87219B021C00217ED5 /* Questions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F0DAB86219B021C00217ED5 /* Questions.storyboard */; };
 		2F0DAB89219B022A00217ED5 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F0DAB88219B022A00217ED5 /* Profile.storyboard */; };
-		2F0DAB8B219B026300217ED5 /* Missions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F0DAB8A219B026300217ED5 /* Missions.storyboard */; };
 		2F0DAB8D219B076C00217ED5 /* StudyGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0DAB8C219B076C00217ED5 /* StudyGroupsViewController.swift */; };
 		2F0DAB9A219DC3BE00217ED5 /* GroupsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0DAB98219DC3BE00217ED5 /* GroupsCollectionViewCell.swift */; };
 		2F0DAB9B219DC3BE00217ED5 /* GroupsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F0DAB99219DC3BE00217ED5 /* GroupsCollectionViewCell.xib */; };
@@ -38,9 +37,17 @@
 		2F3DDEF621B023D700A97CA2 /* HeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3DDEF421B023D700A97CA2 /* HeaderCollectionViewCell.swift */; };
 		2F3DDEF721B023D700A97CA2 /* HeaderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F3DDEF521B023D700A97CA2 /* HeaderCollectionViewCell.xib */; };
 		2F3DDEF921B046D600A97CA2 /* ModelTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3DDEF821B046D600A97CA2 /* ModelTag.swift */; };
+		2F60CCEF21BC448B00BCE0F0 /* AddGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F60CCEE21BC448B00BCE0F0 /* AddGroupViewController.swift */; };
+		2F60CCF221BC44F300BCE0F0 /* ModelMonths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F60CCF121BC44F300BCE0F0 /* ModelMonths.swift */; };
+		2F60CCF621BC479400BCE0F0 /* MonthCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F60CCF421BC479400BCE0F0 /* MonthCollectionViewCell.swift */; };
+		2F60CCF721BC479400BCE0F0 /* MonthCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F60CCF521BC479400BCE0F0 /* MonthCollectionViewCell.xib */; };
+		2F60CCF921BC6FE000BCE0F0 /* ModelDays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F60CCF821BC6FE000BCE0F0 /* ModelDays.swift */; };
+		2F60CCFC21BC744700BCE0F0 /* DayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F60CCFA21BC744700BCE0F0 /* DayCollectionViewCell.swift */; };
+		2F60CCFD21BC744700BCE0F0 /* DayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F60CCFB21BC744700BCE0F0 /* DayCollectionViewCell.xib */; };
+		2F60CD0021BD754900BCE0F0 /* HourCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F60CCFE21BD754900BCE0F0 /* HourCollectionViewCell.swift */; };
+		2F60CD0121BD754900BCE0F0 /* HourCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F60CCFF21BD754900BCE0F0 /* HourCollectionViewCell.xib */; };
+		2F60CD0321BD76A100BCE0F0 /* ModelHours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F60CD0221BD76A100BCE0F0 /* ModelHours.swift */; };
 		2FCCE0E421B4E1E5002BC3D3 /* TestingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCCE0E321B4E1E5002BC3D3 /* TestingViewController.swift */; };
-		2FCCE0E921B4F8E0002BC3D3 /* DateAndTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCCE0E821B4F8E0002BC3D3 /* DateAndTime.swift */; };
-		2FCCE0EB21B4F8ED002BC3D3 /* DateAndTime.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FCCE0EA21B4F8ED002BC3D3 /* DateAndTime.xib */; };
 		2FCCE0ED21B56186002BC3D3 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCCE0EC21B56186002BC3D3 /* DetailsViewController.swift */; };
 		2FCCE0FD21B5A3EF002BC3D3 /* Instantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCCE0FC21B5A3EF002BC3D3 /* Instantiable.swift */; };
 		2FCCE10821B5E74C002BC3D3 /* ButtonsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCCE10621B5E74C002BC3D3 /* ButtonsCollectionViewCell.swift */; };
@@ -80,35 +87,27 @@
 		9205F21821AC322400F5CA73 /* SlideTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205F21721AC322400F5CA73 /* SlideTutorial.swift */; };
 		9206BDB621AD6AE50013437F /* FinalTutorial.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9206BDB521AD6AE50013437F /* FinalTutorial.xib */; };
 		9206BDB821AD6ED40013437F /* FinalTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9206BDB721AD6ED40013437F /* FinalTutorial.swift */; };
+		92134A1321BF1B8E00E773A7 /* Missions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92134A1221BF1B8E00E773A7 /* Missions.storyboard */; };
 		92269E5721AED7EF0053DAB5 /* NewGroup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92269E5621AED7EF0053DAB5 /* NewGroup.storyboard */; };
-		92269E5921AED9010053DAB5 /* AddNewGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92269E5821AED9010053DAB5 /* AddNewGroupViewController.swift */; };
-		92269E9721B01BC40053DAB5 /* DescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92269E9521B01BC30053DAB5 /* DescriptionTableViewCell.swift */; };
-		92269E9821B01BC40053DAB5 /* DescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92269E9621B01BC30053DAB5 /* DescriptionTableViewCell.xib */; };
-		92A470FF21B5BA1A002E7C46 /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A470FE21B5BA19002E7C46 /* DatePickerView.swift */; };
-		92A4710321B5BA44002E7C46 /* DatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92A4710221B5BA44002E7C46 /* DatePickerView.xib */; };
-		92BFF21721B029CF00026FE8 /* TagsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BFF21521B029CF00026FE8 /* TagsTableViewCell.swift */; };
-		92BFF21821B029CF00026FE8 /* TagsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92BFF21621B029CF00026FE8 /* TagsTableViewCell.xib */; };
-		92BFF23321B197AD00026FE8 /* Subjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BFF23221B197AD00026FE8 /* Subjects.swift */; };
-		92BFF23721B3513500026FE8 /* TagsCollectionViewDelegateAndDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BFF23621B3513500026FE8 /* TagsCollectionViewDelegateAndDataSource.swift */; };
-		92BFF23921B354B000026FE8 /* TagsSuggestionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BFF23821B354B000026FE8 /* TagsSuggestionCollectionViewCell.swift */; };
-		92ED0C2921B572C800AA32CB /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ED0C2721B572C800AA32CB /* CalendarTableViewCell.swift */; };
-		92ED0C2A21B572C800AA32CB /* CalendarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92ED0C2821B572C800AA32CB /* CalendarTableViewCell.xib */; };
-		92ED0C2C21B57ACB00AA32CB /* HourCollectionViewDelegateAndDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ED0C2B21B57ACB00AA32CB /* HourCollectionViewDelegateAndDataSource.swift */; };
-		92ED0C2E21B57C0600AA32CB /* HourCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ED0C2D21B57C0600AA32CB /* HourCollectionViewCell.swift */; };
-		DC0296CC21B7EE480055D61C /* CreateUser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC0296CB21B7EE480055D61C /* CreateUser.storyboard */; };
-		DC0296CE21B7EF5E0055D61C /* UserProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC0296CD21B7EF5E0055D61C /* UserProfile.storyboard */; };
-		DC0296D021B7F3F20055D61C /* CreateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0296CF21B7F3F20055D61C /* CreateUserViewController.swift */; };
-		DC20EDE921BEA6A80060CEC8 /* AlertError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC20EDE821BEA6A80060CEC8 /* AlertError.swift */; };
 		92444D4821BEB1DF00F4E6AF /* BadgesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92444D4621BEB1DF00F4E6AF /* BadgesCollectionViewCell.swift */; };
 		92444D4921BEB1E000F4E6AF /* BadgesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92444D4721BEB1DF00F4E6AF /* BadgesCollectionViewCell.xib */; };
+		92A4710A21B80E64002E7C46 /* WSTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A4710521B80E63002E7C46 /* WSTagView.swift */; };
+		92A4710E21B80E64002E7C46 /* WSTagsField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A4710921B80E63002E7C46 /* WSTagsField.swift */; };
 		92A4711021B955E4002E7C46 /* Exchange.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92A4710F21B955E4002E7C46 /* Exchange.storyboard */; };
 		92A4711321B96367002E7C46 /* ValueCoin.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92A4711221B96367002E7C46 /* ValueCoin.xib */; };
 		92A4711521B96534002E7C46 /* ValueCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A4711421B96534002E7C46 /* ValueCoin.swift */; };
 		92A4711821B99F62002E7C46 /* ExchangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A4711721B99F62002E7C46 /* ExchangeViewController.swift */; };
+		92BFF23321B197AD00026FE8 /* Subjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BFF23221B197AD00026FE8 /* Subjects.swift */; };
+		92BFF23721B3513500026FE8 /* TagsCollectionViewDelegateAndDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BFF23621B3513500026FE8 /* TagsCollectionViewDelegateAndDataSource.swift */; };
+		92BFF23921B354B000026FE8 /* TagsSuggestionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BFF23821B354B000026FE8 /* TagsSuggestionCollectionViewCell.swift */; };
 		92FE184121BDF8500069AA99 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE184021BDF8500069AA99 /* ProfileViewController.swift */; };
 		92FE184321BDFB760069AA99 /* CollectionSkillsDelegateAndDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE184221BDFB760069AA99 /* CollectionSkillsDelegateAndDataSource.swift */; };
 		92FE184521BDFBB10069AA99 /* CollectionBadgesDelegateAndDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE184421BDFBB10069AA99 /* CollectionBadgesDelegateAndDataSource.swift */; };
 		92FE184721BDFF410069AA99 /* SkillsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE184621BDFF410069AA99 /* SkillsCollectionViewCell.swift */; };
+		DC0296CC21B7EE480055D61C /* CreateUser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC0296CB21B7EE480055D61C /* CreateUser.storyboard */; };
+		DC0296CE21B7EF5E0055D61C /* UserProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC0296CD21B7EF5E0055D61C /* UserProfile.storyboard */; };
+		DC0296D021B7F3F20055D61C /* CreateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0296CF21B7F3F20055D61C /* CreateUserViewController.swift */; };
+		DC20EDE921BEA6A80060CEC8 /* AlertError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC20EDE821BEA6A80060CEC8 /* AlertError.swift */; };
 		DC66117B21AD7F7400D329DA /* AppleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC66117A21AD7F7400D329DA /* AppleType.swift */; };
 		DC66117D21AD86AF00D329DA /* GroupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC66117C21AD86AF00D329DA /* GroupTests.swift */; };
 		DC66117F21AD86DA00D329DA /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC66117E21AD86DA00D329DA /* UserTests.swift */; };
@@ -126,10 +125,8 @@
 		DCE87269219B4FFB008F78BE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE87268219B4FFB008F78BE /* User.swift */; };
 		DCE8726B219C53DF008F78BE /* CKManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE8726A219C53DF008F78BE /* CKManager.swift */; };
 		DCE87275219CB1F9008F78BE /* DaySchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE87274219CB1F9008F78BE /* DaySchedule.swift */; };
-		DCEF355F21B810B80025B699 /* WSTagsField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEF355A21B810B80025B699 /* WSTagsField.swift */; };
 		DCEF356021B810B80025B699 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEF355B21B810B80025B699 /* Constants.swift */; };
 		DCEF356121B810B80025B699 /* WSTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEF355C21B810B80025B699 /* WSTag.swift */; };
-		DCEF356221B810B80025B699 /* WSTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEF355D21B810B80025B699 /* WSTagView.swift */; };
 		DCEF356321B810B80025B699 /* BackspaceDetectingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEF355E21B810B80025B699 /* BackspaceDetectingTextField.swift */; };
 /* End PBXBuildFile section */
 
@@ -193,7 +190,7 @@
 		2F022D6721A3C11D00A1293D /* TagsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsCollectionViewCell.swift; sourceTree = "<group>"; };
 		2F022D6821A3C11D00A1293D /* TagsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagsCollectionViewCell.xib; sourceTree = "<group>"; };
 		2F022D6B21A3D85B00A1293D /* ModelHourPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelHourPicker.swift; sourceTree = "<group>"; };
-		2F022D6D21A42B7400A1293D /* TextFieldProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldProtocol.swift; sourceTree = "<group>"; };
+		2F022D6D21A42B7400A1293D /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		2F0DAB46219AF37800217ED5 /* Pomar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pomar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F0DAB49219AF37800217ED5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F0DAB4E219AF37800217ED5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -212,7 +209,6 @@
 		2F0DAB84219B020000217ED5 /* Groups.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Groups.storyboard; sourceTree = "<group>"; };
 		2F0DAB86219B021C00217ED5 /* Questions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Questions.storyboard; sourceTree = "<group>"; };
 		2F0DAB88219B022A00217ED5 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
-		2F0DAB8A219B026300217ED5 /* Missions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Missions.storyboard; sourceTree = "<group>"; };
 		2F0DAB8C219B076C00217ED5 /* StudyGroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyGroupsViewController.swift; sourceTree = "<group>"; };
 		2F0DAB98219DC3BE00217ED5 /* GroupsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsCollectionViewCell.swift; sourceTree = "<group>"; };
 		2F0DAB99219DC3BE00217ED5 /* GroupsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupsCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -228,9 +224,17 @@
 		2F3DDEF421B023D700A97CA2 /* HeaderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionViewCell.swift; sourceTree = "<group>"; };
 		2F3DDEF521B023D700A97CA2 /* HeaderCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCollectionViewCell.xib; sourceTree = "<group>"; };
 		2F3DDEF821B046D600A97CA2 /* ModelTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTag.swift; sourceTree = "<group>"; };
+		2F60CCEE21BC448B00BCE0F0 /* AddGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupViewController.swift; sourceTree = "<group>"; };
+		2F60CCF121BC44F300BCE0F0 /* ModelMonths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelMonths.swift; sourceTree = "<group>"; };
+		2F60CCF421BC479400BCE0F0 /* MonthCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthCollectionViewCell.swift; sourceTree = "<group>"; };
+		2F60CCF521BC479400BCE0F0 /* MonthCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonthCollectionViewCell.xib; sourceTree = "<group>"; };
+		2F60CCF821BC6FE000BCE0F0 /* ModelDays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDays.swift; sourceTree = "<group>"; };
+		2F60CCFA21BC744700BCE0F0 /* DayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCollectionViewCell.swift; sourceTree = "<group>"; };
+		2F60CCFB21BC744700BCE0F0 /* DayCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DayCollectionViewCell.xib; sourceTree = "<group>"; };
+		2F60CCFE21BD754900BCE0F0 /* HourCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourCollectionViewCell.swift; sourceTree = "<group>"; };
+		2F60CCFF21BD754900BCE0F0 /* HourCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HourCollectionViewCell.xib; sourceTree = "<group>"; };
+		2F60CD0221BD76A100BCE0F0 /* ModelHours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelHours.swift; sourceTree = "<group>"; };
 		2FCCE0E321B4E1E5002BC3D3 /* TestingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingViewController.swift; sourceTree = "<group>"; };
-		2FCCE0E821B4F8E0002BC3D3 /* DateAndTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAndTime.swift; sourceTree = "<group>"; };
-		2FCCE0EA21B4F8ED002BC3D3 /* DateAndTime.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateAndTime.xib; sourceTree = "<group>"; };
 		2FCCE0EC21B56186002BC3D3 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		2FCCE0FC21B5A3EF002BC3D3 /* Instantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instantiable.swift; sourceTree = "<group>"; };
 		2FCCE10621B5E74C002BC3D3 /* ButtonsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -268,35 +272,32 @@
 		9205F21721AC322400F5CA73 /* SlideTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideTutorial.swift; sourceTree = "<group>"; };
 		9206BDB521AD6AE50013437F /* FinalTutorial.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FinalTutorial.xib; sourceTree = "<group>"; };
 		9206BDB721AD6ED40013437F /* FinalTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalTutorial.swift; sourceTree = "<group>"; };
+		92134A1221BF1B8E00E773A7 /* Missions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Missions.storyboard; sourceTree = "<group>"; };
 		92269E5621AED7EF0053DAB5 /* NewGroup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewGroup.storyboard; sourceTree = "<group>"; };
-		92269E5821AED9010053DAB5 /* AddNewGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewGroupViewController.swift; sourceTree = "<group>"; };
-		92269E9521B01BC30053DAB5 /* DescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTableViewCell.swift; sourceTree = "<group>"; };
-		92269E9621B01BC30053DAB5 /* DescriptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionTableViewCell.xib; sourceTree = "<group>"; };
-		92A470FE21B5BA19002E7C46 /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
-		92A4710221B5BA44002E7C46 /* DatePickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePickerView.xib; sourceTree = "<group>"; };
+		92444D4621BEB1DF00F4E6AF /* BadgesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesCollectionViewCell.swift; sourceTree = "<group>"; };
+		92444D4721BEB1DF00F4E6AF /* BadgesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BadgesCollectionViewCell.xib; sourceTree = "<group>"; };
+		92A4710521B80E63002E7C46 /* WSTagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSTagView.swift; sourceTree = "<group>"; };
+		92A4710621B80E63002E7C46 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		92A4710721B80E63002E7C46 /* WSTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSTag.swift; sourceTree = "<group>"; };
+		92A4710821B80E63002E7C46 /* BackspaceDetectingTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackspaceDetectingTextField.swift; sourceTree = "<group>"; };
+		92A4710921B80E63002E7C46 /* WSTagsField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSTagsField.swift; sourceTree = "<group>"; };
+		92A4710F21B955E4002E7C46 /* Exchange.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Exchange.storyboard; sourceTree = "<group>"; };
+		92A4711221B96367002E7C46 /* ValueCoin.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ValueCoin.xib; sourceTree = "<group>"; };
+		92A4711421B96534002E7C46 /* ValueCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueCoin.swift; sourceTree = "<group>"; };
+		92A4711721B99F62002E7C46 /* ExchangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeViewController.swift; sourceTree = "<group>"; };
 		92BFF21521B029CF00026FE8 /* TagsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsTableViewCell.swift; sourceTree = "<group>"; };
 		92BFF21621B029CF00026FE8 /* TagsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagsTableViewCell.xib; sourceTree = "<group>"; };
 		92BFF23221B197AD00026FE8 /* Subjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subjects.swift; sourceTree = "<group>"; };
 		92BFF23621B3513500026FE8 /* TagsCollectionViewDelegateAndDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsCollectionViewDelegateAndDataSource.swift; sourceTree = "<group>"; };
 		92BFF23821B354B000026FE8 /* TagsSuggestionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsSuggestionCollectionViewCell.swift; sourceTree = "<group>"; };
-		92ED0C2721B572C800AA32CB /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
-		92ED0C2821B572C800AA32CB /* CalendarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarTableViewCell.xib; sourceTree = "<group>"; };
-		92ED0C2B21B57ACB00AA32CB /* HourCollectionViewDelegateAndDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourCollectionViewDelegateAndDataSource.swift; sourceTree = "<group>"; };
-		92ED0C2D21B57C0600AA32CB /* HourCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourCollectionViewCell.swift; sourceTree = "<group>"; };
-		DC0296CB21B7EE480055D61C /* CreateUser.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateUser.storyboard; sourceTree = "<group>"; };
-		DC0296CD21B7EF5E0055D61C /* UserProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserProfile.storyboard; sourceTree = "<group>"; };
-		DC0296CF21B7F3F20055D61C /* CreateUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserViewController.swift; sourceTree = "<group>"; };
-		DC20EDE821BEA6A80060CEC8 /* AlertError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertError.swift; sourceTree = "<group>"; };
-		92444D4621BEB1DF00F4E6AF /* BadgesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesCollectionViewCell.swift; sourceTree = "<group>"; };
-		92444D4721BEB1DF00F4E6AF /* BadgesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BadgesCollectionViewCell.xib; sourceTree = "<group>"; };
-		92A4710F21B955E4002E7C46 /* Exchange.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Exchange.storyboard; sourceTree = "<group>"; };
-		92A4711221B96367002E7C46 /* ValueCoin.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ValueCoin.xib; sourceTree = "<group>"; };
-		92A4711421B96534002E7C46 /* ValueCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueCoin.swift; sourceTree = "<group>"; };
-		92A4711721B99F62002E7C46 /* ExchangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeViewController.swift; sourceTree = "<group>"; };
 		92FE184021BDF8500069AA99 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		92FE184221BDFB760069AA99 /* CollectionSkillsDelegateAndDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionSkillsDelegateAndDataSource.swift; sourceTree = "<group>"; };
 		92FE184421BDFBB10069AA99 /* CollectionBadgesDelegateAndDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionBadgesDelegateAndDataSource.swift; sourceTree = "<group>"; };
 		92FE184621BDFF410069AA99 /* SkillsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsCollectionViewCell.swift; sourceTree = "<group>"; };
+		DC0296CB21B7EE480055D61C /* CreateUser.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateUser.storyboard; sourceTree = "<group>"; };
+		DC0296CD21B7EF5E0055D61C /* UserProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserProfile.storyboard; sourceTree = "<group>"; };
+		DC0296CF21B7F3F20055D61C /* CreateUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserViewController.swift; sourceTree = "<group>"; };
+		DC20EDE821BEA6A80060CEC8 /* AlertError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertError.swift; sourceTree = "<group>"; };
 		DC66117A21AD7F7400D329DA /* AppleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleType.swift; sourceTree = "<group>"; };
 		DC66117C21AD86AF00D329DA /* GroupTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTests.swift; sourceTree = "<group>"; };
 		DC66117E21AD86DA00D329DA /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
@@ -314,10 +315,8 @@
 		DCE87268219B4FFB008F78BE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DCE8726A219C53DF008F78BE /* CKManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKManager.swift; sourceTree = "<group>"; };
 		DCE87274219CB1F9008F78BE /* DaySchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaySchedule.swift; sourceTree = "<group>"; };
-		DCEF355A21B810B80025B699 /* WSTagsField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WSTagsField.swift; path = Pomar/Model/Tags2/WSTagsField.swift; sourceTree = SOURCE_ROOT; };
 		DCEF355B21B810B80025B699 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Pomar/Model/Tags2/Constants.swift; sourceTree = SOURCE_ROOT; };
 		DCEF355C21B810B80025B699 /* WSTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WSTag.swift; path = Pomar/Model/Tags2/WSTag.swift; sourceTree = SOURCE_ROOT; };
-		DCEF355D21B810B80025B699 /* WSTagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WSTagView.swift; path = Pomar/Model/Tags2/WSTagView.swift; sourceTree = SOURCE_ROOT; };
 		DCEF355E21B810B80025B699 /* BackspaceDetectingTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackspaceDetectingTextField.swift; path = Pomar/Model/Tags2/BackspaceDetectingTextField.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -365,6 +364,7 @@
 				576DD72E21B7FC4100E7A769 /* PomarKit Extension */,
 				2F0DAB47219AF37800217ED5 /* Products */,
 				2F0DAB7E219AFA1200217ED5 /* Frameworks */,
+				92134A1121BF194B00E773A7 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -424,7 +424,8 @@
 		2F0DAB7A219AF98300217ED5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DCEF355921B810640025B699 /* Tags */,
+				2F60CCF021BC44DD00BCE0F0 /* AddGroup */,
+				92A4710421B80E10002E7C46 /* Tags */,
 				DCE87265219B0C8D008F78BE /* Group.swift */,
 				92BFF23221B197AD00026FE8 /* Subjects.swift */,
 				DCE87268219B4FFB008F78BE /* User.swift */,
@@ -432,7 +433,7 @@
 				2F0DABA121A2EB1D00217ED5 /* Validation.swift */,
 				2F0DABA321A3505F00217ED5 /* ModelDayPicker.swift */,
 				2F022D6B21A3D85B00A1293D /* ModelHourPicker.swift */,
-				2F022D6D21A42B7400A1293D /* TextFieldProtocol.swift */,
+				2F022D6D21A42B7400A1293D /* Protocols.swift */,
 				DC66117A21AD7F7400D329DA /* AppleType.swift */,
 				DCE8726A219C53DF008F78BE /* CKManager.swift */,
 				2F3DDEF821B046D600A97CA2 /* ModelTag.swift */,
@@ -446,10 +447,9 @@
 			isa = PBXGroup;
 			children = (
 				92A4711121B9634A002E7C46 /* Exchange */,
-				2FCCE0E521B4F8A1002BC3D3 /* Date and Time */,
 				2F3DDEEF21AF8F6900A97CA2 /* Custon Navigation */,
 				2F3DDEE821ADD00500A97CA2 /* User Points */,
-				92269E9421B01B5B0053DAB5 /* Add New Group */,
+				2F60CCF321BC477A00BCE0F0 /* Add Group */,
 				9205F21021AC232F00F5CA73 /* Tutorial */,
 				2F0DAB8F219B082400217ED5 /* Study Groups */,
 				2F0DAB83219B01D000217ED5 /* Storyboards */,
@@ -487,8 +487,8 @@
 				2F0DAB4D219AF37800217ED5 /* Main.storyboard */,
 				2F0DAB84219B020000217ED5 /* Groups.storyboard */,
 				2F0DAB86219B021C00217ED5 /* Questions.storyboard */,
+				92134A1221BF1B8E00E773A7 /* Missions.storyboard */,
 				2F0DAB88219B022A00217ED5 /* Profile.storyboard */,
-				2F0DAB8A219B026300217ED5 /* Missions.storyboard */,
 				9205F20E21AC215900F5CA73 /* Tutorial.storyboard */,
 				2F3DDEE621ADC34700A97CA2 /* Initial.storyboard */,
 				DC74C1B021AED0C200C829B2 /* Feedback.storyboard */,
@@ -527,7 +527,7 @@
 			children = (
 				2F0DAB9C21A2E58F00217ED5 /* AddGroupPart1ViewController.swift */,
 				2F0DAB9E21A2E59E00217ED5 /* AddGroupPart2ViewController.swift */,
-				92269E5821AED9010053DAB5 /* AddNewGroupViewController.swift */,
+				2F60CCEE21BC448B00BCE0F0 /* AddGroupViewController.swift */,
 			);
 			path = "Add Group";
 			sourceTree = "<group>";
@@ -550,13 +550,28 @@
 			path = "Custon Navigation";
 			sourceTree = "<group>";
 		};
-		2FCCE0E521B4F8A1002BC3D3 /* Date and Time */ = {
+		2F60CCF021BC44DD00BCE0F0 /* AddGroup */ = {
 			isa = PBXGroup;
 			children = (
-				2FCCE0E821B4F8E0002BC3D3 /* DateAndTime.swift */,
-				2FCCE0EA21B4F8ED002BC3D3 /* DateAndTime.xib */,
+				2F60CCF121BC44F300BCE0F0 /* ModelMonths.swift */,
+				2F60CCF821BC6FE000BCE0F0 /* ModelDays.swift */,
+				2F60CD0221BD76A100BCE0F0 /* ModelHours.swift */,
 			);
-			path = "Date and Time";
+			path = AddGroup;
+			sourceTree = "<group>";
+		};
+		2F60CCF321BC477A00BCE0F0 /* Add Group */ = {
+			isa = PBXGroup;
+			children = (
+				92ED0C3221B599EE00AA32CB /* Tags */,
+				2F60CCF421BC479400BCE0F0 /* MonthCollectionViewCell.swift */,
+				2F60CCF521BC479400BCE0F0 /* MonthCollectionViewCell.xib */,
+				2F60CCFA21BC744700BCE0F0 /* DayCollectionViewCell.swift */,
+				2F60CCFB21BC744700BCE0F0 /* DayCollectionViewCell.xib */,
+				2F60CCFE21BD754900BCE0F0 /* HourCollectionViewCell.swift */,
+				2F60CCFF21BD754900BCE0F0 /* HourCollectionViewCell.xib */,
+			);
+			path = "Add Group";
 			sourceTree = "<group>";
 		};
 		2FCCE0EE21B5629B002BC3D3 /* DetailsGroup */ = {
@@ -624,59 +639,28 @@
 			path = Tutorial;
 			sourceTree = "<group>";
 		};
-		92269E9421B01B5B0053DAB5 /* Add New Group */ = {
+		92134A1121BF194B00E773A7 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				92ED0C3121B599D600AA32CB /* Description */,
-				92ED0C3221B599EE00AA32CB /* Tags */,
-				92ED0C3021B599B300AA32CB /* DateAndTime */,
+				DCEF355B21B810B80025B699 /* Constants.swift */,
+				DCEF355E21B810B80025B699 /* BackspaceDetectingTextField.swift */,
+				DCEF355C21B810B80025B699 /* WSTag.swift */,
 			);
-			path = "Add New Group";
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
-		92ED0C3021B599B300AA32CB /* DateAndTime */ = {
+		92A4710421B80E10002E7C46 /* Tags */ = {
 			isa = PBXGroup;
 			children = (
-				92ED0C2721B572C800AA32CB /* CalendarTableViewCell.swift */,
-				92ED0C2821B572C800AA32CB /* CalendarTableViewCell.xib */,
-				92ED0C2D21B57C0600AA32CB /* HourCollectionViewCell.swift */,
-				92ED0C2B21B57ACB00AA32CB /* HourCollectionViewDelegateAndDataSource.swift */,
-				92A470FE21B5BA19002E7C46 /* DatePickerView.swift */,
-				92A4710221B5BA44002E7C46 /* DatePickerView.xib */,
-			);
-			path = DateAndTime;
-			sourceTree = "<group>";
-		};
-		92ED0C3121B599D600AA32CB /* Description */ = {
-			isa = PBXGroup;
-			children = (
-				92269E9521B01BC30053DAB5 /* DescriptionTableViewCell.swift */,
-				92269E9621B01BC30053DAB5 /* DescriptionTableViewCell.xib */,
-			);
-			path = Description;
-			sourceTree = "<group>";
-		};
-		92ED0C3221B599EE00AA32CB /* Tags */ = {
-			isa = PBXGroup;
-			children = (
-				92BFF21521B029CF00026FE8 /* TagsTableViewCell.swift */,
-				92BFF21621B029CF00026FE8 /* TagsTableViewCell.xib */,
-				92BFF23821B354B000026FE8 /* TagsSuggestionCollectionViewCell.swift */,
-				92BFF23621B3513500026FE8 /* TagsCollectionViewDelegateAndDataSource.swift */,
+				92A4710821B80E63002E7C46 /* BackspaceDetectingTextField.swift */,
+				92A4710621B80E63002E7C46 /* Constants.swift */,
+				92A4710721B80E63002E7C46 /* WSTag.swift */,
+				92A4710921B80E63002E7C46 /* WSTagsField.swift */,
+				92A4710521B80E63002E7C46 /* WSTagView.swift */,
 			);
 			path = Tags;
 			sourceTree = "<group>";
 		};
-		DC0296CA21B7EE1D0055D61C /* CreateUser */ = {
-			isa = PBXGroup;
-			children = (
-				DC0296CF21B7F3F20055D61C /* CreateUserViewController.swift */,
-				DCA6E34721BA9B60000E75A2 /* KeychainWrapper.swift */,
-				DCA6E34921BA9BBF000E75A2 /* KeychainAcessibility.swift */,
-			);
-			path = CreateUser;
-            sourceTree = "<group>";
-        };
 		92A4711121B9634A002E7C46 /* Exchange */ = {
 			isa = PBXGroup;
 			children = (
@@ -694,6 +678,17 @@
 			path = Exchange;
 			sourceTree = "<group>";
 		};
+		92ED0C3221B599EE00AA32CB /* Tags */ = {
+			isa = PBXGroup;
+			children = (
+				92BFF21521B029CF00026FE8 /* TagsTableViewCell.swift */,
+				92BFF21621B029CF00026FE8 /* TagsTableViewCell.xib */,
+				92BFF23821B354B000026FE8 /* TagsSuggestionCollectionViewCell.swift */,
+				92BFF23621B3513500026FE8 /* TagsCollectionViewDelegateAndDataSource.swift */,
+			);
+			path = Tags;
+			sourceTree = "<group>";
+		};
 		92FE183E21BDF7AF0069AA99 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -707,6 +702,16 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		DC0296CA21B7EE1D0055D61C /* CreateUser */ = {
+			isa = PBXGroup;
+			children = (
+				DC0296CF21B7F3F20055D61C /* CreateUserViewController.swift */,
+				DCA6E34721BA9B60000E75A2 /* KeychainWrapper.swift */,
+				DCA6E34921BA9BBF000E75A2 /* KeychainAcessibility.swift */,
+			);
+			path = CreateUser;
+			sourceTree = "<group>";
+		};
 		DC74C1AD21AECD9E00C829B2 /* Feedback Group */ = {
 			isa = PBXGroup;
 			children = (
@@ -716,18 +721,6 @@
 				DC74C1EB21B5514B00C829B2 /* AppleShape.swift */,
 			);
 			path = "Feedback Group";
-			sourceTree = "<group>";
-		};
-		DCEF355921B810640025B699 /* Tags */ = {
-			isa = PBXGroup;
-			children = (
-				DCEF355E21B810B80025B699 /* BackspaceDetectingTextField.swift */,
-				DCEF355B21B810B80025B699 /* Constants.swift */,
-				DCEF355C21B810B80025B699 /* WSTag.swift */,
-				DCEF355A21B810B80025B699 /* WSTagsField.swift */,
-				DCEF355D21B810B80025B699 /* WSTagView.swift */,
-			);
-			path = Tags;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -894,12 +887,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F60CCF721BC479400BCE0F0 /* MonthCollectionViewCell.xib in Resources */,
 				9205F20F21AC215900F5CA73 /* Tutorial.storyboard in Resources */,
 				2F3DDEF121AF8F8500A97CA2 /* CustomHeader.xib in Resources */,
 				DC74C1B121AED0C200C829B2 /* Feedback.storyboard in Resources */,
 				2F0DAB89219B022A00217ED5 /* Profile.storyboard in Resources */,
 				DC74C1E421B0671000C829B2 /* UserViewCell.xib in Resources */,
 				2F3DDEE721ADC34700A97CA2 /* Initial.storyboard in Resources */,
+				92134A1321BF1B8E00E773A7 /* Missions.storyboard in Resources */,
 				2FCCE12121B64BC1002BC3D3 /* MembersCollectionViewCell.xib in Resources */,
 				92A4711321B96367002E7C46 /* ValueCoin.xib in Resources */,
 				2FCCE11D21B64B13002BC3D3 /* ParticipantsCollectionViewCell.xib in Resources */,
@@ -909,26 +904,19 @@
 				2FCCE11521B5F196002BC3D3 /* ShowTagsCollectionViewCell.xib in Resources */,
 				DC0296CE21B7EF5E0055D61C /* UserProfile.storyboard in Resources */,
 				2F0DAB85219B020000217ED5 /* Groups.storyboard in Resources */,
-				2FCCE0EB21B4F8ED002BC3D3 /* DateAndTime.xib in Resources */,
 				9206BDB621AD6AE50013437F /* FinalTutorial.xib in Resources */,
+				2F60CD0121BD754900BCE0F0 /* HourCollectionViewCell.xib in Resources */,
+				2F60CCFD21BC744700BCE0F0 /* DayCollectionViewCell.xib in Resources */,
 				2F0DAB87219B021C00217ED5 /* Questions.storyboard in Resources */,
 				2F3DDEEA21ADD01F00A97CA2 /* UserMoney.xib in Resources */,
 				2F0DAB57219AF37A00217ED5 /* LaunchScreen.storyboard in Resources */,
-				92BFF21821B029CF00026FE8 /* TagsTableViewCell.xib in Resources */,
-				92ED0C2A21B572C800AA32CB /* CalendarTableViewCell.xib in Resources */,
-				2F0DAB9B219DC3BE00217ED5 /* GroupsCollectionViewCell.xib in Resources */,
-				2FCCE10921B5E74C002BC3D3 /* ButtonsCollectionViewCell.xib in Resources */,
-				2F0DAB8B219B026300217ED5 /* Missions.storyboard in Resources */,
-				92A4710321B5BA44002E7C46 /* DatePickerView.xib in Resources */,
 				92A4711021B955E4002E7C46 /* Exchange.storyboard in Resources */,
 				2F0DAB9B219DC3BE00217ED5 /* GroupsCollectionViewCell.xib in Resources */,
 				2FCCE10921B5E74C002BC3D3 /* ButtonsCollectionViewCell.xib in Resources */,
-				2F0DAB8B219B026300217ED5 /* Missions.storyboard in Resources */,
 				92444D4921BEB1E000F4E6AF /* BadgesCollectionViewCell.xib in Resources */,
-				9205F21621AC30DD00F5CA73 /* SlideTutorial.xib in Resources */,
 				2F3DDEF721B023D700A97CA2 /* HeaderCollectionViewCell.xib in Resources */,
 				2FCCE11921B6019C002BC3D3 /* DateCollectionViewCell.xib in Resources */,
-				92269E9821B01BC40053DAB5 /* DescriptionTableViewCell.xib in Resources */,
+				9205F21621AC30DD00F5CA73 /* SlideTutorial.xib in Resources */,
 				92269E5721AED7EF0053DAB5 /* NewGroup.storyboard in Resources */,
 				2F0DAB54219AF37A00217ED5 /* Assets.xcassets in Resources */,
 				2F0DAB4F219AF37800217ED5 /* Main.storyboard in Resources */,
@@ -977,31 +965,26 @@
 				92FE184521BDFBB10069AA99 /* CollectionBadgesDelegateAndDataSource.swift in Sources */,
 				DC74C1E621B1D5EA00C829B2 /* Apples.swift in Sources */,
 				92BFF23321B197AD00026FE8 /* Subjects.swift in Sources */,
-				92ED0C2E21B57C0600AA32CB /* HourCollectionViewCell.swift in Sources */,
 				2F0DABA421A3505F00217ED5 /* ModelDayPicker.swift in Sources */,
 				2F0DAB9F21A2E59E00217ED5 /* AddGroupPart2ViewController.swift in Sources */,
-				92BFF21721B029CF00026FE8 /* TagsTableViewCell.swift in Sources */,
+				2F60CD0021BD754900BCE0F0 /* HourCollectionViewCell.swift in Sources */,
 				2F0DAB9A219DC3BE00217ED5 /* GroupsCollectionViewCell.swift in Sources */,
 				DCEF356021B810B80025B699 /* Constants.swift in Sources */,
 				2FCCE12321B64D1F002BC3D3 /* ModelCollection.swift in Sources */,
 				2FCCE0E421B4E1E5002BC3D3 /* TestingViewController.swift in Sources */,
 				2FCCE10C21B5EAF4002BC3D3 /* LabelsCollectionViewCell.swift in Sources */,
 				DC74C1B321AED15600C829B2 /* FeedbackViewController.swift in Sources */,
-				92ED0C2C21B57ACB00AA32CB /* HourCollectionViewDelegateAndDataSource.swift in Sources */,
 				2F0DABA221A2EB1D00217ED5 /* Validation.swift in Sources */,
-				2FCCE0E921B4F8E0002BC3D3 /* DateAndTime.swift in Sources */,
 				DCEF356321B810B80025B699 /* BackspaceDetectingTextField.swift in Sources */,
 				2FCCE0FD21B5A3EF002BC3D3 /* Instantiable.swift in Sources */,
 				DC0296D021B7F3F20055D61C /* CreateUserViewController.swift in Sources */,
 				9205F21821AC322400F5CA73 /* SlideTutorial.swift in Sources */,
 				2F022D6C21A3D85B00A1293D /* ModelHourPicker.swift in Sources */,
 				2F0DAB9D21A2E58F00217ED5 /* AddGroupPart1ViewController.swift in Sources */,
-				92ED0C2921B572C800AA32CB /* CalendarTableViewCell.swift in Sources */,
-				2F022D6E21A42B7400A1293D /* TextFieldProtocol.swift in Sources */,
+				2F022D6E21A42B7400A1293D /* Protocols.swift in Sources */,
 				2FCCE11421B5F196002BC3D3 /* ShowTagsCollectionViewCell.swift in Sources */,
-				DCEF356221B810B80025B699 /* WSTagView.swift in Sources */,
+				2F022D6E21A42B7400A1293D /* Protocols.swift in Sources */,
 				2F0DAB52219AF37800217ED5 /* Pomar.xcdatamodeld in Sources */,
-				DCEF355F21B810B80025B699 /* WSTagsField.swift in Sources */,
 				92FE184121BDF8500069AA99 /* ProfileViewController.swift in Sources */,
 				2FE3665821B690F200D7D909 /* InitialViewController.swift in Sources */,
 				2FCCE0ED21B56186002BC3D3 /* DetailsViewController.swift in Sources */,
@@ -1009,9 +992,11 @@
 				2F0DAB4A219AF37800217ED5 /* AppDelegate.swift in Sources */,
 				2F0DAB8D219B076C00217ED5 /* StudyGroupsViewController.swift in Sources */,
 				9205F21321AC238100F5CA73 /* TutorialViewController.swift in Sources */,
+				92A4710A21B80E64002E7C46 /* WSTagView.swift in Sources */,
 				DCE87269219B4FFB008F78BE /* User.swift in Sources */,
 				92BFF23721B3513500026FE8 /* TagsCollectionViewDelegateAndDataSource.swift in Sources */,
 				92A4711821B99F62002E7C46 /* ExchangeViewController.swift in Sources */,
+				92A4710E21B80E64002E7C46 /* WSTagsField.swift in Sources */,
 				2F022D6921A3C11D00A1293D /* TagsCollectionViewCell.swift in Sources */,
 				2F3DDEF921B046D600A97CA2 /* ModelTag.swift in Sources */,
 				92FE184721BDFF410069AA99 /* SkillsCollectionViewCell.swift in Sources */,
@@ -1029,13 +1014,16 @@
 				DCA6E34821BA9B60000E75A2 /* KeychainWrapper.swift in Sources */,
 				DCA6E34A21BA9BBF000E75A2 /* KeychainAcessibility.swift in Sources */,
 				DCEF356121B810B80025B699 /* WSTag.swift in Sources */,
-				92A470FF21B5BA1A002E7C46 /* DatePickerView.swift in Sources */,
+				2F60CCF221BC44F300BCE0F0 /* ModelMonths.swift in Sources */,
+				2F60CCFC21BC744700BCE0F0 /* DayCollectionViewCell.swift in Sources */,
 				9206BDB821AD6ED40013437F /* FinalTutorial.swift in Sources */,
-				92269E5921AED9010053DAB5 /* AddNewGroupViewController.swift in Sources */,
+				2F60CCF921BC6FE000BCE0F0 /* ModelDays.swift in Sources */,
+				2F60CD0321BD76A100BCE0F0 /* ModelHours.swift in Sources */,
+				2F60CCEF21BC448B00BCE0F0 /* AddGroupViewController.swift in Sources */,
 				92BFF23921B354B000026FE8 /* TagsSuggestionCollectionViewCell.swift in Sources */,
 				DC66117B21AD7F7400D329DA /* AppleType.swift in Sources */,
 				2F3DDEEC21ADD13500A97CA2 /* UserMoney.swift in Sources */,
-				92269E9721B01BC40053DAB5 /* DescriptionTableViewCell.swift in Sources */,
+				2F60CCF621BC479400BCE0F0 /* MonthCollectionViewCell.swift in Sources */,
 				DCE87266219B0C8D008F78BE /* Group.swift in Sources */,
 				2F3DDEF621B023D700A97CA2 /* HeaderCollectionViewCell.swift in Sources */,
 			);

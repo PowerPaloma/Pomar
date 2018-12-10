@@ -19,7 +19,7 @@ class TagsCollectionViewDelegateAndDataSource:NSObject, UICollectionViewDelegate
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! TagsSuggestionCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tags", for: indexPath) as! TagsSuggestionCollectionViewCell
         
         cell.label.text = TagsCollectionViewDelegateAndDataSource.tags[indexPath.row]
 //        cell.loadCell()
@@ -28,8 +28,9 @@ class TagsCollectionViewDelegateAndDataSource:NSObject, UICollectionViewDelegate
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        delegate?.tapInTag(tagText: TagsCollectionViewDelegateAndDataSource.tags[indexPath.row])
+        let tag =  TagsCollectionViewDelegateAndDataSource.tags[indexPath.row]
+        delegate?.tapInTag(tagText: tag)
+        subjects = subjects.filter { $0 !=  tag}
     }
     
 }

@@ -73,7 +73,6 @@ extension TagsTableViewCell:TagsSuggestionCollectionDelegate {
             let suggestionTags = subjects.filter {$0.localizedCaseInsensitiveContains(text ?? "")}
             print(suggestionTags)
             TagsCollectionViewDelegateAndDataSource.tags = suggestionTags
-            self.collectionView.reloadData()
             print("onDidChangeText")
         }
         
@@ -93,10 +92,6 @@ extension TagsTableViewCell:TagsSuggestionCollectionDelegate {
     func tapInTag(tagText: String) {
         tagsField.addTag(tagText)
     }
-    
-}
-
-extension TagsTableViewCell: AddNewGroupDelegate{
     func getTags() -> [String] {
         let wsTags = tagsField.tags
         let tags = wsTags.map { (tags) -> String in
@@ -106,5 +101,7 @@ extension TagsTableViewCell: AddNewGroupDelegate{
         
     }
 }
+
+
 
 
