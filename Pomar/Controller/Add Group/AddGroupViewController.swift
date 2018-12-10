@@ -10,9 +10,11 @@ import UIKit
 
 class AddGroupViewController: UIViewController {
 
+    @IBOutlet weak var repeatSwitch: UISwitch!
+    @IBOutlet weak var collectionSuggLayout: UICollectionViewFlowLayout!
     @IBOutlet weak var containerSearch: UIView!
     @IBOutlet weak var searchView: UIView!
-    @IBOutlet weak var suggestionsView: UIView!
+    @IBOutlet weak var collectionSuggestion: UICollectionView!
     @IBOutlet weak var smallDescriptionTxtView: UITextView!
     @IBOutlet weak var nameTxtField: UITextField!
     @IBOutlet weak var hourView: UIView!
@@ -24,15 +26,20 @@ class AddGroupViewController: UIViewController {
     @IBOutlet weak var dateAndTimeView: UIView!
     let minimumInteritemSpacing: CGFloat = 4
     let minimumLineSpacing:CGFloat = 4
+    let dateFormatter = DateFormatter()
     var hours = ["00:00", "00:00", "00:00", "00:00", "00:00"]
     var modelMonth: ModelMonths!
     var modelDay: ModelDays!
+    var modelTags: TagsCollectionViewDelegateAndDataSource!
     var activeField: UITextField!
     var hoursPickerController = UIPickerView()
+    var selected: [Bool]?
     var modelHoursPicker: HourPicker!
     let tagsFieldSearch = WSTagsField()
     let tagsFieldSuggestions = WSTagsField()
-    var tagsCollectionViewDelegateAndDataSource = TagsCollectionViewDelegateAndDataSource()
+    var monthSelected = ""
+    
+    
     var accessoryToolbar: UIToolbar {
         get {
             let toolbarFrame = CGRect(x: 0, y: 0,
@@ -54,21 +61,33 @@ class AddGroupViewController: UIViewController {
         super.viewDidLoad()
         collectionMonths.register(UINib(nibName: "MonthCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "month")
         collectionDays.register(UINib(nibName: "DayCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "day")
+        collectionSuggestion.register(TagsSuggestionCollectionViewCell.self, forCellWithReuseIdentifier: "tags")
         
-        self.modelDay = ModelDays(month: 2, collection: self.collectionDays)
+        self.modelDay = ModelDays(month: 2, collection: self.collectionDays, isRepeat: false)
         modelDay.selectedDaysProtocol = self
         collectionDays.delegate = self.modelDay
         collectionDays.dataSource = self.modelDay
-        collectionDays.allowsMultipleSelection = true
+    
         
         self.modelMonth = ModelMonths(collection: self.collectionMonths, modelDays: modelDay)
         collectionMonths.delegate = self.modelMonth
         collectionMonths.dataSource = self.modelMonth
+        modelMonth.monthProtocol = self
+        
+        self.modelTags = TagsCollectionViewDelegateAndDataSource()
+        self.modelTags.delegate = self
+        collectionSuggestion.delegate = self.modelTags
+        collectionSuggestion.dataSource = self.modelTags
+        collectionSuggLayout.estimatedItemSize = CGSize(width: 10, height: 10)
+        textFieldEvents()
+        
         
         modelHoursPicker = HourPicker()
         hoursPickerController.delegate = modelHoursPicker
         hoursPickerController.dataSource = modelHoursPicker
         modelHoursPicker.textFieldDelegate = self
+        
+        self.repeatSwitch.isOn = false
         
         setupTextFields()
         setupTags()
@@ -97,7 +116,9 @@ class AddGroupViewController: UIViewController {
         self.containerSearch.layer.borderWidth = 0.6
         self.containerSearch.clipsToBounds = true
         self.containerSearch.layer.cornerRadius = 8
-        textFieldEvents()
+        self.card.layer.cornerRadius = 12.0
+        self.card.clipsToBounds = true
+
         
 //        card.layer.cornerRadius = 12.0
 //        card.layer.borderWidth = 1.0
@@ -130,34 +151,36 @@ class AddGroupViewController: UIViewController {
         tagsFieldSearch.borderWidth = 0.5
         tagsFieldSearch.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         searchView.addSubview(tagsFieldSearch)
-        tagsFieldSearch.contentInset = UIEdgeInsets(top: 8 , left: 8, bottom: 8, right: 8)
-        tagsFieldSearch.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        tagsFieldSearch.contentInset = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
+        tagsFieldSearch.layoutMargins = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
+        tagsFieldSuggestions.spaceBetweenTags = 8
+        tagsFieldSuggestions.spaceBetweenLines = 8
         tagsFieldSearch.translatesAutoresizingMaskIntoConstraints = false
-        tagsCollectionViewDelegateAndDataSource.delegate = self
+//        tagsCollectionViewDelegateAndDataSource.delegate = self
         NSLayoutConstraint.activate([
             tagsFieldSearch.topAnchor.constraint(equalTo: searchView.topAnchor),
-            tagsFieldSearch.leadingAnchor.constraint(equalTo: searchView.leadingAnchor, constant: 0),
-            tagsFieldSearch.trailingAnchor.constraint(equalTo: searchView.trailingAnchor, constant: 0),
+            tagsFieldSearch.leadingAnchor.constraint(equalTo: searchView.leadingAnchor, constant: 6),
+            tagsFieldSearch.trailingAnchor.constraint(equalTo: searchView.trailingAnchor, constant: -6),
             searchView.bottomAnchor.constraint(equalTo: tagsFieldSearch.bottomAnchor)
             ])
-        suggestionsView.addSubview(tagsFieldSuggestions)
-        tagsFieldSuggestions.placeholder = ""
-        tagsFieldSuggestions.contentInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
-        tagsFieldSuggestions.layoutMargins = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
-        tagsFieldSuggestions.font =  UIFont.systemFont(ofSize: 14)
-        tagsFieldSuggestions.cornerRadius = 12
-        tagsFieldSuggestions.textColor = #colorLiteral(red: 0.6980392157, green: 0, blue: 0.02352941176, alpha: 1)
-        tagsFieldSuggestions.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        tagsFieldSuggestions.borderColor = #colorLiteral(red: 0.6980392157, green: 0, blue: 0.02352941176, alpha: 1)
-        tagsFieldSuggestions.borderWidth = 0.5
-        tagsFieldSuggestions.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        tagsFieldSuggestions.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            tagsFieldSuggestions.topAnchor.constraint(equalTo: suggestionsView.topAnchor),
-            tagsFieldSuggestions.leadingAnchor.constraint(equalTo: suggestionsView.leadingAnchor, constant: 0),
-            tagsFieldSuggestions.trailingAnchor.constraint(equalTo: suggestionsView.trailingAnchor, constant: 0),
-            suggestionsView.bottomAnchor.constraint(equalTo: tagsFieldSuggestions.bottomAnchor)
-            ])
+//        suggestionsView.addSubview(tagsFieldSuggestions)
+//        tagsFieldSuggestions.placeholder = ""
+//        tagsFieldSuggestions.contentInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+//        tagsFieldSuggestions.layoutMargins = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
+//        tagsFieldSuggestions.font =  UIFont.systemFont(ofSize: 14)
+//        tagsFieldSuggestions.cornerRadius = 12
+//        tagsFieldSuggestions.textColor = #colorLiteral(red: 0.6980392157, green: 0, blue: 0.02352941176, alpha: 1)
+//        tagsFieldSuggestions.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+//        tagsFieldSuggestions.borderColor = #colorLiteral(red: 0.6980392157, green: 0, blue: 0.02352941176, alpha: 1)
+//        tagsFieldSuggestions.borderWidth = 0.5
+//        tagsFieldSuggestions.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+//        tagsFieldSuggestions.translatesAutoresizingMaskIntoConstraints = false
+//        NSLayoutConstraint.activate([
+//            tagsFieldSuggestions.topAnchor.constraint(equalTo: suggestionsView.topAnchor),
+//            tagsFieldSuggestions.leadingAnchor.constraint(equalTo: suggestionsView.leadingAnchor, constant: 0),
+//            tagsFieldSuggestions.trailingAnchor.constraint(equalTo: suggestionsView.trailingAnchor, constant: 0),
+//            suggestionsView.bottomAnchor.constraint(equalTo: tagsFieldSuggestions.bottomAnchor)
+//            ])
 
     }
     
@@ -211,6 +234,86 @@ class AddGroupViewController: UIViewController {
         closePicker()
     }
     
+    
+    @IBAction func done(_ sender: Any) {
+        if !Validation.textFieldsIsEmpty(textFields: [nameTxtField]) && !Validation.textViewsIsEmpty(textViews: [smallDescriptionTxtView]){
+            let newGroup = Group()
+            guard let name = self.nameTxtField.text, let descr = self.smallDescriptionTxtView.text else {return}
+            newGroup.name = name
+            newGroup.description = descr
+//            tagsFieldSearch.tagViews
+            if tagsFieldSearch.tagViews.count == 0 {
+                showAlertEmpty(title: "Add tags to group")
+            }else{
+                newGroup.tags = tagsFieldSearch.tags.map({ (wsTag) -> String in
+                    return wsTag.text
+                })
+                if repeatSwitch.isOn {
+                    newGroup.isWeekly = true
+                }else{
+                    newGroup.isWeekly = false
+                    let date = Date()
+                    let calendar = Calendar.current
+                    let year =  calendar.component(.year, from: date)
+                    let dateSting = "\(self.monthSelected)/\(self.monthSelected)/\(year)"
+                }
+            }
+            
+        }else{
+            showAlertEmpty(title: "Empty fields")
+        }
+        
+    }
+    
+    
+    @IBAction func repeatAction(_ sender: Any) {
+        if self.repeatSwitch.isOn {
+            collectionDays.allowsMultipleSelection = true
+            modelDay.isRepeat = true
+            if var indexPaths = modelDay.collection.indexPathsForSelectedItems {
+                indexPaths = indexPaths.filter({ (indexPath) -> Bool in
+                    return indexPath.row  < 5
+                })
+                modelDay.collection.reloadData()
+                for indexPath in indexPaths {
+                    if let cell =  modelDay.collection.cellForItem(at: indexPath){
+                        cell.isSelected = true
+                    }
+                }
+            
+            }
+            modelDay.collection.reloadData()
+        }else{
+            collectionDays.allowsMultipleSelection = false
+            modelDay.isRepeat = false
+            if let indexPaths = modelDay.collection.indexPathsForSelectedItems {
+                modelDay.collection.reloadData()
+                for indexPath in indexPaths {
+                    if let cell =  modelDay.collection.cellForItem(at: indexPath){
+                        cell.isSelected = true
+                    }
+                }
+                
+            }
+            modelDay.collection.reloadData()
+        }
+        
+    }
+    
+    
+    func showAlertEmpty(title: String){
+         let alertEmptyFiels = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+        self.present(alertEmptyFiels, animated: true, completion: nil)
+        let when = DispatchTime.now() + 3
+        DispatchQueue.main.asyncAfter(deadline: when){
+            alertEmptyFiels.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func cancel(_ sender: Any) {
+       self.dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 extension AddGroupViewController: UITextFieldDelegate {
@@ -222,10 +325,11 @@ extension AddGroupViewController: UITextFieldDelegate {
 extension AddGroupViewController: SelectedDaysProtocol{
     
     func selected(days: [Bool]) {
+        self.selected = days
         for (index, isSelected) in days.enumerated() {
             if isSelected {
                 let txtField = hoursTxtF[index]
-                txtField.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                txtField.textColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
                 txtField.clipsToBounds = true
                 txtField.layer.cornerRadius = 8
                 txtField.backgroundColor = #colorLiteral(red: 0.2589761913, green: 0.8057302833, blue: 0.4474651814, alpha: 0.3603392551)
@@ -275,20 +379,8 @@ extension AddGroupViewController:TagsSuggestionCollectionDelegate {
         
         tagsFieldSearch.onDidChangeText = { _, text in
             let suggestionTags = subjects.filter {$0.localizedCaseInsensitiveContains(text ?? "")}
-            self.tagsFieldSuggestions.removeTags()
-            if suggestionTags.count < 3 {
-                self.tagsFieldSuggestions.addTags(suggestionTags)
-            }else{
-                self.tagsFieldSuggestions.addTags(Array(suggestionTags[0...2]))
-            }
-            self.tagsFieldSuggestions.cornerRadius = 12
-            self.tagsFieldSuggestions.textColor = #colorLiteral(red: 0.6980392157, green: 0, blue: 0.02352941176, alpha: 1)
-            self.tagsFieldSuggestions.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-            self.tagsFieldSuggestions.borderColor = #colorLiteral(red: 0.6980392157, green: 0, blue: 0.02352941176, alpha: 1)
-            self.tagsFieldSuggestions.borderWidth = 0.5
-            self.tagsFieldSuggestions.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-            
-            print(suggestionTags)
+            TagsCollectionViewDelegateAndDataSource.tags = suggestionTags
+            self.collectionSuggestion.reloadData()
             print("onDidChangeText")
         }
         
@@ -296,21 +388,17 @@ extension AddGroupViewController:TagsSuggestionCollectionDelegate {
             print("HeightTo \(height)")
         }
         
-        tagsFieldSuggestions.onDidSelectTagView = { tgField, tagView in
-            self.tagsFieldSearch.addTag(tagView.displayText)
-            subjects
+        tagsFieldSearch.onDidSelectTagView = { _, tagView in
+            tagView.layer.backgroundColor = #colorLiteral(red: 0.6980392157, green: 0, blue: 0.02352941176, alpha: 1)
+            tagView.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            self.tagsFieldSearch.removeTag(tagView.displayText)
+            subjects.append(tagView.displayText)
+            print("Select \(tagView)")
         }
         
         tagsFieldSearch.onDidUnselectTagView = { _, tagView in
             print("Unselect \(tagView)")
         }
-    }
-    
-    func remove(subject: String){
-        for sub in subjects{
-            subjects
-        }
-        
     }
     
     func tapInTag(tagText: String) {
@@ -324,6 +412,18 @@ extension AddGroupViewController:TagsSuggestionCollectionDelegate {
         return tags
         
     }
+    
 }
+
+extension AddGroupViewController: MonthSelectedProtocol{
+    func selected(month: String) {
+        self.monthSelected = month
+    }
+    
+    
+}
+
+
+
 
 

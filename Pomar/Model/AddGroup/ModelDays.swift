@@ -18,17 +18,20 @@ class ModelDays: NSObject, UICollectionViewDelegate, UICollectionViewDataSource,
     var collection: UICollectionView!
     var offsetDays = 0
     var weekStart = 0
-    var selectedDaysProtocol: SelectedDaysProtocol? = nil
+    var selectedDaysProtocol: SelectedDaysProtocol?
     var selectedDays: [Bool] = [false, false, false, false, false]
+    var isRepeat: Bool!
+    var dayProtocol: DayProtocol?
     
     init(month: Int) {
         super.init()
        self.daysIn(month: month)
     }
     
-     convenience init(month: Int, collection: UICollectionView) {
+     convenience init(month: Int, collection: UICollectionView, isRepeat: Bool) {
         self.init(month: month)
         self.collection = collection
+        self.isRepeat = isRepeat
       
     }
     
@@ -52,23 +55,41 @@ class ModelDays: NSObject, UICollectionViewDelegate, UICollectionViewDataSource,
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return numDays + offsetDays + weekStart
-        
+        if isRepeat {
+            return 5
+        }else{
+            return numDays + offsetDays + weekStart
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "day", for: indexPath) as! DayCollectionViewCell
-        
-        if indexPath.row < weekStart {
-             cell.dayLabel.text = ""
-            cell.isUserInteractionEnabled = false
-        }else if indexPath.row < numDays + weekStart {
-             cell.dayLabel.text = "\(indexPath.row + 1 - weekStart )"
-        }else if indexPath.row > numDays {
+        if isRepeat{
             cell.dayLabel.text = ""
-            cell.isUserInteractionEnabled = false
+            cell.isUserInteractionEnabled = true
+             cell.isSelected = self.selectedDays[indexPath.row]
+            //self.selectedDays[indexPath.row] = false
+        }else{
+            if indexPath.row < weekStart {
+                cell.dayLabel.text = ""
+                cell.isUserInteractionEnabled = false
+                self.selectedDays[indexPath.row] = false
+            }else if indexPath.row < numDays + weekStart {
+                cell.dayLabel.text = "\(indexPath.row + 1 - weekStart )"
+            }else if indexPath.row > numDays {
+                cell.dayLabel.text = ""
+                self.selectedDays[indexPath.row] = false
+                cell.isUserInteractionEnabled = false
+            }
         }
-        cell.background.backgroundColor = #colorLiteral(red: 0.9628338218, green: 0.9729439616, blue: 0.9768897891, alpha: 1)
+//        if cell.dayLabel.text == "" {
+//            cell.isSelected = false
+//
+//        }else{
+//            cell.isSelected = self.selectedDays[indexPath.row]
+//        }
+       
+        selectedDaysProtocol?.selected(days: selectedDays)
         cell.clipsToBounds = true
         cell.layer.cornerRadius = cell.frame.height / 2
         return cell
@@ -90,6 +111,7 @@ class ModelDays: NSObject, UICollectionViewDelegate, UICollectionViewDataSource,
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         let index = indexPath.row % 5
+//        dayProtocol?.selected(days: <#T##[Int]#>)
         self.selectedDays[index] = false
         selectedDaysProtocol?.selected(days: selectedDays)
     }
@@ -104,17 +126,31 @@ class ModelDays: NSObject, UICollectionViewDelegate, UICollectionViewDataSource,
 
 extension ModelDays: UIScrollViewDelegate {
     
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        if let indexPaths = self.collection.indexPathsForSelectedItems{
+//            print(indexPaths)
+//            for indexPath in indexPaths {
+//                if let cell = collection.cellForItem(at: indexPath){
+//                    cell.isSelected = false
+//                }
+//            }
+//        }
+//    }
+    
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         
         let pageWidth: CGFloat = self.collection.frame.width - 20
-//            ((((self.collection.frame.width - 20))/5) - 20) * 5
-        
-//            ((self.collection.frame.width - (20*6) - 20*2)/5) * 5
-        
         let currentOffset = scrollView.contentOffset.x
         let targetOffset = targetContentOffset.pointee.x
         var newTargetOffset: Float = 0.0
-        
+//        if let indexPaths = self.collection.indexPathsForSelectedItems{
+//            print(indexPaths)
+//            for indexPath in indexPaths {
+//                if let cell = collection.cellForItem(at: indexPath){
+//                    cell.isSelected = false
+//                }
+//            }
+//        }
         if (targetOffset > currentOffset){
             newTargetOffset = ceilf(Float(currentOffset / pageWidth)) * Float(pageWidth)
         }else{

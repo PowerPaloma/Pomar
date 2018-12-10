@@ -47,7 +47,11 @@ class TagsSuggestionCollectionViewCell: UICollectionViewCell{
         customContentView.addSubview(label)
         label.textAlignment = .center
         label.font = UIFont(name: label.font.fontName, size: 12)
-        self.customContentView.backgroundColor = .green
+        label.textColor = #colorLiteral(red: 0.6980392157, green: 0, blue: 0.02352941176, alpha: 1)
+        self.customContentView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        self.customContentView.layer.cornerRadius = 12
+        self.customContentView.layer.borderColor = #colorLiteral(red: 0.6980392157, green: 0, blue: 0.02352941176, alpha: 1)
+        self.customContentView.layer.borderWidth = 0.5
 
         label.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([

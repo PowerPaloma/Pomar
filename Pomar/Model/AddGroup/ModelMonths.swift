@@ -17,6 +17,7 @@ class ModelMonths: NSObject, UICollectionViewDelegate, UICollectionViewDataSourc
     var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     var modelDays: ModelDays!
     var start = true
+    var monthProtocol: MonthSelectedProtocol? = nil
 
     
     init(collection: UICollectionView, modelDays: ModelDays) {
@@ -64,7 +65,7 @@ class ModelMonths: NSObject, UICollectionViewDelegate, UICollectionViewDataSourc
             cell?.isSelected = false
             start = false
         }
-        
+        monthProtocol?.selected(month: months[indexPath.row])
         modelDays.daysIn(month: indexPath.row+1)
         modelDays.collection.reloadData()
         modelDays.collection.setContentOffset(CGPoint.zero, animated: true)
