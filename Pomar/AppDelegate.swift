@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
-        let storyboard = UIStoryboard(name: "Exchange", bundle: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         let initialViewController = storyboard.instantiateInitialViewController()
         

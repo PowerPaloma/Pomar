@@ -372,11 +372,30 @@ final class CKManager {
             }
             
             let user = User(record: record)
-            user.exchangeApple(type: appleType)
             
-            self.publicDatabase.save(user.record, completionHandler: { (record, error) in
-                completion(record,error)
-            })
+            var couldExchange = true
+            
+            switch appleType{
+            case .green:
+                if user.greenApples < 100{couldExchange = false}
+            case .red:
+                if user.redApples < 100{couldExchange = false}
+            case .yellow:
+                if user.yellowApples < 100{couldExchange = false}
+            }
+            
+            if couldExchange{
+                user.exchangeApple(type: appleType)
+                self.publicDatabase.save(user.record, completionHandler: { (record, error) in
+                    completion(record,error)
+                })
+            }else{
+                let error = NSError(domain: "You does not have enough apples", code: 1, userInfo: nil)
+                completion(nil, error)
+            }
+            
+            
+            
             
         }
         

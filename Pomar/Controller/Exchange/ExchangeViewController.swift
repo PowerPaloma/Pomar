@@ -70,7 +70,11 @@ class ExchangeViewController: UIViewController {
                     }
 //                    print(record?.value(forKey: "money"))
                 }else{
-                    print(error.debugDescription)
+                    guard let error = error else {return}
+                    let nsError = error as NSError
+                    let message = nsError.domain
+                    self.removeSpinner()
+                    self.alertError(withMessage: message)
                 }
             })
         }
@@ -109,6 +113,14 @@ class ExchangeViewController: UIViewController {
         let type = AppleType(index: (gesture.view?.tag)!)
         self.appleTypeChoosed = type!
         
+        switch type! {
+        case .red:
+            messageExchange = "Exchange 100 Apple Red to 100 Moneys"
+        case .green:
+            messageExchange = "Exchange 100 Apple Orange to 150 Moneys"
+        case .yellow:
+            messageExchange = "Exchange 100 Apple Orange to 200 Moneys"
+        }
         self.present(alertController, animated: true, completion: nil)
     }
     
@@ -156,6 +168,16 @@ class ExchangeViewController: UIViewController {
         DispatchQueue.main.async {
            self.spinnerView.removeFromSuperview()
         }
+    }
+    
+    func alertError(withMessage message:String){
+        let alertController = UIAlertController(title: "Error in your exchange", message: message, preferredStyle: .alert)
+        
+        let actionOk = UIAlertAction(title: "Ok", style: .destructive, handler: nil)
+        
+        alertController.addAction(actionOk)
+        
+        self.present(alertController, animated: true, completion: nil)
     }
 
 }
